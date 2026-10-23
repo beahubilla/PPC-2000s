@@ -1,0 +1,125 @@
+<!-- ============================================================
+     PHASE 3: FUTURE (2030s+) — HERO BANNER & NEUROLINK AR VISOR RELIC
+     Edit this file to modify the Future Wing Hero or 2035 AR Visor HTML.
+     ============================================================ -->
+
+<template id="future-hero-template">
+      <figure class="hero-spotlight hero-spotlight-future only-future">
+        <img src="./images/future-wing-hero.jpg" alt="A futuristic 2030s obsidian museum hall with glowing cyan and magenta holographic projections of Manila, a flying jeepney, and an AR neural visor" fetchpriority="high">
+        <div class="hero-image-shade" aria-hidden="true"></div>
+        <figcaption>
+          <span class="hero-overline">FUTURE WING &nbsp; / &nbsp; 2030s+ HOLOGRAPHIC HORIZON</span>
+          <h2 class="hero-title">Where heritage meets<br><em>holographic light.</em></h2>
+          <p>Step into the 2030s onwards: spatial telepresence for OFW families, volumetric P-Pop domes, full-body cyber-athletics, and AI-resilient smart cities.</p>
+          <div class="hero-actions">
+            <button type="button" onclick="openRoom(0)" class="btn btn-pink">Enter neural archive <span aria-hidden="true">↗</span></button>
+            <a href="#exhibits" class="btn">Browse exhibits <span aria-hidden="true">↓</span></a>
+            <button type="button" onclick="openMap()" class="btn">🗺️ Floor map</button>
+          </div>
+        </figcaption>
+        <span class="hero-index" aria-hidden="true">2030s+ &nbsp;•&nbsp; HOLO-ARCHIVE 01—06</span>
+      </figure>
+</template>
+
+<template id="future-relic-template">
+      <!-- Future Mode Switcher -->
+      <div class="future-mode-switch only-future" role="group" aria-label="Choose AR visor module">
+        <button type="button" id="future-mode-holo-btn" class="future-mode-btn active" aria-pressed="true" onclick="setFutureMode('holo')">🫧 Holo-Link</button>
+        <button type="button" id="future-mode-game-btn" class="future-mode-btn" aria-pressed="false" onclick="setFutureMode('game')">⚡ Quantum Sync</button>
+      </div>
+
+      <!-- DEVICE 3: 2035 NeuroLink AR Visor (Future / 2030s+) -->
+      <div class="holovisor-device only-future">
+        <div class="holovisor-frame">
+          <div class="holovisor-bridge" aria-hidden="true"></div>
+          <div class="holovisor-hud">
+            <div class="holovisor-status">
+              <span>MNL-2035 · 21:40 PST</span>
+              <span class="holovisor-signal">6G QUANTUM · SYNC 99% ◈</span>
+            </div>
+
+            <!-- VIEW 1: HOLO-LINK SPATIAL CHAT -->
+            <div id="future-holo-view" class="holovisor-app-view is-active">
+              <div class="future-chat-header">
+                <span class="future-avatar" aria-hidden="true">🌌</span>
+                <div>
+                  <strong>Barkada Holo-Node 07</strong>
+                  <span>4 volumetric avatars linked · Auto-Dialect AI ON</span>
+                </div>
+                <span class="future-live-pill">LIVE 3D</span>
+              </div>
+              <div class="future-chat-feed" id="future-holo-feed" aria-live="polite" aria-label="Holographic transmissions">
+                <div class="future-chat-date">SPATIAL LOG · 2035.10.22</div>
+                <div class="future-msg future-msg-in">
+                  <span class="future-msg-meta">Bea · [AR Lens · Marikina SkyHub]</span>
+                  Uy! Kita-kits sa holographic P-Pop dome mamaya? Naka-sync na biometric lightstick ko!
+                </div>
+                <div class="future-msg future-msg-in">
+                  <span class="future-msg-meta">Benz · [VR Rig 04 · Manila Cyber-Arena]</span>
+                  G! Katatapos lang ng full-body VR scrimmage namin. Send ko 3D replay node sa table niyo.
+                </div>
+                <div class="future-msg future-msg-ai">
+                  <span class="future-msg-meta">TALA-9 · [Civic &amp; Weather AI Co-Pilot]</span>
+                  Watershed Digital Twin Advisory: Clear skies across Metro Manila (0% flood risk). Drone transit corridors optimal.
+                </div>
+                <div class="future-msg future-msg-out">
+                  Deploying my holo-avatar in 5 mins! Save a floating pod for me 🌌
+                </div>
+                <span class="future-typing" id="future-typing-indicator"><i></i><i></i><i></i> Neural link active · Ready to transmit</span>
+              </div>
+              <form class="future-composer" onsubmit="futureSendMessage(event)">
+                <label class="sr-only" for="future-message-input">Transmit holographic message</label>
+                <input id="future-message-input" type="text" maxlength="220" autocomplete="off" placeholder="Transmit thought or holo-message…">
+                <button type="submit" aria-label="Transmit message" title="Transmit message">⚡</button>
+              </form>
+            </div>
+
+            <!-- VIEW 2: QUANTUM SYNC NEURAL MINI-GAME -->
+            <div id="future-game-view" class="holovisor-app-view future-game-view" hidden>
+              <div class="future-game-header">
+                <span>NEURAL REFLEX LAB</span>
+                <span>QUANTUM SYNC v3.5</span>
+              </div>
+              <div class="future-game-scorebar">
+                <span>SCORE <strong id="future-game-score">000</strong></span>
+                <span>COMBO <strong id="future-game-combo">x1</strong></span>
+                <span>TIME <strong id="future-game-time">20</strong>s</span>
+              </div>
+              <div class="future-game-arena" id="future-game-arena">
+                <div class="future-grid-lines" aria-hidden="true"></div>
+                <button type="button" id="future-game-target" class="future-game-target" aria-label="Stabilize quantum node" onclick="futureGameTap('normal')" hidden>
+                  <span class="node-ring"></span>
+                  <span class="node-core">◈</span>
+                </button>
+                <button type="button" id="future-game-bonus" class="future-game-bonus" aria-label="Capture golden overclock node" onclick="futureGameTap('bonus')" hidden>
+                  <span class="node-core">★</span>
+                </button>
+                <div id="future-game-overlay" class="future-game-overlay">
+                  <span class="future-game-emblem" aria-hidden="true">◈</span>
+                  <strong id="future-game-message">Quantum Sync</strong>
+                  <p id="future-game-instructions">Stabilize glowing quantum nodes before phase decay. Chain rapid hits to multiply your neural sync score!</p>
+                  <button type="button" id="future-game-start" onclick="startFutureGame()">Initialize 20s Run ⚡</button>
+                </div>
+              </div>
+              <div class="future-game-foot">
+                <span>Tap cyan nodes (+10×combo) &amp; gold cores (+35)</span>
+                <span>BEST <strong id="future-game-best">0</strong></span>
+              </div>
+            </div>
+
+            <div class="holovisor-home-bar" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Future AR Visor Shortcuts -->
+      <div class="future-shortcuts mt-5 max-w-md mx-auto only-future">
+        <span class="future-shortcuts-label">Transmit a quick neural preset</span>
+        <div class="future-preset-list">
+          <button type="button" onclick="futureUsePreset('Beam your 3D holo-avatar to our Sunday family table! 🫧')">🫧 OFW Holo-Dinner</button>
+          <button type="button" onclick="futureUsePreset('Syncing my biometric lightstick to the P-Pop dome! 🪄')">🪄 Sync Lightstick</button>
+          <button type="button" onclick="futureUsePreset('Hop into the full-body VR arena for one round! 🥽')">🥽 VR Arena Scrim</button>
+          <button type="button" onclick="futureUsePreset('TALA-9, run Marikina River digital twin forecast 🛰️')">🛰️ Check Weather Twin</button>
+        </div>
+      </div>
+</template>
