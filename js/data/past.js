@@ -101,241 +101,6 @@ const pastExhibits = {
       }
     ]
   },
-  "cultural": {
-    "badge": "OPM Rock & P-Pop",
-    "tag": "MP3 CDS & FANTASERYES",
-    "thenTitle": "OPM Rock, Burned CDs & Fantaseryes",
-    "thenBlurb": "Band mania on the radio, MP3 CDs from Quiapo, SexBomb dance crazes, and primetime fantaseryes.",
-    "image": "./images/opm albums.png",
-    "alt": "Audio & Stage Music",
-    "then": "OPM rock explosion (Parokya ni Edgar, Kamikazee), Quiapo burned MP3 CDs, SexBomb dance hits, and primetime fantaseryes (Mulawin).",
-    "impact": "Made band mania, burned CDs, and dance crazes part of everyday life",
-    "intro": "The 2000s were a golden age for Pinoy rock and a wild mix of dance crazes and fantasy TV. Music traveled on burned CDs and radio requests.",
-    "facts": [
-      "Bands like Parokya ni Edgar (nicknamed 'The National Band of the Philippines' by local media), Kamikazee, and Sponge Cola were part of the early-2000s Pinoy rock scene, and FM radio and TV helped make them popular.",
-      "The SexBomb Girls began as backup dancers on Eat Bulaga! (the group formed in 1999) and grew into multi-platinum recording stars.",
-      "Mulawin premiered on GMA Network on August 2, 2004, as a primetime fantasy series."
-    ],
-    "artifacts": [
-      {
-        "emoji": "💿",
-        "name": "Burned MP3 CD",
-        "note": "Dozens of songs on one disc, often bought in Quiapo."
-      },
-      {
-        "emoji": "📻",
-        "name": "Radio requests",
-        "note": "Text-in dedications shaped the hit parade."
-      },
-      {
-        "emoji": "🎤",
-        "name": "Videoke",
-        "note": "The family karaoke machine at every party."
-      },
-      {
-        "emoji": "📺",
-        "name": "Primetime fantaserye",
-        "note": "Capes, creatures, and dramatic cliffhangers."
-      }
-    ],
-    "sources": [
-      {
-        "title": "Pogi rock",
-        "url": "https://en.wikipedia.org/wiki/Pogi_rock",
-        "publisher": "Wikipedia",
-        "era": "then",
-        "note": "Early-2000s Pinoy rock bands on FM radio and TV."
-      },
-      {
-        "title": "Parokya ni Edgar",
-        "url": "https://en.wikipedia.org/wiki/Parokya_ni_Edgar",
-        "publisher": "Wikipedia",
-        "era": "then",
-        "note": "The band and its 'National Band' nickname."
-      },
-      {
-        "title": "Kamikazee",
-        "url": "https://en.wikipedia.org/wiki/Kamikazee",
-        "publisher": "Wikipedia",
-        "era": "then",
-        "note": "First album in 2002."
-      },
-      {
-        "title": "SexBomb Girls",
-        "url": "https://en.wikipedia.org/wiki/SexBomb_Girls",
-        "publisher": "Wikipedia",
-        "era": "then",
-        "note": "From Eat Bulaga! backup dancers to recording stars."
-      },
-      {
-        "title": "Mulawin",
-        "url": "https://en.wikipedia.org/wiki/Mulawin",
-        "publisher": "Wikipedia",
-        "era": "then",
-        "note": "2004 GMA fantasy series."
-      },
-      {
-        "title": "Pirate hunters strike",
-        "url": "https://philstar.com/metro/2003/07/16/213833/pirate-hunters-strike",
-        "publisher": "The Philippine STAR",
-        "year": "2003",
-        "era": "then",
-        "note": "Quiapo and the pirated CD trade."
-      }
-    ]
-  },
-  "sports": {
-    "badge": "Pacquiao & LAN Shops",
-    "tag": "DOTA 1 & CRIME DROPS",
-    "thenTitle": "Fight Nights & LAN Cafes",
-    "thenBlurb": "Streets that went quiet for Pacquiao fights, and computer shops packed for all-night DotA.",
-    "image": "./images/computer shop.png",
-    "alt": "Esports Gaming Room",
-    "then": "Crime reportedly fell to almost zero during Pacquiao boxing broadcasts, plus PBA arena finals and bulky CRT computer shops playing DotA 1 and Counter-Strike.",
-    "impact": "Fight nights and LAN shops became shared neighborhood rituals",
-    "intro": "Sports and games brought neighborhoods together. In the 2000s that meant crowding around one TV for a Pacquiao fight or packing a computer shop for an all-night DotA match.",
-    "facts": [
-      "Pacquiao fight nights became famous for quiet streets, and police often reported close to zero crime while the fights were on.",
-      "DotA started as a Warcraft III mod and was a staple of internet cafes across the country.",
-      "Internet cafes rented computers by the hour, so a few pesos could buy an afternoon of games."
-    ],
-    "artifacts": [
-      {
-        "emoji": "🥊",
-        "name": "Fight-night TV",
-        "note": "Whole barangays watching one screen."
-      },
-      {
-        "emoji": "🖥️",
-        "name": "CRT monitor rows",
-        "note": "Pay-per-hour computer shops after school."
-      },
-      {
-        "emoji": "🎧",
-        "name": "Headset & Mouse",
-        "note": "Essential gear for a late-night match."
-      },
-      {
-        "emoji": "🏀",
-        "name": "PBA finals",
-        "note": "Basketball nights filled arenas and living rooms."
-      }
-    ],
-    "sources": [
-      {
-        "title": "Crime rate turns almost zilch on Pacquiao fight days - police",
-        "url": "https://gmanetwork.com/news/topstories/nation/63607/crime-rate-turns-almost-zilch-on-pacquiao-fight-days-police/story",
-        "publisher": "GMA News",
-        "era": "then",
-        "note": "Police reports on crime during Pacquiao fights."
-      },
-      {
-        "title": "Police on alert Sunday despite almost no crime during Pacquiao fights",
-        "url": "https://newsinfo.inquirer.net/92331/police-on-alert-sunday-despite-almost-no-crime-during-pacquiao-fights/amp",
-        "publisher": "Philippine Daily Inquirer",
-        "era": "then",
-        "note": "Crime was usually close to zero on fight days."
-      },
-      {
-        "title": "13 Top PC Games in Computer Cafes in the Philippines",
-        "url": "https://news.yahoo.com/13-top-pc-games-computer-200034195.html",
-        "publisher": "Tech in Asia via Yahoo News",
-        "era": "then",
-        "note": "DotA as a Warcraft III map; popular computer cafe games."
-      },
-      {
-        "title": "In Response to IGN Asia Pacific's 'Overview: Gaming in the Philippines'",
-        "url": "https://www.gamedeveloper.com/game-platforms/in-response-to-ign-asia-pacific-s-overview-gaming-in-the-philippines-",
-        "publisher": "Game Developer",
-        "era": "then",
-        "note": "Computer shops and cheap hourly PC rental."
-      },
-      {
-        "title": "Lakad matatag",
-        "url": "https://gameindustry.ph/article/lakad-matatag",
-        "publisher": "GameIndustry.ph",
-        "era": "then",
-        "note": "DotA culture in Philippine internet cafes."
-      }
-    ]
-  },
-  "political": {
-    "badge": "EDSA II & Text Brigades",
-    "tag": "GMS & HELLO GARCI",
-    "thenTitle": "Text Brigades & Hello Garci",
-    "thenBlurb": "Chain texts, wiretap scandals, and satire shows shaped how Filipinos talked politics.",
-    "image": "./images/people power.png",
-    "alt": "Civic Protests",
-    "then": "\"Go 2 EDSA, wear black\" SMS chains that toppled Estrada, the Hello Garci scandal, and political satire shows (Wazzup Wazzup).",
-    "impact": "Showed that a forwarded text could help gather a crowd",
-    "intro": "Politics moved at the speed of forwarded texts. In January 2001, messages spread calls to gather at EDSA, and the 'text brigade' became part of the story of how crowds were mobilized.",
-    "facts": [
-      "Text volume reportedly jumped from about 30 million to about 70 million messages a day during the final days of Estrada's impeachment trial and EDSA 2.",
-      "The 'Hello Garci' scandal began in June 2005, when audio recordings allegedly of a phone call between President Arroyo and election official Virgilio Garcillano about the 2004 election were released.",
-      "Texting was also used for everyday services, like booking movie tickets and reaching government agencies."
-    ],
-    "artifacts": [
-      {
-        "emoji": "📩",
-        "name": "Chain text",
-        "note": "'Pls pass 2 all' spread news and rumors alike."
-      },
-      {
-        "emoji": "💿",
-        "name": "'Hello Garci' CDs",
-        "note": "Copies of the alleged recordings were played for reporters on CDs."
-      },
-      {
-        "emoji": "📺",
-        "name": "Satire shows",
-        "note": "Comedy as a way to talk about power."
-      },
-      {
-        "emoji": "📣",
-        "name": "EDSA gatherings",
-        "note": "Crowds gathered at EDSA in January 2001 (EDSA II)."
-      }
-    ],
-    "sources": [
-      {
-        "title": "The Cell Phone and the Crowd",
-        "url": "https://doi.org/10.1215/08992363-15-3-399",
-        "publisher": "Vicente L. Rafael, Public Culture",
-        "year": "2003",
-        "era": "then",
-        "note": "People Power II and mobile communication."
-      },
-      {
-        "title": "The Philippine text messaging phenomenon",
-        "url": "https://www.philstar.com/lifestyle/business-life/2001/05/15/85823/philippine-text-messaging-phenomenon/amp/",
-        "publisher": "The Philippine STAR",
-        "year": "2001",
-        "era": "then",
-        "note": "SMS volume during EDSA 2."
-      },
-      {
-        "title": "Applying the Digital Opportunity Index to the Philippines (presentation)",
-        "url": "https://itu.int/osg/spuold/digitalbridges/materials/salazar-ppt.pdf",
-        "publisher": "ITU / LIRNEasia",
-        "era": "then",
-        "note": "Everyday uses of SMS."
-      },
-      {
-        "title": "Hello Garci scandal",
-        "url": "https://en.wikipedia.org/wiki/Hello_Garci_scandal",
-        "publisher": "Wikipedia",
-        "era": "then",
-        "note": "Timeline and background of the scandal."
-      },
-      {
-        "title": "What Went Before: Saga of the 'Hello Garci' tapes",
-        "url": "https://newsinfo.inquirer.net/606445/what-went-before-saga-of-the-hello-garci-tapes",
-        "publisher": "Philippine Daily Inquirer",
-        "era": "then",
-        "note": "Timeline of the 2005 tapes."
-      }
-    ]
-  },
   "economic": {
     "badge": "BPO Nightshifts & Piracy",
     "tag": "CALL CENTERS & DVDS",
@@ -427,6 +192,166 @@ const pastExhibits = {
       }
     ]
   },
+  "political": {
+    "badge": "EDSA II & Text Brigades",
+    "tag": "GMS & HELLO GARCI",
+    "thenTitle": "Text Brigades & Hello Garci",
+    "thenBlurb": "Chain texts, wiretap scandals, and satire shows shaped how Filipinos talked politics.",
+    "image": "./images/people power.png",
+    "alt": "Civic Protests",
+    "then": "\"Go 2 EDSA, wear black\" SMS chains that toppled Estrada, the Hello Garci scandal, and political satire shows (Wazzup Wazzup).",
+    "impact": "Showed that a forwarded text could help gather a crowd",
+    "intro": "Politics moved at the speed of forwarded texts. In January 2001, messages spread calls to gather at EDSA, and the 'text brigade' became part of the story of how crowds were mobilized.",
+    "facts": [
+      "Text volume reportedly jumped from about 30 million to about 70 million messages a day during the final days of Estrada's impeachment trial and EDSA 2.",
+      "The 'Hello Garci' scandal began in June 2005, when audio recordings allegedly of a phone call between President Arroyo and election official Virgilio Garcillano about the 2004 election were released.",
+      "Texting was also used for everyday services, like booking movie tickets and reaching government agencies."
+    ],
+    "artifacts": [
+      {
+        "emoji": "📩",
+        "name": "Chain text",
+        "note": "'Pls pass 2 all' spread news and rumors alike."
+      },
+      {
+        "emoji": "💿",
+        "name": "'Hello Garci' CDs",
+        "note": "Copies of the alleged recordings were played for reporters on CDs."
+      },
+      {
+        "emoji": "📺",
+        "name": "Satire shows",
+        "note": "Comedy as a way to talk about power."
+      },
+      {
+        "emoji": "📣",
+        "name": "EDSA gatherings",
+        "note": "Crowds gathered at EDSA in January 2001 (EDSA II)."
+      }
+    ],
+    "sources": [
+      {
+        "title": "The Cell Phone and the Crowd",
+        "url": "https://doi.org/10.1215/08992363-15-3-399",
+        "publisher": "Vicente L. Rafael, Public Culture",
+        "year": "2003",
+        "era": "then",
+        "note": "People Power II and mobile communication."
+      },
+      {
+        "title": "The Philippine text messaging phenomenon",
+        "url": "https://www.philstar.com/lifestyle/business-life/2001/05/15/85823/philippine-text-messaging-phenomenon/amp/",
+        "publisher": "The Philippine STAR",
+        "year": "2001",
+        "era": "then",
+        "note": "SMS volume during EDSA 2."
+      },
+      {
+        "title": "Applying the Digital Opportunity Index to the Philippines (presentation)",
+        "url": "https://itu.int/osg/spuold/digitalbridges/materials/salazar-ppt.pdf",
+        "publisher": "ITU / LIRNEasia",
+        "era": "then",
+        "note": "Everyday uses of SMS."
+      },
+      {
+        "title": "Hello Garci scandal",
+        "url": "https://en.wikipedia.org/wiki/Hello_Garci_scandal",
+        "publisher": "Wikipedia",
+        "era": "then",
+        "note": "Timeline and background of the scandal."
+      },
+      {
+        "title": "What Went Before: Saga of the 'Hello Garci' tapes",
+        "url": "https://newsinfo.inquirer.net/606445/what-went-before-saga-of-the-hello-garci-tapes",
+        "publisher": "Philippine Daily Inquirer",
+        "era": "then",
+        "note": "Timeline of the 2005 tapes."
+      }
+    ]
+  },
+  "cultural": {
+    "badge": "OPM Rock & P-Pop",
+    "tag": "MP3 CDS & FANTASERYES",
+    "thenTitle": "OPM Rock, Burned CDs & Fantaseryes",
+    "thenBlurb": "Band mania on the radio, MP3 CDs from Quiapo, SexBomb dance crazes, and primetime fantaseryes.",
+    "image": "./images/opm albums.png",
+    "alt": "Audio & Stage Music",
+    "then": "OPM rock explosion (Parokya ni Edgar, Kamikazee), Quiapo burned MP3 CDs, SexBomb dance hits, and primetime fantaseryes (Mulawin).",
+    "impact": "Made band mania, burned CDs, and dance crazes part of everyday life",
+    "intro": "The 2000s were a golden age for Pinoy rock and a wild mix of dance crazes and fantasy TV. Music traveled on burned CDs and radio requests.",
+    "facts": [
+      "Bands like Parokya ni Edgar (nicknamed 'The National Band of the Philippines' by local media), Kamikazee, and Sponge Cola were part of the early-2000s Pinoy rock scene, and FM radio and TV helped make them popular.",
+      "The SexBomb Girls began as backup dancers on Eat Bulaga! (the group formed in 1999) and grew into multi-platinum recording stars.",
+      "Mulawin premiered on GMA Network on August 2, 2004, as a primetime fantasy series."
+    ],
+    "artifacts": [
+      {
+        "emoji": "💿",
+        "name": "Burned MP3 CD",
+        "note": "Dozens of songs on one disc, often bought in Quiapo."
+      },
+      {
+        "emoji": "📻",
+        "name": "Radio requests",
+        "note": "Text-in dedications shaped the hit parade."
+      },
+      {
+        "emoji": "🎤",
+        "name": "Videoke",
+        "note": "The family karaoke machine at every party."
+      },
+      {
+        "emoji": "📺",
+        "name": "Primetime fantaserye",
+        "note": "Capes, creatures, and dramatic cliffhangers."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Pogi rock",
+        "url": "https://en.wikipedia.org/wiki/Pogi_rock",
+        "publisher": "Wikipedia",
+        "era": "then",
+        "note": "Early-2000s Pinoy rock bands on FM radio and TV."
+      },
+      {
+        "title": "Parokya ni Edgar",
+        "url": "https://en.wikipedia.org/wiki/Parokya_ni_Edgar",
+        "publisher": "Wikipedia",
+        "era": "then",
+        "note": "The band and its 'National Band' nickname."
+      },
+      {
+        "title": "Kamikazee",
+        "url": "https://en.wikipedia.org/wiki/Kamikazee",
+        "publisher": "Wikipedia",
+        "era": "then",
+        "note": "First album in 2002."
+      },
+      {
+        "title": "SexBomb Girls",
+        "url": "https://en.wikipedia.org/wiki/SexBomb_Girls",
+        "publisher": "Wikipedia",
+        "era": "then",
+        "note": "From Eat Bulaga! backup dancers to recording stars."
+      },
+      {
+        "title": "Mulawin",
+        "url": "https://en.wikipedia.org/wiki/Mulawin",
+        "publisher": "Wikipedia",
+        "era": "then",
+        "note": "2004 GMA fantasy series."
+      },
+      {
+        "title": "Pirate hunters strike",
+        "url": "https://philstar.com/metro/2003/07/16/213833/pirate-hunters-strike",
+        "publisher": "The Philippine STAR",
+        "year": "2003",
+        "era": "then",
+        "note": "Quiapo and the pirated CD trade."
+      }
+    ]
+  },
   "environmental": {
     "badge": "Typhoon Ondoy (2009)",
     "tag": "DISASTER RESCUE TWEETS",
@@ -499,6 +424,81 @@ const pastExhibits = {
       }
     ]
   }
+  "sports and gaming": {
+    "badge": "Pacquiao & LAN Shops",
+    "tag": "DOTA 1 & CRIME DROPS",
+    "thenTitle": "Fight Nights & LAN Cafes",
+    "thenBlurb": "Streets that went quiet for Pacquiao fights, and computer shops packed for all-night DotA.",
+    "image": "./images/computer shop.png",
+    "alt": "Esports Gaming Room",
+    "then": "Crime reportedly fell to almost zero during Pacquiao boxing broadcasts, plus PBA arena finals and bulky CRT computer shops playing DotA 1 and Counter-Strike.",
+    "impact": "Fight nights and LAN shops became shared neighborhood rituals",
+    "intro": "Sports and games brought neighborhoods together. In the 2000s that meant crowding around one TV for a Pacquiao fight or packing a computer shop for an all-night DotA match.",
+    "facts": [
+      "Pacquiao fight nights became famous for quiet streets, and police often reported close to zero crime while the fights were on.",
+      "DotA started as a Warcraft III mod and was a staple of internet cafes across the country.",
+      "Internet cafes rented computers by the hour, so a few pesos could buy an afternoon of games."
+    ],
+    "artifacts": [
+      {
+        "emoji": "🥊",
+        "name": "Fight-night TV",
+        "note": "Whole barangays watching one screen."
+      },
+      {
+        "emoji": "🖥️",
+        "name": "CRT monitor rows",
+        "note": "Pay-per-hour computer shops after school."
+      },
+      {
+        "emoji": "🎧",
+        "name": "Headset & Mouse",
+        "note": "Essential gear for a late-night match."
+      },
+      {
+        "emoji": "🏀",
+        "name": "PBA finals",
+        "note": "Basketball nights filled arenas and living rooms."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Crime rate turns almost zilch on Pacquiao fight days - police",
+        "url": "https://gmanetwork.com/news/topstories/nation/63607/crime-rate-turns-almost-zilch-on-pacquiao-fight-days-police/story",
+        "publisher": "GMA News",
+        "era": "then",
+        "note": "Police reports on crime during Pacquiao fights."
+      },
+      {
+        "title": "Police on alert Sunday despite almost no crime during Pacquiao fights",
+        "url": "https://newsinfo.inquirer.net/92331/police-on-alert-sunday-despite-almost-no-crime-during-pacquiao-fights/amp",
+        "publisher": "Philippine Daily Inquirer",
+        "era": "then",
+        "note": "Crime was usually close to zero on fight days."
+      },
+      {
+        "title": "13 Top PC Games in Computer Cafes in the Philippines",
+        "url": "https://news.yahoo.com/13-top-pc-games-computer-200034195.html",
+        "publisher": "Tech in Asia via Yahoo News",
+        "era": "then",
+        "note": "DotA as a Warcraft III map; popular computer cafe games."
+      },
+      {
+        "title": "In Response to IGN Asia Pacific's 'Overview: Gaming in the Philippines'",
+        "url": "https://www.gamedeveloper.com/game-platforms/in-response-to-ign-asia-pacific-s-overview-gaming-in-the-philippines-",
+        "publisher": "Game Developer",
+        "era": "then",
+        "note": "Computer shops and cheap hourly PC rental."
+      },
+      {
+        "title": "Lakad matatag",
+        "url": "https://gameindustry.ph/article/lakad-matatag",
+        "publisher": "GameIndustry.ph",
+        "era": "then",
+        "note": "DotA culture in Philippine internet cafes."
+      }
+    ]
+  },
 };
 
 // Circa-2007 Friendster Profiles for Meet the Curators
