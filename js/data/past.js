@@ -23,8 +23,8 @@ const pastExhibits = {
     "tag": "SMS, FRIENDSTER & HANGOUTS",
     "thenTitle": "The Texting Capital & Early Social Networks",
     "thenBlurb": "Affordable SMS, Friendster & Multiply profiles, neighborhood internet cafes, SMS reality-TV voting, and Skype/Yahoo Messenger OFW calls.",
-    "image": "./images/nokia.png",
-    "alt": "Nokia Mobile Phones",
+    "image": "./images/nokia.jpg",
+    "alt": "Nokia 3310 showing a Filipino text message on its screen",
     "then": "Start of social media in the PH (Friendster, MySpace, Multiply, Facebook, YouTube, Twitter), the texting boom that made the PH the 'Texting Capital of the World', audience-driven SMS voting on reality shows (StarStruck, Star Circle Quest, Pinoy Big Brother), and Skype/Yahoo Messenger for OFWs.",
     "impact": "Texting culture and early social networks (Friendster, Multiply, Facebook) built the habit of staying constantly connected across separate devices and places.",
     "intro": "Communication evolved dramatically during 2000–2010 as affordable mobile phones dubbed the Philippines the 'Texting Capital of the World'. Friendster, MySpace, and Facebook—plus YouTube and Twitter—were all founded in this decade, while computer shops and internet cafes were how many Filipinos got online.",
@@ -57,13 +57,23 @@ const pastExhibits = {
     ],
     "gallery": [
       {
-        "src": "./images/phones.png",
+        "src": "./images/phones.jpg",
         "caption": "Early 2000s mobile phones and texting culture",
         "year": "2000–2010"
       },
       {
-        "src": "./images/phones 1.png",
+        "src": "./images/phones-1.jpg",
         "caption": "Keypad phones that powered the Texting Capital of the World",
+        "year": "2000–2010"
+      },
+      {
+        "src": "./images/computer-shop.jpg",
+        "caption": "Neighborhood computer shops were where many Filipinos first got online",
+        "year": "2000–2010"
+      },
+      {
+        "src": "./images/internet-cafe.jpg",
+        "caption": "Internet cafe desktops used for social networks and video calls",
         "year": "2000–2010"
       }
     ],
@@ -121,8 +131,8 @@ const pastExhibits = {
     "tag": "CALL CENTERS & MALL CULTURE",
     "thenTitle": "The BPO Boom, Mega-Malls & 24/7 Economy",
     "thenBlurb": "Declared the Call Center Capital of the World in 2010, overnight graveyard shifts, SM MOA & BGC High Street, and physical media.",
-    "image": "./images/bpo.png",
-    "alt": "Urban Business District",
+    "image": "./images/bpo-industry.jpg",
+    "alt": "Rows of call-center workers at their desks in a BPO office",
     "then": "Boom of the BPO industry (PH declared Call Center Capital of the World in 2010), malls like SM MOA and Bonifacio High Street as spending and leisure hubs, media shift from cassettes/CRT TVs to burned CDs/MP3s/LCDs, entertainment earned via TV ratings and album/ticket sales, and OFW remittances.",
     "impact": "The BPO boom and OFW remittances tied the place-based Philippine economy to global clients and round-the-clock work.",
     "intro": "The rapid boom of the Business Process Outsourcing (BPO) industry culminated in the Philippines being declared the 'Call Center Capital of the World' in 2010. Serving Western clients overnight alongside OFW remittances linked the PH economy to the world and powered a 24/7 night economy (fast food, convenience stores, and transport open around the clock), while malls like SM MOA and Bonifacio High Street became major spending and leisure hubs.",
@@ -191,8 +201,8 @@ const pastExhibits = {
     "tag": "SMS BRIGADES & SCANDALS",
     "thenTitle": "Text-Driven Mobilization & Major Scandals",
     "thenBlurb": "EDSA II SMS chains, the Estrada impeachment trial, the Hello Garci controversy, and the 2009 Maguindanao massacre.",
-    "image": "./images/people power.png",
-    "alt": "Civic Protests",
+    "image": "./images/people-power.jpg",
+    "alt": "Large crowd of protesters with banners at a rally",
     "then": "Estrada impeachment trial, EDSA II SMS text chains and early political blogs, the 'Hello Garci' wiretapping controversy, primetime investigative news magazines and political satire shows, and the 2009 Maguindanao massacre drawing global attention to press freedom.",
     "impact": "SMS mobilization (EDSA II) and public outrage over scandals like Hello Garci set a lasting pattern of citizens organizing through communication technology.",
     "intro": "Politics in 2000–2010 was shaped by text-driven mass mobilization and major national controversies: the Estrada impeachment trial and EDSA II in 2001, the 'Hello Garci' wiretapping scandal in 2005, and the 2009 Maguindanao massacre, which drew global attention to press freedom in the Philippines.",
@@ -254,7 +264,7 @@ const pastExhibits = {
     "tag": "OPM, SEXBOMB & BEBOT LOOK",
     "thenTitle": "Golden Era of OPM, Fantaseryes & Y2K Fashion",
     "thenBlurb": "OPM bands (Parokya ni Edgar, Sponge Cola, MYMP), fantaseryes (Mulawin, Encantadia), SexBomb craze, Emo/Jejemon fashion, and the first Hallyu wave.",
-    "image": "./images/opm albums.png",
+    "image": "./images/opm-albums.jpg",
     "alt": "OPM Albums and Pop Culture Icons",
     "then": "Golden era of OPM bands (Parokya ni Edgar, Sponge Cola, MYMP), fantaseryes (Mulawin, Encantadia), the SexBomb craze, Emo and Jejemon fashion, burned MP3 CDs/iPods/Friendster music widgets, SMS radio dedications, Western pop on MTV, MCU's Iron Man (2008), and the first Hallyu wave (Meteor Garden, early K-dramas).",
     "impact": "Fantaserye and TV dramas led to today's streaming series and micro-dramas, the SexBomb craze and SMS radio/TV led to TikTok dance trends, and the first Hallyu wave helped inspire P-pop groups like SB19 and BINI.",
@@ -288,12 +298,12 @@ const pastExhibits = {
     ],
     "gallery": [
       {
-        "src": "./images/opm albums.png",
+        "src": "./images/opm-albums.jpg",
         "caption": "Greatest OPM band and pop hits of the 2000s",
         "year": "2000–2010"
       },
       {
-        "src": "./images/opm 1.png",
+        "src": "./images/opm-1.jpg",
         "caption": "OPM compilation albums and burned CD culture",
         "year": "2000–2010"
       }
@@ -362,8 +372,8 @@ const pastExhibits = {
     "tag": "ONDOY (2009) & SARS/H1N1",
     "thenTitle": "Typhoon Ondoy & Early Disaster Crowdsourcing",
     "thenBlurb": "Deadly 2009 Metro Manila flooding, early Facebook/Twitter/SMS rescue coordination, and the 2003 SARS & 2009 H1N1 scares.",
-    "image": "./images/ondoy.png",
-    "alt": "Storm & Heavy Rain",
+    "image": "./images/ondoy.jpg",
+    "alt": "Residents wading through deep floodwaters during Typhoon Ondoy",
     "then": "Typhoon Ondoy (2009) caused deadly flooding in Metro Manila alongside the 2003 SARS outbreak and 2009 swine flu (H1N1) scare; TV/radio weather bulletins and documentaries were supplemented by stranded residents and volunteers using Facebook, Twitter, and SMS to coordinate rescue.",
     "impact": "Ondoy and the SARS/H1N1 scares raised awareness of disaster and health preparedness, while online crowdsourcing during Ondoy foreshadowed today's real-time alerts.",
     "intro": "Typhoon Ondoy (2009) caused deadly flooding across Metro Manila, while the decade also saw the 2003 SARS outbreak and 2009 swine flu (H1N1) scare. Broadcast-based warnings on TV and radio were supplemented during Ondoy by early social media crowdsourcing as stranded residents and volunteers used Facebook, Twitter, and text messages to ask for and coordinate rescue.",
@@ -396,12 +406,12 @@ const pastExhibits = {
     ],
     "gallery": [
       {
-        "src": "./images/ondoy.png",
+        "src": "./images/ondoy.jpg",
         "caption": "Residents navigating deep floodwaters during Typhoon Ondoy",
         "year": "2009"
       },
       {
-        "src": "./images/ondoy baha.png",
+        "src": "./images/ondoy-baha.jpg",
         "caption": "Stranded residents awaiting rescue on rooftops during Ondoy",
         "year": "2009"
       }
@@ -437,8 +447,8 @@ const pastExhibits = {
     "tag": "PACMAN, PBA & DOTA 1",
     "thenTitle": "Manny Pacquiao, PBA Finals & Global Pinoy Pride",
     "thenBlurb": "Pacquiao fights that emptied streets and lowered crime, packed PBA and NBA finals, analog CRT broadcasts in plazas, and global Pinoy icons.",
-    "image": "./images/computer shop.png",
-    "alt": "Esports Gaming Room",
+    "image": "./images/manny.jpg",
+    "alt": "Manny Pacquiao in the ring during a 2000s world title bout",
     "then": "Manny Pacquiao's rise made boxing a national event (widely reported to empty streets and coincide with lower crime), PBA and NBA finals filled arenas and boosted TV ratings, millions watched via analog TV/radio and CRT screens in public gyms and plazas, and Charice and Arnel Pineda (Journey) won global recognition alongside LAN cafe gaming.",
     "impact": "Watching Pacquiao fights and PBA finals together built a collective, TV-centered habit of rallying behind Filipino athletes and talents on the world stage.",
     "intro": "Manny Pacquiao's rise made boxing a national event in 2000–2010: his fights were widely reported to empty the streets and even coincide with lower crime, while PBA and NBA finals filled arenas and boosted TV ratings. Millions of Filipinos watched together on analog CRT TVs, in public gyms and plazas, and via radio commentary to cheer on Pinoy icons.",
@@ -476,12 +486,12 @@ const pastExhibits = {
         "year": "2000–2010"
       },
       {
-        "src": "./images/computer shop.png",
+        "src": "./images/computer-shop.jpg",
         "caption": "Neighborhood computer shop packed with LAN gamers",
         "year": "2000–2010"
       },
       {
-        "src": "./images/internetcafe.jpg",
+        "src": "./images/internet-cafe.jpg",
         "caption": "Multiplayer gaming culture in 2000s internet cafes",
         "year": "2000–2010"
       }
@@ -537,7 +547,7 @@ const friendsterProfiles = [
     "short": "Bea",
     "initials": "BH",
     "handle": "★彡 BeA_Coups_2002 彡★",
-    "avatar": "./images/Keep Calm.jpg",
+    "avatar": "./images/keep-calm.jpg",
     "quote": "KEEP CALM AND PLAY HARD",
     "status": "Single (but txtmates 24/7)",
     "memberSince": "November 2002",
@@ -595,7 +605,7 @@ const friendsterProfiles = [
     "short": "Ingrid",
     "initials": "IS",
     "handle": "♪♫ ingridientZz1230__ ♫♪",
-    "avatar": "./images/domo.png",
+    "avatar": "./images/domo.jpg",
     "quote": "gusto ko lang matulog‎꜀( ꜆-ࡇ-)꜆ ᶻ 𝗓 𐰁",
     "status": "single ayee",
     "memberSince": "December 2007",
