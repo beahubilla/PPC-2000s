@@ -45,6 +45,23 @@ const presentExhibits = {
           "name": "Discord & Global Fandoms",
           "note": "Global online communities connecting Filipino fans worldwide."
         }
+      ],
+      "gallery": [
+        {
+          "src": "./images/modernphones.jpg",
+          "caption": "Today's flagship smartphones: one device for messaging, social media, and calls",
+          "year": "Today"
+        },
+        {
+          "src": "./images/foldable-phones-1.jpg",
+          "caption": "Foldable smartphones now on the market",
+          "year": "Today"
+        },
+        {
+          "src": "./images/foldable-phones-2.jpg",
+          "caption": "Foldable and flip phones in use",
+          "year": "Today"
+        }
       ]
     },
     "sources": [
@@ -89,8 +106,8 @@ const presentExhibits = {
       "tag": "GCASH, SHOPEE & FREELANCING",
       "title": "Platform-Based Economy: E-Wallets, E-Commerce & Global Remote Work",
       "blurb": "Work, shopping, payments, and entertainment income run through apps—from GCash, Maya, Shopee, and Lazada to global freelancing and BPO.",
-      "image": "./images/bpo industry.png",
-      "alt": "Modern Philippine digital economy",
+      "image": "./images/bpo.jpg",
+      "alt": "BPO workers in face masks behind plastic dividers during the COVID-19 pandemic",
       "impact": "The BPO boom and OFW remittances tied the Philippine economy to global clients and round-the-clock work. That experience carried into today's freelancing, remote work, e-commerce, and mobile payments (GCash, Maya), so Filipinos still earn and spend through global connections, now through apps instead of offices and malls.",
       "intro": "The COVID-19 pandemic accelerated e-commerce and e-wallet use across the Philippines, making GCash, Maya, Shopee, Lazada, and delivery apps everyday tools while BPO continued as a major employer. Today's economy is platform-based: work, shopping, payments, and creator income all run through digital apps.",
       "facts": [
@@ -140,8 +157,8 @@ const presentExhibits = {
       "tag": "2025 PROTESTS & LIVESTREAMS",
       "title": "Online-Networked Politics: 2025 Protests, Livestreams & Press Freedom",
       "blurb": "The 2025 flood-control corruption protests, live-streamed Congressional hearings, political vloggers, podcasts, and Maria Ressa's 2021 Nobel Peace Prize.",
-      "image": "./images/people power 1.png",
-      "alt": "Modern civic discourse",
+      "image": "./images/people-power-1.jpg",
+      "alt": "Crowd of protesters gathered at a rally",
       "impact": "SMS mobilization (EDSA II) and public outrage over scandals like Hello Garci set a pattern of citizens organizing through communication tech. Today the same impulse runs through social media, livestreams, and online campaigns, as seen in the 2025 flood-control protests.",
       "intro": "Today's political participation is online-networked: the 2025 flood-control corruption scandal sparked nationwide protests and leadership changes in both houses of Congress, with marches organized and amplified across social media, political vlogs, podcasts, and live-streamed hearings.",
       "facts": [
@@ -206,7 +223,7 @@ const presentExhibits = {
       "tag": "SB19, BINI & BEBOT REVIVAL",
       "title": "P-Pop Global Surge, Streaming & 2000s 'Bebot' Y2K Revival",
       "blurb": "SB19 and BINI take P-Pop global, the 2000s 'bebot' makeup look goes viral again in 2026, and Spotify, Netflix, micro-dramas, and TikTok dance trends thrive.",
-      "image": "./images/ppop.png",
+      "image": "./images/ppop.webp",
       "alt": "P-Pop and music streaming",
       "impact": "Fantaserye and TV dramas led to today's streaming series and micro-dramas. The SexBomb craze and SMS-interactive radio and TV led to TikTok dance trends and online fan engagement. The first Hallyu wave helped open the door to K-culture and inspired P-pop groups like SB19 and BINI.",
       "intro": "Today's pop culture is streaming- and creator-driven: the P-pop surge led by SB19 and BINI, widespread K-culture, and Y2K nostalgia revivals—highlighted by the 2000s 'bebot' makeup look going viral again in 2026—spread across borders through global social media and streaming platforms.",
@@ -280,8 +297,8 @@ const presentExhibits = {
       "tag": "REAL-TIME ALERTS & CLIMATE",
       "title": "Real-Time Disaster Alerts, 2025 Floods & Climate Advocacy",
       "blurb": "From Super Typhoon Yolanda (2013), COVID-19, and the July 2025 floods to weather apps, social media alerts, and global climate campaigns.",
-      "image": "./images/ondoy baha.png",
-      "alt": "Flood monitoring and community resilience",
+      "image": "./images/ondoy-baha.jpg",
+      "alt": "Flooded street with stranded residents (archive photo from Typhoon Ondoy, 2009)",
       "impact": "Ondoy and the SARS/H1N1 scares raised awareness of disaster and health preparedness. Online crowdsourcing during Ondoy foreshadowed today's real-time alerts and social media reporting during typhoons and the pandemic.",
       "intro": "Today, the Philippines faces more frequent super typhoons and severe flooding—including Super Typhoon Yolanda (2013) and the July 2025 floods that exposed flood-control corruption—alongside the COVID-19 pandemic. Communities rely on weather apps, social media alerts, and real-time online disaster and health updates connected to global climate discussions.",
       "facts": [
@@ -347,7 +364,7 @@ const presentExhibits = {
       "tag": "OLYMPICS, PVL & B.LEAGUE",
       "title": "Multi-Sport Golden Era: Olympic Golds, PVL, Alex Eala & Athlete Vlogs",
       "blurb": "Hidilyn Diaz and Carlos Yulo's Olympic golds, tennis star Alex Eala, booming PVL volleyball, Filipinos in Japan's B.League, and HD mobile livestreams.",
-      "image": "./images/recentsports.png",
+      "image": "./images/recent-sports.jpg",
       "alt": "Today's Filipino champions",
       "impact": "Watching Pacquiao fights and PBA finals together built a habit of rallying behind Pinoy athletes. Today that fandom has moved online through livestreams, real-time reactions, and athlete vlogs, and it covers more sports, such as volleyball, tennis, gymnastics, and weightlifting.",
       "intro": "Philippine sports fandom is now a digitally connected, multi-sport movement: Olympic golds by Hidilyn Diaz (Tokyo 2020) and Carlos Yulo (two golds, Paris 2024), tennis star Alex Eala, and growing Premier Volleyball League (PVL) followings inspire millions, while Filipino athletes compete in foreign leagues like Japan's B.League.",
@@ -380,17 +397,17 @@ const presentExhibits = {
       ],
       "gallery": [
         {
-          "src": "./images/recentsports.png",
+          "src": "./images/recent-sports.jpg",
           "caption": "Filipino multi-sport champions on the Olympic and international stage",
           "year": "2020s"
         },
         {
-          "src": "./images/sports.png",
+          "src": "./images/sports.jpg",
           "caption": "Philippine athletes celebrating international victories across multiple sports",
           "year": "2020s"
         },
         {
-          "src": "./images/esports.png",
+          "src": "./images/esports.jpg",
           "caption": "Professional Filipino mobile esports players on the tournament stage",
           "year": "2020s"
         }
@@ -439,7 +456,7 @@ const beforeAfterPairs = [
     "title": "Separate Channels (Nokia & Friendster) → Everything in One Smartphone",
     "caption": "From 160-character SMS voting, internet cafe Friendster profiles, and Skype OFW calls to 5G smartphones running Messenger, TikTok, and Discord anywhere.",
     "before": {
-      "img": "./images/phones 1.png",
+      "img": "./images/nokia.jpg",
       "emoji": "📟",
       "label": "Nokia 3310 & SMS, 2000s"
     },
@@ -454,12 +471,12 @@ const beforeAfterPairs = [
     "title": "Place-Based BPO & Malls → Platform-Based E-Wallets & Remote Work",
     "caption": "From overnight BPO offices and mega-malls (SM MOA, Bonifacio High Street) to GCash, Maya, Shopee, Lazada, creator monetization, and global freelancing.",
     "before": {
-      "img": "./images/bpo.png",
+      "img": "./images/bpo-industry.jpg",
       "emoji": "🏢",
       "label": "24/7 BPO Offices, 2000s"
     },
     "after": {
-      "img": "./images/bpo industry.png",
+      "img": "./images/bpo.jpg",
       "emoji": "💳",
       "label": "Platform Economy & BPO, Today"
     }
@@ -469,12 +486,12 @@ const beforeAfterPairs = [
     "title": "EDSA II SMS Chains & Hello Garci → 2025 Flood-Control Protests & Livestreams",
     "caption": "From EDSA II text brigades, Hello Garci, and the 2009 Maguindanao massacre to live-streamed hearings, vloggers, Maria Ressa's Nobel Prize, and the 2025 anti-corruption movement.",
     "before": {
-      "img": "./images/people power.png",
+      "img": "./images/people-power.jpg",
       "emoji": "📨",
       "label": "EDSA II Text Brigades, 2001"
     },
     "after": {
-      "img": "./images/people power 1.png",
+      "img": "./images/people-power-1.jpg",
       "emoji": "🗳️",
       "label": "Networked Protests, Today"
     }
@@ -484,12 +501,12 @@ const beforeAfterPairs = [
     "title": "OPM Bands, Burned CDs & Fantaseryes → P-Pop, Streaming & 'Bebot' Revival",
     "caption": "From Parokya ni Edgar, SexBomb, Mulawin, and burned MP3 CDs to SB19, BINI, Spotify/Netflix, TikTok trends, and the 2026 'Bebot' makeup revival.",
     "before": {
-      "img": "./images/opm 1.png",
+      "img": "./images/opm-1.jpg",
       "emoji": "💿",
       "label": "OPM & Burned CDs, 2000s"
     },
     "after": {
-      "img": "./images/ppop.png",
+      "img": "./images/ppop.webp",
       "emoji": "🎧",
       "label": "P-Pop & Streaming, Today"
     }
@@ -499,12 +516,12 @@ const beforeAfterPairs = [
     "title": "Typhoon Ondoy Broadcasts & Rescues → Real-Time Weather Apps & Climate Action",
     "caption": "From TV/radio bulletins and early Facebook/Twitter rescue calls during Ondoy (2009) and SARS/H1N1 to real-time weather apps, Yolanda/2025 flood response, and global climate advocacy.",
     "before": {
-      "img": "./images/ondoy.png",
+      "img": "./images/ondoy.jpg",
       "emoji": "📻",
       "label": "Ondoy TV Alerts, 2009"
     },
     "after": {
-      "img": "./images/ondoy baha.png",
+      "img": "./images/ondoy-baha.jpg",
       "emoji": "⛈️",
       "label": "Real-Time Disaster Apps, Today"
     }
@@ -519,7 +536,7 @@ const beforeAfterPairs = [
       "label": "Pacquiao & PBA, 2000s"
     },
     "after": {
-      "img": "./images/recentsports.png",
+      "img": "./images/recent-sports.jpg",
       "emoji": "🥇",
       "label": "Multi-Sport Champions, Today"
     }
