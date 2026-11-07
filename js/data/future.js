@@ -1,7 +1,7 @@
 // ============================================================
 // PHASE 3: FUTURE DATA (2030 PREDICTIONS & IMPACT TO 2030)
 // ------------------------------------------------------------
-// Updated with MO-HUM080 Final Group Worksheet 3 (2030 columns &
+// Source: MO-HUM080 Final Group Worksheet 3 (2030 columns &
 // Impact to 2030) across Social, Economic, Political, Cultural,
 // Environmental, and Others (Sports).
 // ============================================================
@@ -9,8 +9,8 @@
 // Automated responses for the 2030+ Future Interactive Relic
 const futureAutoReplies = [
   {
-    "sender": "Bea · 8G AI Hub",
-    "text": "Connected via 8G! Our OFW family virtual call and real-time AI livestream event are synced ✨"
+    "sender": "Bea · 6G AI Hub",
+    "text": "Connected via 6G! Our OFW family virtual call and real-time AI livestream event are synced ✨"
   },
   {
     "sender": "Benz · Global Sports Feed",
@@ -29,49 +29,49 @@ const futureAutoReplies = [
 // Future (2030) Exhibit Content (keyed by exhibit ID)
 const futureExhibits = {
   "social": {
-    "futureSummary": "Smartphones, AI assistants, and digital communities shape how Filipinos communicate, learn, and interact—powered by advanced smartphones, 8G or newer network coverage accessible everywhere, interactive livestreaming, virtual events, and immersive OFW communication.",
+    "futureSummary": "AI assistants built into messaging and social apps like Messenger, Viber, and TikTok become the norm, and online communities are a main space for learning, chatting, and fandom. Early 6G rollout and wider 5G coverage, plus AI-powered smartphones, bring fast mobile data to more areas, including the provinces.",
     "future": {
       "icon": "🤖",
-      "badge": "8G Networks, AI Assistants & Virtual Events",
-      "tag": "8G, AI ASSISTANTS & GLOBAL COMMUNITIES",
-      "title": "AI-Powered Communication, 8G Coverage & Immersive Communities",
-      "blurb": "Advanced smartphones, AI assistants, universally accessible 8G+ networks, interactive virtual events, and immersive digital communication for OFW families.",
+      "badge": "Early 6G, AI Assistants & Virtual Events",
+      "tag": "6G, AI ASSISTANTS & GLOBAL COMMUNITIES",
+      "title": "AI-Powered Communication, Early 6G & Immersive Communities",
+      "blurb": "AI assistants in messaging apps, early 6G and wider 5G coverage, interactive livestreams with real-time captions and translation, and immersive OFW communication.",
       "image": "./images/future-social.jpg",
       "alt": "Filipino family connecting via AI-assisted immersive communication in 2030",
-      "summary": "Smartphones, AI assistants, and digital communities shape how Filipinos communicate, learn, and interact—powered by advanced smartphones, 8G or newer network coverage accessible everywhere, interactive livestreaming, virtual events, and immersive OFW communication.",
+      "summary": "AI assistants built into messaging and social apps like Messenger, Viber, and TikTok become the norm, and online communities are a main space for learning, chatting, and fandom. Early 6G rollout and wider 5G coverage, plus AI-powered smartphones, bring fast mobile data to more areas, including the provinces.",
       "impact": "The shift from texting and desktop social networks to advanced smartphone apps has made communication more immediate. AI and virtual communication continue to strengthen global connections.",
-      "intro": "By 2030, smartphones, AI assistants, and digital communities shape and change the way Filipinos communicate, learn, and interact. With the start of 8G or newer network coverage widely accessible everywhere, interactive livestreaming, virtual events, and immersive digital communication keep OFW families and global online communities connected in real time.",
+      "intro": "By 2030, AI assistants built into messaging and social apps like Messenger, Viber, and TikTok become the norm, and online communities are a main space for learning, chatting, and fandom. Filipinos grow reliant on AI to communicate, while early 6G rollout and wider 5G coverage, plus AI-powered smartphones, bring fast mobile data to more areas, including the provinces.",
       "facts": [
-        "Key Events & Highlights (2030): Smartphones, AI assistants, and digital communities shape and transform how Filipinos communicate, learn, and interact every day.",
-        "Technology & Performance (2030): Advanced smartphones, AI-powered communication, and 8G or newer network coverage become widely accessible everywhere, while interactive livestreaming, virtual events, and AI-assisted content enhance audience engagement in real time.",
+        "Key Events & Technology (2030): AI assistants built into messaging and social apps like Messenger, Viber, and TikTok become the norm, while early 6G rollout, wider 5G coverage, and AI-powered smartphones bring fast mobile data to more areas, including the provinces.",
+        "Performance (2030): Interactive livestreams and virtual events with real-time captions and translation let fans react and engage with creators live.",
         "Globalization (2030): OFW families continue to communicate and connect across the world through advanced immersive digital communication and global online communities."
       ],
       "artifacts": [
         {
           "emoji": "📶",
-          "name": "8G+ Universal Coverage",
-          "note": "Next-generation network coverage widely accessible across urban and rural areas alike."
+          "name": "Early 6G & Wider 5G Coverage",
+          "note": "Fast mobile data reaching more areas, including the provinces."
         },
         {
           "emoji": "🤖",
-          "name": "AI Communication Assistants",
-          "note": "Smartphones and AI assistants that help Filipinos communicate, learn, and interact."
+          "name": "AI Messaging Assistants",
+          "note": "AI built into Messenger, Viber, and TikTok, which Filipinos increasingly rely on to communicate."
         },
         {
           "emoji": "🎪",
-          "name": "Interactive Virtual Events",
-          "note": "Real-time interactive livestreaming and AI-assisted audience engagement."
+          "name": "Captioned Virtual Events",
+          "note": "Interactive livestreams and virtual events with real-time captions and translation."
         },
         {
           "emoji": "🌍",
           "name": "Immersive OFW Links",
-          "note": "Advanced immersive digital communication uniting OFW families and global communities."
+          "note": "Advanced immersive digital communication uniting OFW families and global online communities."
         }
       ],
       "gallery": [
         {
           "src": "./images/future-social.jpg",
-          "caption": "Immersive AI-powered OFW family communication and 8G connectivity in 2030",
+          "caption": "Immersive AI-powered OFW family communication and early 6G connectivity in 2030",
           "year": "2030"
         }
       ]
@@ -96,49 +96,49 @@ const futureExhibits = {
     ]
   },
   "economic": {
-    "futureSummary": "Digital businesses, online freelancing, and cashless transactions advance alongside AI automation, digital banking, and advanced e-commerce systems—expanding global remote work and creator monetization while raising new challenges around AI automation and job competition.",
+    "futureSummary": "Digital banks, QR Ph payments, and online freelancing become everyday norms, while industries like BPO shift toward AI-assisted work. Creators earn through streaming, subscriptions, sponsorships, and live selling, and Filipinos serve international clients through remote work, freelancing, and AI-related jobs.",
     "future": {
       "icon": "🪙",
-      "badge": "AI Automation, Digital Banking & Global Work",
-      "tag": "DIGITAL ECONOMY & AI AUTOMATION",
-      "title": "Advanced Digital Economy, AI Banking & Global Remote Work",
-      "blurb": "Digital businesses, AI automation, digital banking, advanced e-commerce, creator subscriptions, and cross-border remote work.",
+      "badge": "AI-Assisted BPO, Digital Banks & Live Selling",
+      "tag": "DIGITAL ECONOMY & AI-ASSISTED WORK",
+      "title": "Digital Banks, AI-Assisted BPO & Global Freelancing",
+      "blurb": "Digital banks, QR Ph payments, AI tools in business and BPO, advanced e-commerce with live selling, and cross-border freelancing.",
       "image": "./images/future-economic.jpg",
       "alt": "2030 Philippine digital economy, AI automation, and remote work hub",
-      "summary": "Digital businesses, online freelancing, and cashless transactions advance alongside AI automation, digital banking, and advanced e-commerce systems—expanding global remote work and creator monetization while raising new challenges around AI automation and job competition.",
+      "summary": "Digital banks, QR Ph payments, and online freelancing become everyday norms, while industries like BPO shift toward AI-assisted work. Creators earn through streaming, subscriptions, sponsorships, and live selling, and Filipinos serve international clients through remote work, freelancing, and AI-related jobs.",
       "impact": "The shift towards an advanced digital economy may create more job opportunities and global income sources, but with increasing use of AI, workers may face automation, unstable employment, and stronger competition.",
-      "intro": "By 2030, digital businesses, online freelancing, and cashless transactions continue to advance and become increasingly common across the Philippines. AI automation, digital banking, and advanced e-commerce systems support businesses while Filipino workers and creators expand their reach to international clients and markets.",
+      "intro": "By 2030, digital banks, QR Ph payments, and online freelancing become everyday norms in the Philippines, while many industries like BPO shift toward AI-assisted work. AI tools, digital banking, and advanced e-commerce such as live selling and faster delivery are widely used, and Filipinos serve international clients and sell across borders online.",
       "facts": [
-        "Key Events & Technology (2030): Digital businesses, online freelancing, and cashless transactions become increasingly common as AI automation, digital banking, and advanced e-commerce systems support businesses.",
-        "Performance & Creator Economy (2030): Content creators and entertainment businesses advance and continue to earn through streaming, subscriptions, sponsorships, and digital platforms.",
-        "Globalization & Labor Impact (2030): Filipino workers and businesses expand their reach to international clients and markets through remote work and online platforms—creating new global income sources while also confronting AI automation, unstable employment, and stronger competition."
+        "Key Events & Technology (2030): Digital banks, QR Ph payments, and online freelancing become everyday norms, while industries like BPO shift toward AI-assisted work; AI tools, digital banking, and advanced e-commerce (live selling, faster delivery) are widely used.",
+        "Performance (2030): Creators and entertainment businesses earn through streaming, subscriptions, sponsorships, and live selling on platforms like TikTok and YouTube.",
+        "Globalization & Labor Impact (2030): Filipinos serve international clients through remote work, freelancing, and AI-related jobs, and sell across borders online, creating new global income sources while workers may also face automation, unstable employment, and stronger competition."
       ],
       "artifacts": [
         {
           "emoji": "🏦",
-          "name": "AI Banking & Cashless Systems",
-          "note": "Digital banking, cashless transactions, and advanced e-commerce systems."
+          "name": "Digital Banks & QR Ph",
+          "note": "Digital banking and QR Ph payments as everyday norms."
         },
         {
           "emoji": "🤖",
-          "name": "Business AI Automation",
-          "note": "AI tools supporting digital businesses while reshaping workforce demands."
+          "name": "AI Tools in Business & BPO",
+          "note": "AI-assisted work reshaping BPO and other industries."
         },
         {
           "emoji": "🌐",
-          "name": "Global Remote Work Platforms",
-          "note": "Filipino workers and businesses reaching international clients and markets online."
+          "name": "Cross-Border Freelancing & AI Jobs",
+          "note": "Filipinos serving international clients through remote work, freelancing, and AI-related jobs."
         },
         {
           "emoji": "🎬",
-          "name": "Creator Subscriptions & Streams",
-          "note": "Sustained earnings from streaming, subscriptions, sponsorships, and digital platforms."
+          "name": "Live Selling & Creator Income",
+          "note": "Earnings from streaming, subscriptions, sponsorships, and live selling on TikTok and YouTube."
         }
       ],
       "gallery": [
         {
           "src": "./images/future-economic.jpg",
-          "caption": "2030 digital banking, e-commerce, and AI-supported remote work in Manila",
+          "caption": "2030 digital banking, live-selling e-commerce, and AI-assisted remote work in Manila",
           "year": "2030"
         }
       ]
@@ -163,49 +163,49 @@ const futureExhibits = {
     ]
   },
   "political": {
-    "futureSummary": "Technology majorly influences Philippine politics through digital campaigns, online activism, AI-driven government services, misinformation detection tools, livestreamed debates, political podcasts, and international advocacy networks collaborating on democracy, human rights, and press freedom.",
+    "futureSummary": "The 2028 national elections are heavily shaped by online campaigns, vloggers, and AI-generated content, while online activism continues to demand accountability. AI fact-checking tools and digital government services become more common to fight misinformation and deepfakes.",
     "future": {
       "icon": "🛡️",
-      "badge": "Digital Governance, AI Fact-Checks & Civic Tech",
-      "tag": "AI FACT-CHECKING & DIGITAL DEMOCRACY",
-      "title": "AI Misinformation Tools, Digital Government & Livestreamed Debates",
-      "blurb": "Technology-driven public engagement, AI tools to identify misinformation, digital government services, livestreamed debates, and global press-freedom networks.",
+      "badge": "2028 Elections, AI Fact-Checks & Digital Government",
+      "tag": "AI FACT-CHECKING & ONLINE POLITICS",
+      "title": "AI-Shaped Elections, Fact-Checking Tools & Livestreamed Debates",
+      "blurb": "Online campaigns, vloggers, and AI-generated content in the 2028 elections, AI fact-checking against deepfakes, livestreamed debates, and global press-freedom advocacy.",
       "image": "./images/future-political.jpg",
       "alt": "2030 Philippine digital governance, AI fact-checking, and civic participation",
-      "summary": "Technology majorly influences Philippine politics through digital campaigns, online activism, AI-driven government services, misinformation detection tools, livestreamed debates, political podcasts, and international advocacy networks collaborating on democracy, human rights, and press freedom.",
+      "summary": "The 2028 national elections are heavily shaped by online campaigns, vloggers, and AI-generated content, while online activism continues to demand accountability. AI fact-checking tools and digital government services become more common to fight misinformation and deepfakes.",
       "impact": "Digital platforms, online political campaigns and AI fact-checking may strengthen the public's participation in politics, improve government transparency, and make public services and political information more accessible to people across the country.",
-      "intro": "In 2030, technology majorly influences politics in the Philippines through digital campaigns, online activism, and technology-driven public engagement. Greater use of AI-driven services, digital government portals, and misinformation detection tools works alongside livestreamed debates and international advocacy networks to make governance more transparent and accessible.",
+      "intro": "By 2030, the 2028 national elections have been heavily shaped by online campaigns, vloggers, and AI-generated content, while online activism continues to demand accountability. AI fact-checking tools and digital government services become more common to fight misinformation and deepfakes, and livestreamed debates and political podcasts increasingly influence public opinion.",
       "facts": [
-        "Technology & Governance (2030): Greater use of AI-driven services, digital government services, and AI tools to identify misinformation becomes widespread across the country.",
-        "Performance & Public Opinion (2030): Livestreamed debates, political podcasts, and interactive online discussions become more widespread and increasingly influence public opinion.",
-        "Globalization & Rights (2030): International organizations and online advocacy networks collaborate on democracy, human rights, and press freedom."
+        "Key Events & Technology (2030): The 2028 national elections are heavily shaped by online campaigns, vloggers, and AI-generated content, while online activism continues to demand accountability; AI fact-checking tools and digital government services become more common to fight misinformation and deepfakes.",
+        "Performance (2030): Livestreamed debates, political podcasts, and interactive online discussions increasingly influence public opinion.",
+        "Globalization (2030): International organizations and online advocacy networks work with Filipino groups on press freedom, democracy, human rights, and the regulation of AI and misinformation."
       ],
       "artifacts": [
         {
-          "emoji": "🔍",
-          "name": "AI Misinformation Detector",
-          "note": "AI-driven fact-checking tools that identify disinformation during digital campaigns."
+          "emoji": "🗳️",
+          "name": "AI-Shaped Online Campaigns",
+          "note": "Online campaigns, vloggers, and AI-generated content shaping the 2028 national elections."
         },
         {
-          "emoji": "🏛️",
-          "name": "Digital Government Services",
-          "note": "Accessible online public services and transparent governance platforms."
+          "emoji": "🔍",
+          "name": "AI Fact-Checking & Digital Government",
+          "note": "Tools and services that fight misinformation and deepfakes and make public services accessible."
         },
         {
           "emoji": "🎙️",
           "name": "Livestreamed Debates & Podcasts",
-          "note": "Interactive online discussions and political podcasts shaping public opinion."
+          "note": "Interactive online discussions and political podcasts that influence public opinion."
         },
         {
           "emoji": "🕊️",
           "name": "Global Rights & Press Networks",
-          "note": "International organizations collaborating on democracy, human rights, and press freedom."
+          "note": "International organizations working with Filipino groups on press freedom, democracy, human rights, and AI regulation."
         }
       ],
       "gallery": [
         {
           "src": "./images/future-political.jpg",
-          "caption": "Digital government services, AI fact-checking, and interactive civic debates in 2030",
+          "caption": "Digital government services, AI fact-checking, and livestreamed civic debates in 2030",
           "year": "2030"
         }
       ]
@@ -230,43 +230,43 @@ const futureExhibits = {
     ]
   },
   "cultural": {
-    "futureSummary": "Filipino music, films, fashion, and traditions reach younger generations and wider international audiences through digital platforms—transformed by AI-assisted content creation, immersive media, advanced streaming, interactive performances, virtual concerts, and creator-led entertainment.",
+    "futureSummary": "P-pop groups like SB19 and BINI keep growing their international fanbases, while OPM, films, and traditions reach younger generations through digital platforms. AI-assisted music and filmmaking, immersive media like AR/VR, and virtual concerts change how entertainment is made and accessed.",
     "future": {
       "icon": "🌌",
-      "badge": "Virtual Concerts, Immersive Media & Cultural Preservation",
+      "badge": "Virtual Concerts, AR/VR & AI-Assisted Creation",
       "tag": "AI CREATION & GLOBAL PINOY CULTURE",
-      "title": "Immersive Filipino Culture, Virtual Concerts & Global Digital Reach",
-      "blurb": "Sharing Filipino music, films, fashion, and traditions with younger generations and the world via AI-assisted creation, virtual concerts, and immersive streaming.",
+      "title": "Immersive Filipino Culture, Virtual Concerts & Global P-Pop Reach",
+      "blurb": "Growing P-pop fanbases, AI-assisted music and filmmaking, AR/VR immersive media, virtual concerts, and Filipino culture shared with younger generations worldwide.",
       "image": "./images/future-cultural.jpg",
       "alt": "2030 virtual concert and immersive Filipino cultural showcase",
-      "summary": "Filipino music, films, fashion, and traditions reach younger generations and wider international audiences through digital platforms—transformed by AI-assisted content creation, immersive media, advanced streaming, interactive performances, virtual concerts, and creator-led entertainment.",
+      "summary": "P-pop groups like SB19 and BINI keep growing their international fanbases, while OPM, films, and traditions reach younger generations through digital platforms. AI-assisted music and filmmaking, immersive media like AR/VR, and virtual concerts change how entertainment is made and accessed.",
       "impact": "Digital platforms and immersive online engagement will help preserve and promote more Filipinos to appreciate their culture by sharing Filipino music, films, traditions, and stories with younger generations and audiences around the world.",
-      "intro": "By 2030, Filipino music, films, fashion, and traditions reach younger generations through digital platforms while international trends continue to influence local culture. AI-assisted content creation, filmmaking, immersive media, virtual concerts, and interactive performances transform how Philippine stories and artistry are produced and shared globally.",
+      "intro": "By 2030, P-pop groups like SB19 and BINI keep growing their international fanbases, while OPM, films, and traditions reach younger generations through digital platforms. AI-assisted music and filmmaking and immersive media like AR/VR change how entertainment is made and accessed, and virtual concerts, interactive livestreams, and creator-led shows become more common.",
       "facts": [
-        "Technology & Production (2030): AI-assisted content creation, music, filmmaking, immersive media, and advanced streaming services transform entertainment production and access.",
-        "Performance & Creator Entertainment (2030): Interactive performances, virtual concerts, livestreams, and creator-led entertainment continuously become more common.",
-        "Globalization & Cultural Preservation (2030): Through digital platforms, Filipino artists and creators gain wider international audiences while preserving and promoting Filipino music, films, fashion, traditions, and stories for younger generations."
+        "Key Events & Technology (2030): P-pop groups like SB19 and BINI keep growing their international fanbases, while OPM, films, and traditions reach younger generations through digital platforms; AI-assisted music and filmmaking and immersive media like AR/VR change how entertainment is made and accessed, and AI-involved content creation becomes the norm.",
+        "Performance (2030): Virtual concerts, interactive livestreams, and creator-led shows become more common.",
+        "Globalization (2030): Filipino artists and creators reach wider global audiences through streaming and social media, while global trends like K-culture keep shaping local tastes."
       ],
       "artifacts": [
         {
+          "emoji": "🎤",
+          "name": "P-Pop's Growing Global Fanbases",
+          "note": "SB19, BINI, and other P-pop groups growing their international followings."
+        },
+        {
           "emoji": "🎶",
-          "name": "Virtual Concerts & Live Stages",
-          "note": "Interactive performances, virtual concerts, and creator-led livestreams."
+          "name": "Virtual Concerts & Creator-Led Shows",
+          "note": "Virtual concerts, interactive livestreams, and creator-led shows."
         },
         {
           "emoji": "🎬",
           "name": "AI-Assisted Music & Filmmaking",
-          "note": "AI creation tools, immersive media, and advanced streaming platforms."
+          "note": "AI creation tools and immersive media like AR/VR changing how entertainment is made."
         },
         {
           "emoji": "👘",
-          "name": "Digital Heritage & Fashion Archive",
-          "note": "Sharing Filipino music, films, fashion, and traditions with younger generations."
-        },
-        {
-          "emoji": "🌏",
-          "name": "Global Creator Platforms",
-          "note": "Connecting Filipino artists and stories with audiences around the world."
+          "name": "Digital Heritage Sharing",
+          "note": "Filipino music, films, traditions, and stories shared with younger generations and audiences worldwide."
         }
       ],
       "gallery": [
@@ -297,43 +297,43 @@ const futureExhibits = {
     ]
   },
   "environmental": {
-    "futureSummary": "Greater climate change adaptation, disaster preparedness, and environmental protection become urgent national priorities—supported by AI-powered weather forecasting, early warning systems, satellite monitoring, virtual environmental campaigns, educational livestreams, and international disaster-response partnerships.",
+    "futureSummary": "Stronger typhoons and flooding make climate adaptation, flood-control reform, and disaster preparedness top national priorities. AI-powered forecasting, satellite monitoring, and early warning systems become more widely used, while online campaigns and educational livestreams encourage public participation in climate action.",
     "future": {
       "icon": "🛰️",
-      "badge": "AI Weather Forecasting, Satellites & Climate Deals",
+      "badge": "Flood-Control Reform, AI Forecasting & Climate Deals",
       "tag": "AI EARLY WARNINGS & GLOBAL PARTNERSHIPS",
-      "title": "AI Weather Forecasting, Satellite Monitoring & Global Climate Action",
-      "blurb": "AI-powered weather forecasting, early warning systems, satellite monitoring, virtual environmental campaigns, and international disaster-response partnerships.",
+      "title": "AI Forecasting, Satellite Monitoring & Flood-Control Reform",
+      "blurb": "Climate adaptation and flood-control reform as top priorities, AI-powered forecasting, satellite monitoring, early warning systems, climate livestreams, and international partnerships.",
       "image": "./images/future-environmental.jpg",
       "alt": "2030 AI weather forecasting, satellite monitoring, and disaster preparedness",
-      "summary": "Greater climate change adaptation, disaster preparedness, and environmental protection become urgent national priorities—supported by AI-powered weather forecasting, early warning systems, satellite monitoring, virtual environmental campaigns, educational livestreams, and international disaster-response partnerships.",
-      "impact": "Improved AI-assisted technology and international collaboration could increase disaster preparedness and raise environmental awareness.",
-      "intro": "In 2030, greater climate change adaptation, disaster preparedness, and environmental protection become urgent national priorities in the Philippines. The start of AI-powered weather forecasting, early warning systems, satellite monitoring, and disaster-response technology works alongside virtual environmental campaigns and international partnerships to protect communities.",
+      "summary": "Stronger typhoons and flooding make climate adaptation, flood-control reform, and disaster preparedness top national priorities. AI-powered forecasting, satellite monitoring, and early warning systems become more widely used, while online campaigns and educational livestreams encourage public participation in climate action.",
+      "impact": "The lessons of Ondoy, SARS, and COVID-19 will continue to shape preparedness, with AI-assisted tools and international collaboration improving early warnings and public awareness.",
+      "intro": "By 2030, stronger typhoons and flooding make climate adaptation, flood-control reform, and disaster preparedness top national priorities in the Philippines. AI-powered forecasting, satellite monitoring, and early warning systems become more widely used, while online campaigns, educational livestreams, and interactive digital projects encourage public participation in climate action.",
       "facts": [
-        "Technology & Early Warnings (2030): Start of AI-powered weather forecasting, early warning systems, satellite monitoring, and advanced disaster-response technology.",
-        "Public Participation (2030): Virtual environmental campaigns, educational livestreams, and interactive digital projects encourage widespread public participation in climate adaptation.",
-        "Global Collaboration (2030): Global climate campaigns and online environmental discussions continue and influence international climate deals, disaster-response partnerships, and environmental programs in the Philippines."
+        "Key Events & Technology (2030): Stronger typhoons and flooding make climate adaptation, flood-control reform, and disaster preparedness top national priorities; AI-powered forecasting, satellite monitoring, and early warning systems are more widely used.",
+        "Performance (2030): Online campaigns, educational livestreams, and interactive digital projects encourage public participation in climate action.",
+        "Globalization (2030): Global climate campaigns and online environmental discussions continue and may influence international climate deals, disaster-response partnerships, and global environmental campaigns in the Philippines."
       ],
       "artifacts": [
         {
           "emoji": "🛰️",
-          "name": "AI Weather & Satellite Monitoring",
-          "note": "AI-powered weather forecasting, satellite tracking, and early warning systems."
+          "name": "AI Forecasting & Satellite Monitoring",
+          "note": "AI-powered forecasting and satellite monitoring used more widely."
         },
         {
           "emoji": "🚨",
-          "name": "Smart Disaster-Response Tech",
-          "note": "Rapid-response systems strengthening national climate adaptation and preparedness."
+          "name": "Early Warning Systems",
+          "note": "Early warnings strengthening disaster preparedness and public awareness."
         },
         {
           "emoji": "📡",
-          "name": "Educational Climate Livestreams",
-          "note": "Virtual environmental campaigns and interactive digital projects for citizens."
+          "name": "Climate Livestreams & Digital Projects",
+          "note": "Online campaigns, educational livestreams, and interactive digital projects for climate action."
         },
         {
           "emoji": "🤝",
           "name": "Global Climate Partnerships",
-          "note": "International climate deals and cross-border disaster-response cooperation."
+          "note": "International climate deals and disaster-response partnerships."
         }
       ],
       "gallery": [
@@ -364,43 +364,43 @@ const futureExhibits = {
     ]
   },
   "sports": {
-    "futureSummary": "More Filipino athletes gain recognition through international competitions, foreign leagues, and global sponsorships—supported by livestreaming, short-form videos, online interactive fan communities, and virtual viewing experiences that inspire young people to participate in sports.",
+    "futureSummary": "Filipino athletes will compete at the 2028 Los Angeles Olympics, building on Carlos Yulo's and Alex Eala's success and inspiring more youth to join sports like gymnastics, volleyball, and tennis. Livestreaming, short-form highlights, and AI-powered replays and stats make local and international sports easier to follow.",
     "future": {
       "icon": "🏆",
-      "badge": "Global Leagues, Virtual Viewing & Interactive Fandoms",
-      "tag": "GLOBAL SPONSORSHIPS & VIRTUAL VIEWING",
-      "title": "Globally Recognized Filipino Athletes & Interactive Virtual Fan Hubs",
-      "blurb": "Filipino athletes in international leagues and global sponsorships, connected to fans via livestreaming, short-form video, and virtual viewing experiences.",
+      "badge": "LA 2028, Foreign Leagues & Virtual Viewing",
+      "tag": "LA 2028 & VIRTUAL VIEWING",
+      "title": "LA 2028 Olympians, Global Sponsorships & Interactive Fan Hubs",
+      "blurb": "Filipino athletes at the 2028 LA Olympics and in foreign leagues, AI-powered replays and stats, and interactive watch parties and virtual viewing.",
       "image": "./images/future-sports.jpg",
       "alt": "2030 Filipino athletes competing internationally with virtual viewing experiences",
-      "summary": "More Filipino athletes gain recognition through international competitions, foreign leagues, and global sponsorships—supported by livestreaming, short-form videos, online interactive fan communities, and virtual viewing experiences that inspire young people to participate in sports.",
-      "impact": "Sports fandoms will be more digitally connected and become internationally recognized, allowing more Filipino athletes to reach wider audiences while strengthening national pride.",
-      "intro": "By 2030, more Filipino athletes continue to gain recognition through international competitions and online platforms, inspiring young people across the country to participate in sports. Livestreaming, short-form videos, online interactive fan communities, and virtual viewing experiences make it easier than ever to follow Filipino contenders in international leagues and tournaments.",
+      "summary": "Filipino athletes will compete at the 2028 Los Angeles Olympics, building on Carlos Yulo's and Alex Eala's success and inspiring more youth to join sports like gymnastics, volleyball, and tennis. Livestreaming, short-form highlights, and AI-powered replays and stats make local and international sports easier to follow.",
+      "impact": "Sports fandom will become more digitally connected and internationally recognized, helping more Filipino athletes reach wider audiences while strengthening national pride.",
+      "intro": "By 2030, Filipino athletes will have competed at the 2028 Los Angeles Olympics, building on Carlos Yulo's and Alex Eala's success and inspiring more youth to join sports like gymnastics, volleyball, and tennis. Livestreaming, short-form highlights, and AI-powered replays and stats make local and international sports easier to follow, while more Filipino athletes play in foreign leagues and gain global sponsorships.",
       "facts": [
-        "Key Events & Youth Inspiration (2030): More Filipino athletes gain recognition through international competitions and online platforms, inspiring young Filipinos to participate across diverse sports.",
-        "Technology & Virtual Viewing (2030): Livestreaming, short-form videos, digital platforms, online interactive fan communities, and virtual viewing experiences expand audience engagement.",
-        "Globalization & Sponsorships (2030): Filipino athletes continue to gain opportunities in international leagues, global tournaments, and worldwide sponsorships."
+        "Key Events & Technology (2030): Filipino athletes compete at the 2028 Los Angeles Olympics, building on Carlos Yulo's and Alex Eala's success and inspiring more youth to join sports like gymnastics, volleyball, and tennis; livestreaming, short-form highlights, and AI-powered replays and stats make local and international sports easier to follow.",
+        "Performance (2030): Interactive fan communities, watch parties, and virtual viewing experiences expand audience engagement.",
+        "Globalization (2030): More Filipino athletes play in foreign leagues and international tournaments and gain global sponsorships."
       ],
       "artifacts": [
         {
-          "emoji": "🏅",
-          "name": "Global Leagues & Sponsorships",
-          "note": "Filipino athletes competing in international leagues with global sponsorships."
-        },
-        {
-          "emoji": "🥽",
-          "name": "Virtual Viewing Experiences",
-          "note": "Immersive livestreams and interactive online fan communities."
+          "emoji": "🥇",
+          "name": "Road to LA 2028",
+          "note": "Filipino athletes competing at the 2028 Los Angeles Olympics, building on Yulo's and Eala's success."
         },
         {
           "emoji": "📱",
-          "name": "Short-Form Sports Highlights",
-          "note": "Digital platforms making local and international sporting events easy to follow."
+          "name": "Short-Form Highlights & AI Replays",
+          "note": "Livestreaming, short-form highlights, and AI-powered replays and stats."
         },
         {
-          "emoji": "🌟",
-          "name": "Youth Sports Inspiration",
-          "note": "Online visibility inspiring the next generation of Filipino athletes."
+          "emoji": "🥽",
+          "name": "Watch Parties & Virtual Viewing",
+          "note": "Interactive fan communities, watch parties, and virtual viewing experiences."
+        },
+        {
+          "emoji": "🏅",
+          "name": "Foreign Leagues & Global Sponsorships",
+          "note": "More Filipino athletes in foreign leagues and international tournaments with global sponsorships."
         }
       ],
       "gallery": [
