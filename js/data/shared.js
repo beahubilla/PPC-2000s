@@ -33,6 +33,24 @@ const playlistSearch = {
   "music": "https://music.youtube.com/search?q=2000s+OPM+hits"
 };
 
+// Photo credits show up in the Sources section once this list has entries.
+// Fill in the real source/photographer for each image, then uncomment the lines you complete.
+// Format: { item: "what the image shows", credit: "Photographer / publisher / license", url: "link to the original" }
+//
+// { item: "Typhoon Ondoy flood photo (ondoy-baha.jpg)", credit: "", url: "" },
+// { item: "Typhoon Ondoy rescue photo (ondoy.jpg)", credit: "", url: "" },
+// { item: "EDSA rally photos (people-power.jpg, people-power-1.jpg)", credit: "", url: "" },
+// { item: "Manny Pacquiao (manny.jpg)", credit: "", url: "" },
+// { item: "OPM album covers (opm-albums.jpg, opm-1.jpg)", credit: "", url: "" },
+// { item: "Nokia 3310 text-message art (nokia.jpg)", credit: "", url: "" },
+// { item: "Keypad phones (phones.jpg, phones-1.jpg)", credit: "", url: "" },
+// { item: "Computer shop / internet cafe photos (computer-shop.jpg, internet-cafe.jpg)", credit: "", url: "" },
+// { item: "BPO office photos (bpo-industry.jpg, bpo.jpg)", credit: "", url: "" },
+// { item: "Smartphones and foldables (modernphones.jpg, foldable-phones-1.jpg, foldable-phones-2.jpg)", credit: "", url: "" },
+// { item: "P-pop group photo (ppop.webp)", credit: "", url: "" },
+// { item: "Athletes and esports photos (recent-sports.jpg, sports.jpg, esports.jpg)", credit: "", url: "" },
+// { item: "Profile pictures (keep-calm.jpg, deku.jpg, domo.jpg)", credit: "", url: "" },
+// { item: "Future Wing images (future-*.jpg) and wing hero images", credit: "", url: "" },
 const imageCredits = [];
 
 const exhibitMeta = [
@@ -44,7 +62,8 @@ const exhibitMeta = [
     "domain": "Social Aspect",
     "title": "Texting Capital to All-in-One Smartphones & 6G AI Communication",
     "blurb": "From 2000s SMS voting, Friendster cafes, and Skype OFW calls to today's 5G smartphones (TikTok, Messenger, Discord) and 2030 early 6G, AI-powered communication.",
-    "change": "Texting culture and early social networks (Friendster, Multiply, Facebook) built the habit of staying constantly connected. That habit moved from SMS and desktops to apps like Messenger, TikTok, and Instagram on smartphones and by 2030, AI, early 6G networks, and virtual communication continue to strengthen global connections."
+    "change": "Texting culture and early social networks (Friendster, Multiply, Facebook) built the habit of staying constantly connected. That habit moved from SMS and desktops to apps like Messenger, TikTok, and Instagram on smartphones—and by 2030, AI, early 6G networks, and virtual communication continue to strengthen global connections.",
+    "curator": 0
   },
   {
     "id": "economic",
