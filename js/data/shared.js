@@ -42,10 +42,9 @@ const exhibitMeta = [
     "icon": "📱",
     "color": "#3aa7ff",
     "domain": "Social Aspect",
-    "title": "Texting Capital to All-in-One Smartphones & 8G AI Communication",
-    "blurb": "From 2000s SMS voting, Friendster cafes, and Skype OFW calls to today's 5G smartphones (TikTok, Messenger, Discord) and 2030 8G AI-powered communication.",
-    "change": "Texting culture and early social networks (Friendster, Multiply, Facebook) built the habit of staying constantly connected. That habit moved from SMS and desktops to apps like Messenger, TikTok, and Instagram on smartphones—and by 2030, AI, 8G networks, and virtual communication continue to strengthen global connections.",
-    "curator": 0
+    "title": "Texting Capital to All-in-One Smartphones & 6G AI Communication",
+    "blurb": "From 2000s SMS voting, Friendster cafes, and Skype OFW calls to today's 5G smartphones (TikTok, Messenger, Discord) and 2030 early 6G, AI-powered communication.",
+    "change": "Texting culture and early social networks (Friendster, Multiply, Facebook) built the habit of staying constantly connected. That habit moved from SMS and desktops to apps like Messenger, TikTok, and Instagram on smartphones and by 2030, AI, early 6G networks, and virtual communication continue to strengthen global connections."
   },
   {
     "id": "economic",
