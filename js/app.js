@@ -56,7 +56,8 @@ const ERA_INFO = {
   future: {
     name: 'The Future Wing',
     theme: '#070b19',
-    desc: '2030 Horizon: early 6G & AI assistants, AI digital banking & remote work, AI fact-checking & digital governance, virtual concerts, AI satellite weather forecasting, and global sports fandoms.'  }
+    desc: '2030 Horizon: early 6G & AI assistants, AI digital banking & remote work, AI fact-checking & digital governance, virtual concerts, AI satellite weather forecasting, and global sports fandoms.'
+  }
 };
 
 // One exhibit, seen through one era. Missing fields fall back to safe blanks.
