@@ -28,7 +28,7 @@ const presentExhibits = {
       "tag": "5G, TIKTOK & DISCORD",
       "title": "Everything in One Device: Feeds, Reels & Global Fandoms",
       "blurb": "Facebook, Messenger, Instagram, and TikTok run messaging, fan voting, Discord fandoms, and OFW calls on one screen.",
-      "image": "./images/modernphones.jpg",
+      "image": "./images/present-phones.png",
       "alt": "Modern smartphones",
       "impact": "Texting culture and early social networks (Friendster, Multiply, Facebook) built the habit of staying constantly connected. That habit moved from SMS and desktops to apps like Messenger, TikTok, and Instagram on smartphones.",
       "intro": "Social media is now the Philippines' main public space: Facebook, Messenger, Instagram, and TikTok dominate, and short-form video is the leading content format—running on one smartphone anytime and anywhere.",
@@ -121,7 +121,7 @@ const presentExhibits = {
       "tag": "GCASH, E-COMMERCE & GIGS",
       "title": "Platform Economy: E-Wallets, Online Shopping & Remote Work",
       "blurb": "GCash, Maya, Shopee, Lazada, delivery apps, creator monetization, and global freelancing power daily commerce.",
-      "image": "./images/bpo industry.png",
+      "image": "./images/present-bgc.jpg",
       "alt": "Modern Philippine digital economy",
       "impact": "The BPO boom and OFW remittances tied the Philippine economy to global clients and round-the-clock work. That experience carried into today's freelancing, remote work, e-commerce, and mobile payments (GCash, Maya), so Filipinos still earn and spend through global connections, now through apps instead of offices and malls.",
       "intro": "Accelerated by COVID-19, today's Philippine economy is platform-based: GCash, Maya, Shopee, Lazada, and delivery apps are everyday tools while BPO, remote work, and creator monetization link Filipinos to global markets.",
@@ -199,7 +199,7 @@ const presentExhibits = {
       "tag": "ONLINE ACTIVISM & HEARINGS",
       "title": "Online-Networked Politics: 2025 Protests, Podcasts & Press Freedom",
       "blurb": "The 2025 flood-control corruption protests, livestreamed hearings, political podcasts/TikToks, and Maria Ressa's Nobel Prize.",
-      "image": "./images/people power 1.png",
+      "image": "./images/presentpolitical.png",
       "alt": "Modern civic discourse",
       "impact": "SMS mobilization (EDSA II) and public outrage over scandals like Hello Garci set a pattern of citizens organizing through communication tech. Today the same impulse runs through social media, livestreams, and online campaigns, as seen in the 2025 flood-control protests.",
       "intro": "Today's political participation is online-networked: the 2025 flood-control corruption scandal sparked nationwide protests and leadership changes in both houses of Congress, amplified by social media, vloggers, podcasts, and livestreamed hearings.",
@@ -385,7 +385,7 @@ const presentExhibits = {
       "tag": "WEATHER APPS & CLIMATE",
       "title": "Real-Time Disaster Alerts, 2025 Floods & Climate Action",
       "blurb": "Super Typhoon Yolanda, the July 2025 floods, COVID-19 updates, weather apps, and online climate campaigns.",
-      "image": "./images/ondoy baha.png",
+      "image": "./images/present-environmental.jpg",
       "alt": "Flood monitoring and community resilience",
       "impact": "Ondoy and the SARS/H1N1 scares raised awareness of disaster and health preparedness. Online crowdsourcing during Ondoy foreshadowed today's real-time alerts and social media reporting during typhoons and the pandemic.",
       "intro": "Facing more frequent super typhoons and severe flooding—including Yolanda (2013) and the July 2025 floods that exposed flood-control corruption—plus COVID-19, Filipinos rely on weather apps and real-time social media updates.",
@@ -585,7 +585,7 @@ const beforeAfterPairs = [
       "label": "Nokia 3310 & SMS, 2000s"
     },
     "after": {
-      "img": "./images/modernphones.jpg",
+      "img": "./images/present-phones.png",
       "emoji": "📱",
       "label": "All-in-One Smartphone, Today"
     }
@@ -595,12 +595,12 @@ const beforeAfterPairs = [
     "title": "Place-Based BPO & Malls → Platform-Based E-Wallets & Remote Work",
     "caption": "From overnight BPO offices and mega-malls (SM MOA, Bonifacio High Street) to GCash, Maya, Shopee, Lazada, creator monetization, and global freelancing.",
     "before": {
-      "img": "./images/bpo.png",
+      "img": "./images/past-bgc.jpg",
       "emoji": "🏢",
       "label": "24/7 BPO Offices, 2000s"
     },
     "after": {
-      "img": "./images/bpo industry.png",
+      "img": "./images/present-bgc.jpg",
       "emoji": "💳",
       "label": "Platform Economy & BPO, Today"
     }
@@ -615,7 +615,7 @@ const beforeAfterPairs = [
       "label": "EDSA II Text Brigades, 2001"
     },
     "after": {
-      "img": "./images/people power 1.png",
+      "img": "./images/presentpolitical.png",
       "emoji": "🗳️",
       "label": "Networked Protests, Today"
     }
@@ -645,7 +645,7 @@ const beforeAfterPairs = [
       "label": "Ondoy TV Alerts, 2009"
     },
     "after": {
-      "img": "./images/ondoy baha.png",
+      "img": "./images/present-environmental.jpg",
       "emoji": "⛈️",
       "label": "Real-Time Disaster Apps, Today"
     }
