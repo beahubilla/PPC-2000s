@@ -3,8 +3,8 @@
 // ============================================================
 const futureAutoReplies = [
   {
-    "sender": "Bea · 8G AI Hub",
-    "text": "Connected via 8G! Our OFW family virtual call and real-time AI livestream event are synced ✨"
+    "sender": "Bea · 6G AI Hub",
+    "text": "Connected via 6G! Our OFW family virtual call and real-time AI livestream event are synced ✨"
   },
   {
     "sender": "Benz · Global Sports Feed",
@@ -21,18 +21,18 @@ const futureAutoReplies = [
 ];
 const futureExhibits = {
   "social": {
-    "futureSummary": "Smartphones, AI assistants, and digital communities shape how Filipinos communicate, learn, and interact—powered by 8G+ network coverage, interactive livestreaming, virtual events, and immersive OFW communication.",
+    "futureSummary": "Smartphones, AI assistants, and digital communities shape how Filipinos communicate, learn, and interact—powered by 6G+ network coverage, interactive livestreaming, virtual events, and immersive OFW communication.",
     "future": {
       "icon": "🤖",
-      "badge": "8G, AI Assistants & Virtual Events",
-      "tag": "8G & AI COMMUNICATION",
-      "title": "AI-Powered Communication, 8G & Global Communities",
-      "blurb": "Advanced smartphones, AI assistants, widely accessible 8G+ networks, virtual events, and immersive OFW links.",
+      "badge": "6G, AI Assistants & Virtual Events",
+      "tag": "6G & AI COMMUNICATION",
+      "title": "AI-Powered Communication, 6G & Global Communities",
+      "blurb": "Advanced smartphones, AI assistants, widely accessible 6G+ networks, virtual events, and immersive OFW links.",
       "image": "./images/future-social.jpg",
       "alt": "Filipino family connecting via AI-assisted immersive communication in 2030",
-      "summary": "Smartphones, AI assistants, and digital communities shape how Filipinos communicate, learn, and interact—powered by 8G+ network coverage, interactive livestreaming, virtual events, and immersive OFW communication.",
+      "summary": "Smartphones, AI assistants, and digital communities shape how Filipinos communicate, learn, and interact—powered by 6G+ network coverage, interactive livestreaming, virtual events, and immersive OFW communication.",
       "impact": "The shift from texting and desktop social networks to advanced smartphone apps has made communication more immediate. AI and virtual communication continue to strengthen global connections.",
-      "intro": "By 2030, smartphones, AI assistants, and digital communities shape how Filipinos communicate, learn, and interact—supported by widely accessible 8G+ networks, interactive livestreaming, and immersive OFW family connections.",
+      "intro": "By 2030, smartphones, AI assistants, and digital communities shape how Filipinos communicate, learn, and interact—supported by widely accessible 6G+ networks, interactive livestreaming, and immersive OFW family connections.",
       "categories": [
         {
           "icon": "✨",
@@ -42,7 +42,7 @@ const futureExhibits = {
         {
           "icon": "⚙️",
           "label": "Technology",
-          "text": "Advanced smartphones, AI-powered communication, start of 8G or more and newer network coverage is widely accessible everywhere."
+          "text": "Advanced smartphones, AI-powered communication, start of 6G or more and newer network coverage is widely accessible everywhere."
         },
         {
           "icon": "🎭",
@@ -62,13 +62,13 @@ const futureExhibits = {
       ],
       "facts": [
         "Smartphones, AI assistants, and digital communities shape and change the way Filipinos communicate, learn, and interact.",
-        "Advanced smartphones, AI-powered communication, and 8G or newer network coverage become widely accessible everywhere.",
+        "Advanced smartphones, AI-powered communication, and 6G or newer network coverage become widely accessible everywhere.",
         "OFW families continue to connect across the world through advanced immersive digital communication and global online communities."
       ],
       "artifacts": [
         {
           "emoji": "📶",
-          "name": "8G+ Universal Coverage",
+          "name": "6G+ Universal Coverage",
           "note": "Next-generation network coverage widely accessible everywhere."
         },
         {
@@ -90,7 +90,7 @@ const futureExhibits = {
       "gallery": [
         {
           "src": "./images/future-social.jpg",
-          "caption": "Immersive AI-powered OFW family communication and 8G connectivity in 2030",
+          "caption": "Immersive AI-powered OFW family communication and 6G connectivity in 2030",
           "year": "2030"
         }
       ]
@@ -131,7 +131,7 @@ const futureExhibits = {
         {
           "icon": "✨",
           "label": "Key Events & Highlights",
-          "text": "Digital businesses, online freelancing, and cashless transactions continues to advance and becomes more increasingly common."
+          "text": "Digital businesses, online freelancing, and cashless transactions continue to advance and become increasingly common."
         },
         {
           "icon": "⚙️",
@@ -230,12 +230,12 @@ const futureExhibits = {
         {
           "icon": "⚙️",
           "label": "Technology",
-          "text": "Greater use of AI driven services, digital government services and tools to identify misinformation may become more widespread."
+          "text": "Greater use of AI-driven services, digital government services, and tools to identify misinformation may become more widespread."
         },
         {
           "icon": "🎭",
           "label": "Performance",
-          "text": "Livestreamed debates, political podcasts, and interactive online discussions becomes more widespread and increasingly influences public opinion."
+          "text": "Livestreamed debates, political podcasts, and interactive online discussions become more widespread and increasingly influence public opinion."
         },
         {
           "icon": "🌐",
