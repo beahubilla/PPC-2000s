@@ -138,8 +138,8 @@ const pastExhibits = {
     "tag": "CALL CENTERS & MALLS",
     "thenTitle": "BPO Boom, Mega-Malls & 24/7 Economy",
     "thenBlurb": "Declared Call Center Capital in 2010, overnight BPO shifts, SM MOA & BGC hubs, and physical media sales.",
-    "image": "./images/bpo.png",
-    "alt": "Urban Business District",
+    "image": "./images/past-bgc.jpg",
+    "alt": "Bonifacio High Street and 2000s business hubs",
     "then": "A place-based economy with global links: work and spending happened in physical places (BPO offices, malls like SM MOA and BGC, record stores, concerts), connected globally via BPO clients and OFW remittances.",
     "impact": "The BPO boom and OFW remittances tied the Philippine economy to global clients and round-the-clock work. That experience carried into today's freelancing, remote work, e-commerce, and mobile payments (GCash, Maya).",
     "intro": "The boom of the BPO industry led the Philippines to be declared the call-center capital of the world in 2010, powering a 24/7 night economy alongside OFW remittances and mega-malls like SM MOA and Bonifacio High Street.",
@@ -227,6 +227,18 @@ const pastExhibits = {
         "publisher": "SunStar",
         "era": "both",
         "note": "From early SMS money transfers in 2004 to mobile-money QR payments."
+      }
+    ],
+    "gallery": [
+      {
+        "src": "./images/past-bgc.jpg",
+        "caption": "Bonifacio High Street and emerging lifestyle hubs in the 2000s",
+        "year": "2000–2010"
+      },
+      {
+        "src": "./images/bpo.png",
+        "caption": "24/7 BPO call center offices powering the night economy",
+        "year": "2000–2010"
       }
     ]
   },
@@ -317,6 +329,18 @@ const pastExhibits = {
         "publisher": "Philippine Daily Inquirer",
         "era": "then",
         "note": "Timeline of the 2005 Hello Garci wiretapping controversy."
+      }
+    ],
+    "gallery": [
+      {
+        "src": "./images/people power.png",
+        "caption": "Text-driven mass mobilization at EDSA II",
+        "year": "2001"
+      },
+      {
+        "src": "./images/people power 1.png",
+        "caption": "Public rallies and civic action in the 2000s",
+        "year": "2000–2010"
       }
     ]
   },
