@@ -95,13 +95,13 @@ function pickFutureSmartReply(promptText) {
     return list[3] || { sender: 'TALA-2030 · AI Co-Pilot', text: 'AI weather forecasting & satellite monitoring active: 0% flood risk.' };
   }
   if (q.includes('concert') || q.includes('p-pop') || q.includes('music')) {
-    return list[2] || { sender: 'Ingrid · Creator Studio', text: 'Virtual P-Pop concert livestream synced across 8G!' };
+    return list[2] || { sender: 'Ingrid · Creator Studio', text: 'Virtual P-Pop concert livestream synced across 6G!' };
   }
   if (q.includes('sport') || q.includes('athlete') || q.includes('league')) {
     return list[1] || { sender: 'Benz · Global Sports Feed', text: 'International tournament livestream active in our virtual fan hub!' };
   }
-  if (q.includes('ofw') || q.includes('family') || q.includes('8g')) {
-    return list[0] || { sender: 'Bea · 8G AI Hub', text: '8G OFW family virtual call connected with real-time AI translation!' };
+  if (q.includes('ofw') || q.includes('family') || q.includes('6g')) {
+    return list[0] || { sender: 'Bea · 6G AI Hub', text: '6G OFW family virtual call connected with real-time AI translation!' };
   }
   const reply = list[futureReplyIndex % list.length];
   futureReplyIndex += 1;
@@ -110,12 +110,12 @@ function pickFutureSmartReply(promptText) {
 
 function triggerFutureAutoReply(promptText) {
   const typing = $('future-typing-indicator');
-  if (typing) typing.innerHTML = '<i></i><i></i><i></i> Incoming 8G neural transmission…';
+  if (typing) typing.innerHTML = '<i></i><i></i><i></i> Incoming 6G neural transmission…';
   setTimeout(() => {
     const reply = pickFutureSmartReply(promptText);
     if (reply) appendFutureMessage(reply.text, true, reply.sender);
     playNokiaTone(1040, 0.05, 'sine');
-    if (typing) typing.innerHTML = '<i></i><i></i><i></i> 8G AI Assistant ready · Tap any message to sync ⚡';
+    if (typing) typing.innerHTML = '<i></i><i></i><i></i> 6G AI Assistant ready · Tap any message to sync ⚡';
   }, 600);
 }
 
