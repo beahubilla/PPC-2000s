@@ -85,6 +85,18 @@ const presentExhibits = {
           "name": "Discord & Global Fandoms",
           "note": "Global online communities connecting Filipino fans worldwide."
         }
+      ],
+      "gallery": [
+        {
+          "src": "./images/present-phones.png",
+          "caption": "All-in-one 5G smartphones running social media, messaging, and OFW calls",
+          "year": "Present"
+        },
+        {
+          "src": "./images/modernphones.jpg",
+          "caption": "Mobile-first apps connecting Filipino communities anywhere",
+          "year": "Present"
+        }
       ]
     },
     "sources": [
@@ -178,6 +190,18 @@ const presentExhibits = {
           "name": "Creator & Streaming Income",
           "note": "Earnings from streaming royalties, YouTube/TikTok, and brand deals."
         }
+      ],
+      "gallery": [
+        {
+          "src": "./images/present-bgc.jpg",
+          "caption": "Modern Bonifacio Global City and today's digital business hubs",
+          "year": "Present"
+        },
+        {
+          "src": "./images/bpo industry.png",
+          "caption": "Platform economy, e-wallets (GCash, Maya), and BPO/remote work",
+          "year": "Present"
+        }
       ]
     },
     "sources": [
@@ -255,6 +279,18 @@ const presentExhibits = {
           "emoji": "🕊️",
           "name": "Maria Ressa's 2021 Nobel Prize",
           "note": "Global spotlight on press freedom and fighting disinformation."
+        }
+      ],
+      "gallery": [
+        {
+          "src": "./images/presentpolitical.png",
+          "caption": "Online-networked civic action and the 2025 flood-control protests",
+          "year": "Present"
+        },
+        {
+          "src": "./images/people power 1.png",
+          "caption": "Livestreamed hearings, vloggers, and digital public participation",
+          "year": "Present"
         }
       ]
     },
@@ -349,6 +385,13 @@ const presentExhibits = {
           "name": "TikTok Dances & Micro-Dramas",
           "note": "Viral dance challenges, vertical micro-dramas, and creator livestreams."
         }
+      ],
+      "gallery": [
+        {
+          "src": "./images/ppop.png",
+          "caption": "P-Pop global surge (SB19, BINI), streaming, and the 2026 'bebot' revival",
+          "year": "Present"
+        }
       ]
     },
     "sources": [
@@ -441,6 +484,18 @@ const presentExhibits = {
           "emoji": "😷",
           "name": "COVID-19 Online Tracking",
           "note": "Global health crisis followed via real-time online updates."
+        }
+      ],
+      "gallery": [
+        {
+          "src": "./images/present-environmental.jpg",
+          "caption": "Real-time disaster alerts, severe flooding response, and climate action",
+          "year": "Present"
+        },
+        {
+          "src": "./images/ondoy baha.png",
+          "caption": "Flood monitoring and community disaster preparedness",
+          "year": "Present"
         }
       ]
     },
