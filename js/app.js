@@ -56,7 +56,7 @@ const ERA_INFO = {
   future: {
     name: 'The Future Wing',
     theme: '#070b19',
-    desc: '2030 Horizon • 8G AI Assistants, Digital Banking & Virtual Stages'
+    desc: '2030 Horizon • 6G AI Assistants, Digital Banking & Virtual Stages'
   }
 };
 
