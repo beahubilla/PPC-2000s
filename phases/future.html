@@ -9,7 +9,7 @@
         <figcaption>
           <span class="hero-overline">FUTURE WING &nbsp; / &nbsp; 2030 HORIZON</span>
           <h2 class="hero-title">Where heritage meets<br><em>holographic light.</em></h2>
-          <p>8G AI-assisted communication, digital banking, AI fact-checking, virtual concerts, and satellite weather forecasting.</p>
+          <p>6G AI-assisted communication, digital banking, AI fact-checking, virtual concerts, and satellite weather forecasting.</p>
           <div class="hero-actions">
             <button type="button" onclick="openRoom(0)" class="btn btn-pink">Enter 2030 archive <span aria-hidden="true">↗</span></button>
             <a href="#exhibits" class="btn">Browse exhibits <span aria-hidden="true">↓</span></a>
@@ -23,7 +23,7 @@
 <template id="future-relic-template">
       <!-- Future Mode Switcher -->
       <div class="future-mode-switch only-future" role="group" aria-label="Choose AR visor module">
-        <button type="button" id="future-mode-holo-btn" class="future-mode-btn active" aria-pressed="true" onclick="setFutureMode('holo')">🫧 8G Holo-Link</button>
+        <button type="button" id="future-mode-holo-btn" class="future-mode-btn active" aria-pressed="true" onclick="setFutureMode('holo')">🫧 6G Holo-Link</button>
         <button type="button" id="future-mode-game-btn" class="future-mode-btn" aria-pressed="false" onclick="setFutureMode('game')">⚡ Quantum Sync</button>
       </div>
 
@@ -34,7 +34,7 @@
           <div class="holovisor-hud">
             <div class="holovisor-status">
               <span>MNL-2030 · 21:40 PST</span>
-              <span class="holovisor-signal" id="future-hud-signal">8G AI-NET · SYNC 99% ◈</span>
+              <span class="holovisor-signal" id="future-hud-signal">6G AI-NET · SYNC 99% ◈</span>
             </div>
 
             <!-- VIEW 1: HOLO-LINK SPATIAL CHAT -->
@@ -42,15 +42,15 @@
               <div class="future-chat-header">
                 <span class="future-avatar" aria-hidden="true">🌌</span>
                 <div>
-                  <strong>Barkada 8G Hub</strong>
+                  <strong>Barkada 6G Hub</strong>
                   <span>Tap any transmission to neural-sync ⚡ · AI Assistant ON</span>
                 </div>
-                <span class="future-live-pill">8G LIVE</span>
+                <span class="future-live-pill">6G LIVE</span>
               </div>
               <div class="future-chat-feed" id="future-holo-feed" aria-live="polite" aria-label="Holographic transmissions">
                 <div class="future-chat-date">2030 AI NETWORK LOG</div>
                 <div class="future-msg future-msg-in" onclick="toggleFutureReaction(this)">
-                  <span class="future-msg-meta">Bea · [8G Smart Hub · Marikina]</span>
+                  <span class="future-msg-meta">Bea · [6G Smart Hub · Marikina]</span>
                   Uy! Naka-connect na OFW family virtual call natin habang nanonood ng interactive virtual P-Pop concert!
                 </div>
                 <div class="future-msg future-msg-in" onclick="toggleFutureReaction(this)">
@@ -62,13 +62,13 @@
                   AI Satellite Weather Advisory: Clear skies across Metro Manila. AI fact-checking &amp; digital public services active.
                 </div>
                 <div class="future-msg future-msg-out" onclick="toggleFutureReaction(this)">
-                  Joining the 8G virtual stream now! Save a slot for me 🌌
+                  Joining the 6G virtual stream now! Save a slot for me 🌌
                 </div>
-                <span class="future-typing" id="future-typing-indicator"><i></i><i></i><i></i> 8G AI Assistant ready · Transmit a prompt</span>
+                <span class="future-typing" id="future-typing-indicator"><i></i><i></i><i></i> 6G AI Assistant ready · Transmit a prompt</span>
               </div>
               <form class="future-composer" onsubmit="futureSendMessage(event)">
                 <label class="sr-only" for="future-message-input">Transmit holographic message</label>
-                <input id="future-message-input" type="text" maxlength="220" autocomplete="off" placeholder="Ask AI or message the 8G hub…">
+                <input id="future-message-input" type="text" maxlength="220" autocomplete="off" placeholder="Ask AI or message the 6G hub…">
                 <button type="submit" aria-label="Transmit message" title="Transmit message">⚡</button>
               </form>
             </div>
@@ -115,7 +115,7 @@
       <div class="future-shortcuts mt-5 max-w-md mx-auto only-future">
         <span class="future-shortcuts-label">Transmit a 2030 preset (triggers smart AI &amp; barkada reply)</span>
         <div class="future-preset-list">
-          <button type="button" onclick="futureUsePreset('Connecting our OFW family call on 8G with AI live translation! 🌐')">🌐 8G OFW Family Call</button>
+          <button type="button" onclick="futureUsePreset('Connecting our OFW family call on 6G with AI live translation! 🌐')">🌐 6G OFW Family Call</button>
           <button type="button" onclick="futureUsePreset('Joining the interactive virtual P-Pop concert &amp; creator livestream! 🎶')">🎶 Virtual Concert</button>
           <button type="button" onclick="futureUsePreset('Watching our Filipino athletes live in the international league virtual hub! 🏆')">🏆 Global Sports Hub</button>
           <button type="button" onclick="futureUsePreset('Run AI weather forecast, satellite storm tracker &amp; AI fact-check! 🛰️')">🛰️ AI Weather &amp; Civic Check</button>
