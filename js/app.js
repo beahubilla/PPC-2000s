@@ -668,6 +668,13 @@ function openRoomFromHash() {
 // ------------------------------------------------------------
 // Keyboard controls
 // ------------------------------------------------------------
+function snakeIsOnScreen() {
+  const c = $('snake-canvas');
+  if (!c) return false;
+  const r = c.getBoundingClientRect();
+  return r.width > 0 && r.bottom > 0 && r.top < window.innerHeight;
+}
+
 document.addEventListener('keydown', e => {
   if (lbIsOpen()) {
     if (e.key === 'Escape') closeLightbox();
@@ -701,12 +708,22 @@ document.addEventListener('keydown', e => {
     return;
   }
 
-  if (typeof nokiaMode !== 'undefined' && nokiaMode === 'snake' && currentEra === 'then') {
+  // Nokia Snake II controls (2000s wing). Only active while the game is on
+  // screen, so it never steals arrow keys / Space / Enter from the rest of the page.
+  if (typeof nokiaMode !== 'undefined' && nokiaMode === 'snake' && currentEra === 'then' && snakeIsOnScreen()) {
+    if (e.ctrlKey || e.metaKey || e.altKey) return;
+    const t = e.target;
+    // Never hijack typing in a text field.
+    if (t && t.closest && t.closest('input, textarea, select, [contenteditable="true"]')) return;
+    // Let Space/Enter activate whatever button or link has focus,
+    // except on the Snake/SMS switch, where they start or pause the game.
+    const onControl = t && t.closest && t.closest('button, a[href], [role="button"]');
+    const onModeSwitch = t && t.closest && t.closest('.seg');
     if (['ArrowUp', 'KeyW'].includes(e.code)) { snakeChangeDir(0, -1); e.preventDefault(); }
     else if (['ArrowDown', 'KeyS'].includes(e.code)) { snakeChangeDir(0, 1); e.preventDefault(); }
     else if (['ArrowLeft', 'KeyA'].includes(e.code)) { snakeChangeDir(-1, 0); e.preventDefault(); }
     else if (['ArrowRight', 'KeyD'].includes(e.code)) { snakeChangeDir(1, 0); e.preventDefault(); }
-    else if (['Space', 'Enter'].includes(e.code)) { toggleSnakePlay(); e.preventDefault(); }
+    else if (['Space', 'Enter'].includes(e.code) && (!onControl || onModeSwitch)) { toggleSnakePlay(); e.preventDefault(); }
     else if (e.key === 'Escape') { setNokiaMode('sms'); }
   }
 });

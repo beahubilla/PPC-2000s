@@ -10,10 +10,10 @@ const playlistStations = [
     "url": "https://www.youtube.com/playlist?list=PLiy0XOfUv4hGbDDI0gx6sFqsYdcQ6zMWx"
   },
   {
-    "tab": "🎵 YT Music",
+    "tab": "☀️ Summer Hits",
     "title": "☀️ '00s Summer Hits",
-    "type": "link",
-    "url": "https://music.youtube.com/playlist?list=RDCLAK5uy_mZ0IsRBiplkwK-nuyY63tYi9TerQRQJc4"
+    "type": "embed",
+    "url": "https://www.youtube.com/playlist?list=PLz8cxnYPx0tkfCi6drRRKALyIl2sJjEwq"
   },
   {
     "tab": "🚀 Future Wave",
