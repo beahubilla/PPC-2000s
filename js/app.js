@@ -1272,6 +1272,9 @@ function bootMuseum() {
 
 window.bootMuseum = bootMuseum;
 
-document.addEventListener('DOMContentLoaded', () => {
-  bootMuseum();
-});
+   document.addEventListener('DOMContentLoaded', async () => {
+     if (typeof mountAllPhases === 'function') {
+       try { await mountAllPhases(); } catch (e) { console.warn('mountAllPhases failed', e); }
+     }
+     bootMuseum();
+   });
