@@ -94,12 +94,12 @@ const presentExhibits = {
         },
         {
           "src": "./images/modernphones.jpg",
-          "caption": "All-in-one 5G smartphones running social media, messaging, and OFW calls",
+          "caption": "Mobile-first apps connecting Filipino communities anywhere",
           "year": "Present"
         },
         {
           "src": "./images/presentsocialmedia.png",
-          "caption": "Mobile-first apps connecting Filipino communities anywhere",
+          "caption": "Social media platforms dominating everyday digital life in the Philippines",
           "year": "Present"
         }
       ]
@@ -204,17 +204,17 @@ const presentExhibits = {
         },
         {
           "src": "./images/ewallet.png",
-          "caption": "Platform economy, e-wallets (GCash, Maya), and BPO/remote work",
+          "caption": "Cashless e-wallet payments (GCash, Maya) in everyday transactions",
           "year": "Present"
         },
         {
           "src": "./images/ecommerce.png",
-          "caption": "Platform economy, e-wallets (GCash, Maya), and BPO/remote work",
+          "caption": "Online shopping and delivery platforms (Shopee, Lazada)",
           "year": "Present"
         },
         {
           "src": "./images/presentbpo.jpg",
-          "caption": "Platform economy, e-wallets (GCash, Maya), and BPO/remote work",
+          "caption": "Modern BPO and global remote work across the Philippines",
           "year": "Present"
         }
       ]
@@ -304,12 +304,12 @@ const presentExhibits = {
         },
         {
           "src": "./images/presentimpeachment.png",
-          "caption": "Vice President Impeachment Trial",
+          "caption": "Vice President Impeachment Trial and livestreamed hearings",
           "year": "Present"
         },
         {
           "src": "./images/presentgovernment.png",
-          "caption": "Livestreamed hearings, vloggers, and digital public participation",
+          "caption": "Livestreamed Congressional inquiries and digital public participation",
           "year": "Present"
         }
       ]
@@ -414,12 +414,12 @@ const presentExhibits = {
         },
         {
           "src": "./images/presentppop.png",
-          "caption": "P-Pop global surge (SB19, BINI) and streaming",
+          "caption": "P-Pop groups and international fan communities",
           "year": "Present"
         },
         {
           "src": "./images/presentclothes.png",
-          "caption": "2026 'bebot' revival and trending styles",
+          "caption": "2026 'bebot' revival and trending Y2K styles",
           "year": "Present"
         }
       ]
@@ -524,14 +524,14 @@ const presentExhibits = {
         },
         {
           "src": "./images/presentenvironmental.png",
-          "caption": "Flood monitoring and community disaster preparedness",
+          "caption": "Severe flooding and climate resilience in the Philippines",
           "year": "Present"
         },
         {
           "src": "./images/presentenvironmental1.png",
           "caption": "Flood monitoring and community disaster preparedness",
           "year": "Present"
-        },
+        }
       ]
     },
     "sources": [
@@ -623,17 +623,17 @@ const presentExhibits = {
         {
           "src": "./images/recentsports.png",
           "caption": "Filipino multi-sport champions on the Olympic and international stage",
-          "year": "2020s"
+          "year": "Present"
         },
         {
           "src": "./images/presentsports.jpg",
           "caption": "Philippine athletes celebrating international victories across multiple sports",
-          "year": "2020s"
+          "year": "Present"
         },
         {
           "src": "./images/esports.png",
           "caption": "Professional Filipino mobile esports players on the tournament stage",
-          "year": "2020s"
+          "year": "Present"
         }
       ]
     },
@@ -687,7 +687,7 @@ const beforeAfterPairs = [
     "before": {
       "img": "./images/past-bgc.jpg",
       "emoji": "🏢",
-      "label": "24/7 BPO Offices, 2000s"
+      "label": "24/7 BPO & BGC, 2000s"
     },
     "after": {
       "img": "./images/present-bgc.jpg",
