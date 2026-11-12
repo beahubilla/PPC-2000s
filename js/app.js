@@ -1561,7 +1561,7 @@ function syncMobilePolishAndRelicHeadings() {
   }
 }
 
-function bootMuseum() {
+function bootMuseumCore() {
   ensureHeroSectionsRestored();
   syncMobilePolishAndRelicHeadings();
   renderWingTabs();
@@ -1615,14 +1615,22 @@ function bindHeroProtectionObserver() {
 }
 
 window.bootMuseum = function() {
-  bootMuseum();
+  bootMuseumCore();
   bindHeroProtectionObserver();
 };
 
-document.addEventListener('DOMContentLoaded', () => {
+// Mount phases/*.html (hero + relic) BEFORE booting, and make the window 'load'
+// fallback wait for it so it never injects a second, hardcoded hero.
+let phasesReady = Promise.resolve();
+document.addEventListener('DOMContentLoaded', async () => {
+  if (typeof mountAllPhases === 'function') {
+    phasesReady = mountAllPhases().catch(e => console.warn('mountAllPhases failed', e));
+  }
+  await phasesReady;
   window.bootMuseum();
 });
-window.addEventListener('load', () => {
+window.addEventListener('load', async () => {
+  await phasesReady;
   ensureHeroSectionsRestored();
   renderWingTabs();
 });
