@@ -629,8 +629,3 @@ function drawFutureSaberScene() {
     ctx.fillText(saberState.judgeText, cx, horizonY + 20);
   }
 }
-    ctx.font = "bold 11px sans-serif";
-    ctx.fillStyle = saberState.judgeColor;
-    ctx.fillText(saberState.judgeText, cx, horizonY + 20);
-  }
-}
