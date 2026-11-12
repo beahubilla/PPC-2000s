@@ -1,10 +1,5 @@
 // ============================================================
 // SHARED MUSEUM DATA & PHASE ASSEMBLER (js/data/shared.js)
-// ------------------------------------------------------------
-// Restores playlistStations, playlistSearch, imageCredits,
-// exhibitMeta, and the `exhibits` merger that combines
-// pastExhibits (past.js), presentExhibits (present.js), and
-// futureExhibits (future.js).
 // ============================================================
 
 const playlistStations = [
@@ -33,7 +28,6 @@ const playlistSearch = {
   "music": "https://music.youtube.com/search?q=2000s+OPM+hits"
 };
 
-// Populated Image & Audio Credits so #credits-wrap in Sources is never blank
 const imageCredits = [
   {
     "item": "2000s Nokia 3310 & Keypad Phones (nokia.png, phones.png, phones 1.png)",
@@ -140,7 +134,6 @@ const exhibitMeta = [
   }
 ];
 
-// Merge Past (2000s), Present (Today), and Future (2030) into the unified exhibits list
 const exhibits = exhibitMeta.map(meta => {
   const past = (typeof pastExhibits !== 'undefined' && pastExhibits[meta.id]) || {};
   const present = (typeof presentExhibits !== 'undefined' && presentExhibits[meta.id]) || {};
