@@ -308,7 +308,7 @@ const presentExhibits = {
           "year": "Present"
         },
         {
-          "src": "./presentgovernment.png",
+          "src": "./images/presentgovernment.png",
           "caption": "Livestreamed hearings, vloggers, and digital public participation",
           "year": "Present"
         }
