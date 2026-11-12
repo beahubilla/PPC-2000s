@@ -236,7 +236,7 @@ const pastExhibits = {
         "year": "2000–2010"
       },
       {
-        "src": "./images/bpo.png",
+        "src": "./images/bpo industry.png",
         "caption": "24/7 BPO call center offices powering the night economy",
         "year": "2000–2010"
       }
