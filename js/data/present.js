@@ -94,6 +94,11 @@ const presentExhibits = {
         },
         {
           "src": "./images/modernphones.jpg",
+          "caption": "All-in-one 5G smartphones running social media, messaging, and OFW calls",
+          "year": "Present"
+        },
+        {
+          "src": "./images/presentsocialmedia.png",
           "caption": "Mobile-first apps connecting Filipino communities anywhere",
           "year": "Present"
         }
@@ -198,7 +203,17 @@ const presentExhibits = {
           "year": "Present"
         },
         {
-          "src": "./images/bpo industry.png",
+          "src": "./images/ewallet.png",
+          "caption": "Platform economy, e-wallets (GCash, Maya), and BPO/remote work",
+          "year": "Present"
+        },
+        {
+          "src": "./images/ecommerce.png",
+          "caption": "Platform economy, e-wallets (GCash, Maya), and BPO/remote work",
+          "year": "Present"
+        },
+        {
+          "src": "./images/presentbpo.jpg",
           "caption": "Platform economy, e-wallets (GCash, Maya), and BPO/remote work",
           "year": "Present"
         }
@@ -288,7 +303,12 @@ const presentExhibits = {
           "year": "Present"
         },
         {
-          "src": "./images/people power 1.png",
+          "src": "./images/presentimpeachment.png",
+          "caption": "Vice President Impeachment Trial",
+          "year": "Present"
+        },
+        {
+          "src": "./presentgovernment.png",
           "caption": "Livestreamed hearings, vloggers, and digital public participation",
           "year": "Present"
         }
@@ -389,7 +409,17 @@ const presentExhibits = {
       "gallery": [
         {
           "src": "./images/ppop.png",
-          "caption": "P-Pop global surge (SB19, BINI), streaming, and the 2026 'bebot' revival",
+          "caption": "P-Pop global surge (SB19, BINI) and streaming",
+          "year": "Present"
+        },
+        {
+          "src": "./images/presentppop.png",
+          "caption": "P-Pop global surge (SB19, BINI) and streaming",
+          "year": "Present"
+        },
+        {
+          "src": "./images/presentclothes.png",
+          "caption": "2026 'bebot' revival and trending styles",
           "year": "Present"
         }
       ]
@@ -493,10 +523,15 @@ const presentExhibits = {
           "year": "Present"
         },
         {
-          "src": "./images/ondoy baha.png",
+          "src": "./images/presentenvironmental.png",
           "caption": "Flood monitoring and community disaster preparedness",
           "year": "Present"
-        }
+        },
+        {
+          "src": "./images/presentenvironmental1.png",
+          "caption": "Flood monitoring and community disaster preparedness",
+          "year": "Present"
+        },
       ]
     },
     "sources": [
@@ -591,7 +626,7 @@ const presentExhibits = {
           "year": "2020s"
         },
         {
-          "src": "./images/sports.png",
+          "src": "./images/presentsports.jpg",
           "caption": "Philippine athletes celebrating international victories across multiple sports",
           "year": "2020s"
         },
