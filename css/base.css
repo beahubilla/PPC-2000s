@@ -1985,3 +1985,17 @@ html.era-now .wing-current {
 @media (max-width: 767px) {
   .lobby-links { grid-template-columns: 1fr 1fr; }
 }
+
+/* ------------------------------------------------------------
+   Keep dialogs hidden even if Tailwind's CDN utilities are slow,
+   blocked or offline. These components set their own `display`,
+   so Tailwind's `.hidden` alone is not enough to hide them.
+   Two-class selectors win regardless of stylesheet order.
+   ------------------------------------------------------------ */
+.modal-backdrop.hidden,
+.lightbox.hidden,
+.player-popup.hidden,
+.nokia-view.hidden,
+#yt-music-wrap.hidden {
+  display: none;
+}
