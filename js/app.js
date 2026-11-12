@@ -1081,8 +1081,11 @@ function renderPassport() {
           <div class="pp-stamps" style="grid-template-columns:repeat(3,minmax(0,1fr));gap:0.4rem;">${slot(ex, i, 'then')}${slot(ex, i, 'now')}${slot(ex, i, 'future')}</div>
         </div>`).join('')}
     </div>
-    <div class="pp-foot" style="flex-wrap:wrap;">
-      <button type="button" id="pp-reset-btn" class="btn btn-sm" onclick="resetPassport()">${passportResetArmed ? 'Tap again to confirm reset' : 'Reset passport'}</button>
+    <div class="pp-foot" style="flex-wrap:wrap;gap:0.5rem;">
+      <div style="display:flex;align-items:center;gap:0.45rem;flex-wrap:wrap;">
+        <button type="button" class="btn btn-pink btn-sm" onclick="closePassport()">🏛️ Explore Lobby →</button>
+        <button type="button" id="pp-reset-btn" class="btn btn-sm" onclick="resetPassport()">${passportResetArmed ? 'Tap again to confirm reset' : 'Reset passport'}</button>
+      </div>
       <span>Saved on this device only.</span>
     </div>`;
 }
@@ -1247,7 +1250,26 @@ function mapGo(sectionId) {
 // ------------------------------------------------------------
 let swipeEventsBound = false;
 
+function syncMobilePolishAndRelicHeadings() {
+  // Ensure sheet headers in Passport & Map have horizontal clearance from the top-right close button on mobile
+  document.querySelectorAll('.sheet-head').forEach(el => {
+    el.style.paddingLeft = '2.2rem';
+    el.style.paddingRight = '2.2rem';
+  });
+  // Sync Relic section heading & sub-caption with 2030 Holo-Saber & Metro Surfer
+  const smsSec = $('sms');
+  if (smsSec) {
+    const fTitle = smsSec.querySelector('h3 .only-future');
+    if (fTitle) fTitle.textContent = 'NeuroLink AR Visor • 2030 Relic';
+    const nDesc = smsSec.querySelector('p .only-now');
+    if (nDesc) nDesc.textContent = 'Step into a 5G smartphone: send a message to Besties GC, or dodge EDSA traffic in Metro Surfer!';
+    const fDesc = smsSec.querySelector('p .only-future');
+    if (fDesc) fDesc.textContent = 'Connect with your barkada on the 6G AI Hub, or slice neon beat-cubes in Holo-Saber: 2030 Beat!';
+  }
+}
+
 function bootMuseum() {
+  syncMobilePolishAndRelicHeadings();
   renderWingTabs();
   initGalleryEvents();
   applyEra(currentEra);
