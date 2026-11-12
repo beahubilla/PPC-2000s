@@ -4,17 +4,16 @@
 // Controls:
 // 1. Era Time Machine (2000s / Today / 2030s+ Future) & Exhibit Cards
 // 2. Detail Room Modals (with 5 Worksheet Category Sub-Cards &
-//    Full-Width High-Contrast Compare 3-Era Banner + Fallback Hero Images)
+//    High-Contrast Compare 3-Era Banner + Fallback Hero Images)
 // 3. Friendster Curators Modal, Before/After Slider, OPM Mini-Player
-// 4. Museum Floor Map & 18-Stamp Museum Passport (Mobile & Web Friendly)
+// 4. Museum Floor Map & 18-Stamp Museum Passport
 // 5. Auto-Popup Museum Passport on Site Entry (unless a #room- hash is open)
 // ============================================================
 
 // ------------------------------------------------------------
 // Helpers
 // ------------------------------------------------------------
-window.$ = window.$ || (id => document.getElementById(id));
-var $ = window.$;
+const $ = id => document.getElementById(id);
 
 function esc(value) {
   return String(value == null ? '' : value)
@@ -443,7 +442,7 @@ function roomCategoriesHtml(categories) {
   if (!categories || !categories.length) return '';
   return `
     <h3 class="room-h">🗂️ Worksheet Breakdown</h3>
-    <div class="category-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:0.75rem;margin-bottom:1.1rem;">
+    <div class="category-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:0.75rem;margin-bottom:1.1rem;">
       ${categories.map(c => `
         <div class="category-card" style="background:rgba(128,128,160,0.08);border:1px solid rgba(128,128,160,0.22);border-radius:0.85rem;padding:0.85rem 1rem;">
           <div style="font-weight:800;font-size:0.8rem;letter-spacing:0.03em;text-transform:uppercase;margin-bottom:0.35rem;color:var(--c, #db32ae);">
@@ -477,20 +476,20 @@ function roomHeroHtml(ex, era) {
     const third = (d, cls) => {
       const heroSrc = d.image || (d.gallery && d.gallery[0] && d.gallery[0].src) || ex.image || '';
       return `
-      <div class="hero-half ${cls}" style="position:relative;height:100%;min-height:13.5rem;overflow:hidden;">
+      <div class="hero-half ${cls}">
         <span class="hero-half-emoji" aria-hidden="true">${esc(d.icon)}</span>
-        ${heroSrc ? `<img src="${esc(heroSrc)}" alt="${esc(d.alt || d.title)}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" onerror="this.remove()">` : ''}
-        <span class="hero-half-tag" style="z-index:3;color:#0f172a;background:#ffffff;">${esc(d.label)}</span>
+        ${heroSrc ? `<img src="${esc(heroSrc)}" alt="${esc(d.alt || d.title)}" onerror="this.remove()">` : ''}
+        <span class="hero-half-tag">${esc(d.label)}</span>
       </div>`;
     };
     return `
-      <div class="room-hero compare" style="position:relative;height:13.5rem;min-height:13.5rem;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));background:#0f172a;color:#ffffff;overflow:hidden;">
+      <div class="room-hero compare" style="position:relative;background:#0f172a;color:#ffffff;">
         ${third(eraData(ex, 'then'), 'then')}${third(eraData(ex, 'now'), 'now')}${third(eraData(ex, 'future'), 'future')}
-        <div class="room-hero-shade" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,11,26,0.18) 0%,rgba(8,11,26,0.68) 48%,rgba(8,11,26,0.94) 100%);pointer-events:none;z-index:2;"></div>
-        <div class="room-hero-text" style="position:absolute;left:0;right:0;bottom:0;z-index:3;padding:0.9rem 1.2rem;color:#ffffff;text-shadow:0 2px 10px rgba(0,0,0,0.88);">
-          <span class="room-domain" style="background:#ffffff;color:#0f172a;font-weight:800;">${esc(ex.domain)} • All 3 Phases</span>
-          <h2 style="color:#ffffff;font-size:clamp(1.12rem,2.6vw,1.6rem);line-height:1.18;margin:0.15rem 0 0.2rem;text-shadow:0 2px 12px rgba(0,0,0,0.92);">${esc(ex.title)}</h2>
-          <p style="color:rgba(255,255,255,0.95);font-size:0.78rem;line-height:1.38;margin:0;text-shadow:0 1px 8px rgba(0,0,0,0.88);">${esc(ex.blurb)}</p>
+        <div class="room-hero-shade" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,11,26,0.32) 0%,rgba(8,11,26,0.88) 100%);pointer-events:none;z-index:1;"></div>
+        <div class="room-hero-text" style="position:relative;z-index:2;color:#ffffff;text-shadow:0 2px 10px rgba(0,0,0,0.85);">
+          <span class="room-domain" style="color:#f9a8d4;font-weight:800;">${esc(ex.domain)} • All 3 Phases</span>
+          <h2 style="color:#ffffff;text-shadow:0 2px 12px rgba(0,0,0,0.9);">${esc(ex.title)}</h2>
+          <p style="color:rgba(255,255,255,0.94);text-shadow:0 1px 8px rgba(0,0,0,0.85);">${esc(ex.blurb)}</p>
         </div>
       </div>`;
   }
@@ -1074,18 +1073,15 @@ function renderPassport() {
     ${n === total
       ? `<div class="pp-complete">🏅 Museum complete! You explored every room across all three eras (2000s, Today, and 2030s+).</div>`
       : `<p class="pp-hint">Open each room in the <b>2000s</b>, <b>Today</b>, and <b>2030s+</b> tabs to collect all 18 stamps. The <b>Compare</b> tab awards all three at once. Tap a stamp to jump there.</p>`}
-    <div class="pp-grid" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,13.2rem),1fr));">
+    <div class="pp-grid">
       ${exhibits.map((ex, i) => `
         <div class="pp-room" style="--c:${esc(ex.color)}">
           <div class="pp-room-head" onclick="passportGo(${i}, currentEra)" style="cursor:pointer" title="Enter ${esc(ex.wing)} room"><span>${esc(ex.icon)}</span><b>${esc(ex.wing)}</b></div>
-          <div class="pp-stamps" style="grid-template-columns:repeat(3,minmax(0,1fr));gap:0.4rem;">${slot(ex, i, 'then')}${slot(ex, i, 'now')}${slot(ex, i, 'future')}</div>
+          <div class="pp-stamps">${slot(ex, i, 'then')}${slot(ex, i, 'now')}${slot(ex, i, 'future')}</div>
         </div>`).join('')}
     </div>
-    <div class="pp-foot" style="flex-wrap:wrap;gap:0.5rem;">
-      <div style="display:flex;align-items:center;gap:0.45rem;flex-wrap:wrap;">
-        <button type="button" class="btn btn-pink btn-sm" onclick="closePassport()">🏛️ Explore Lobby →</button>
-        <button type="button" id="pp-reset-btn" class="btn btn-sm" onclick="resetPassport()">${passportResetArmed ? 'Tap again to confirm reset' : 'Reset passport'}</button>
-      </div>
+    <div class="pp-foot">
+      <button type="button" id="pp-reset-btn" class="btn btn-sm" onclick="resetPassport()">${passportResetArmed ? 'Tap again to confirm reset' : 'Reset passport'}</button>
       <span>Saved on this device only.</span>
     </div>`;
 }
@@ -1250,330 +1246,12 @@ function mapGo(sectionId) {
 // ------------------------------------------------------------
 let swipeEventsBound = false;
 
-
-// ------------------------------------------------------------
-// GUARANTEE ALL 3 ERA HERO BANNERS, WING TABS & TIME MACHINE PICKER
-// Restores:
-// - Past (2000s): "From Unli-Text & Friendster to P-Pop & Holo-Horizons" (.hero-copy.only-then)
-// - Present (Today): ./images/today-wing-hero.png spotlight (.hero-spotlight.only-now)
-// - Future (2030s+): ./images/future-wing-hero.jpg spotlight (.hero-spotlight-future.only-future)
-// - Topic filter bar (#wing-tabs) & Time Machine picker (.wing-picker)
-// ------------------------------------------------------------
-const PAST_HERO_HTML = `
-      <div class="hero-copy only-then">
-        <span class="hero-pill">📼 The 2000s Wing is open • 2000–2010</span>
-        <h2 class="hero-title">
-          From <span class="grad-text">Unli-Text &amp; Friendster</span><br>to P-Pop &amp; Holo-Horizons
-        </h2>
-        <p class="max-w-2xl mx-auto text-xs sm:text-base leading-relaxed text-[var(--muted)] mb-6 sm:mb-7">
-          Trace how the analog-digital hybrid era of 2000–2010 shaped modern Philippine communication, entertainment, sports, and socio-political identity—and where it is heading next.
-        </p>
-        <div class="flex flex-wrap justify-center gap-2.5 sm:gap-3 mb-6 sm:mb-8">
-          <button type="button" onclick="openRoom(0)" class="btn btn-pink">🚪 Start the tour</button>
-          <a href="#exhibits" class="btn">Browse exhibits ↓</a>
-          <button type="button" onclick="openMap()" class="btn">🗺️ Floor map</button>
-        </div>
-      </div>`;
-
-const PRESENT_HERO_HTML = `
-      <figure class="hero-spotlight only-now">
-        <img src="./images/today-wing-hero.png" alt="An iridescent Y2K museum display featuring a chrome flip phone, smartphone, compact discs, and holographic interfaces" fetchpriority="high">
-        <div class="hero-image-shade" aria-hidden="true"></div>
-        <figcaption>
-          <span class="hero-overline">TODAY WING &nbsp; / &nbsp; PHILIPPINE POP CULTURE, REBOOTED</span>
-          <h2 class="hero-title">The present looks<br><em>a little familiar.</em></h2>
-          <p>From pocket-sized text threads to world-stage P-pop, explore the 2020s culture bridging our past and what comes next.</p>
-          <div class="hero-actions">
-            <button type="button" onclick="openRoom(0)" class="btn btn-pink">Explore the collection <span aria-hidden="true">↗</span></button>
-            <a href="#exhibits" class="btn">Browse exhibits <span aria-hidden="true">↓</span></a>
-          </div>
-        </figcaption>
-        <span class="hero-index" aria-hidden="true">01 &nbsp;—&nbsp; 06</span>
-      </figure>`;
-
-const FUTURE_HERO_HTML = `
-      <figure class="hero-spotlight hero-spotlight-future only-future">
-        <img src="./images/future-wing-hero.jpg" alt="A futuristic 2030s obsidian museum hall with glowing cyan and magenta holographic projections of Manila, a flying jeepney, and an AR neural visor" fetchpriority="high">
-        <div class="hero-image-shade" aria-hidden="true"></div>
-        <figcaption>
-          <span class="hero-overline">FUTURE WING &nbsp; / &nbsp; 2030s+ HOLOGRAPHIC HORIZON</span>
-          <h2 class="hero-title">Where heritage meets<br><em>holographic light.</em></h2>
-          <p>Step into the 2030s onwards: spatial telepresence for OFW families, volumetric P-Pop domes, full-body cyber-athletics, and AI-resilient smart cities.</p>
-          <div class="hero-actions">
-            <button type="button" onclick="openRoom(0)" class="btn btn-pink">Enter neural archive <span aria-hidden="true">↗</span></button>
-            <a href="#exhibits" class="btn">Browse exhibits <span aria-hidden="true">↓</span></a>
-            <button type="button" onclick="openMap()" class="btn">🗺️ Floor map</button>
-          </div>
-        </figcaption>
-        <span class="hero-index" aria-hidden="true">2030s+ &nbsp;•&nbsp; HOLO-ARCHIVE 01—06</span>
-      </figure>`;
-
-const WING_PICKER_HTML = `
-    <div class="wing-picker panel mb-7">
-      <div class="text-center mb-3">
-        <span class="wing-kicker">TIME MACHINE</span>
-        <h3 class="font-extrabold text-sm sm:text-base">🏛️ Choose an era</h3>
-        <p id="wing-current" class="wing-current" aria-live="polite">Now viewing: The 2000s Wing</p>
-        <p id="wing-desc" class="text-xs text-[var(--muted)] mt-0.5"></p>
-      </div>
-      <div class="wing-switch" role="group" aria-label="Choose a wing">
-        <button type="button" class="wing-btn wing-then active" data-era="then" aria-pressed="true" onclick="setEra('then')">
-          <span class="wing-emoji">🕹️</span><b>The 2000s Wing</b><small>2000–2010</small>
-        </button>
-        <button type="button" class="wing-btn wing-now" data-era="now" aria-pressed="false" onclick="setEra('now')">
-          <span class="wing-emoji">📱</span><b>The Today Wing</b><small>2020s</small>
-        </button>
-        <button type="button" class="wing-btn wing-future" data-era="future" aria-pressed="false" onclick="setEra('future')">
-          <span class="wing-emoji">🚀</span><b>The Future Wing</b><small>2030s Onwards</small>
-        </button>
-      </div>
-    </div>`;
-
-window.PHASE_TEMPLATES = window.PHASE_TEMPLATES || {};
-window.PHASE_TEMPLATES.past = window.PHASE_TEMPLATES.past || {};
-window.PHASE_TEMPLATES.past.hero = PAST_HERO_HTML;
-window.PHASE_TEMPLATES.present = window.PHASE_TEMPLATES.present || {};
-window.PHASE_TEMPLATES.present.hero = PRESENT_HERO_HTML;
-window.PHASE_TEMPLATES.future = window.PHASE_TEMPLATES.future || {};
-window.PHASE_TEMPLATES.future.hero = FUTURE_HERO_HTML;
-
-function ensureHeroSectionsRestored() {
-  // 1. Ensure era visibility & full hero spotlight styles (2000s, Today, 2030s+) are always present
-  if (!$('hero-restore-styles')) {
-    const st = document.createElement('style');
-    st.id = 'hero-restore-styles';
-    st.textContent = `
-      html.era-then .only-now, html.era-then .only-future { display: none !important; }
-      html.era-now .only-then, html.era-now .only-future { display: none !important; }
-      html.era-future .only-then, html.era-future .only-now { display: none !important; }
-      html.era-then .hero-copy.only-then { display: block !important; text-align: center; }
-      html.era-now .hero-spotlight.only-now { display: block !important; }
-      html.era-future .hero-spotlight-future.only-future { display: block !important; }
-
-      /* Past 2000s Hero Copy */
-      .hero-copy.only-then { max-width: 54rem; margin: 0 auto 1.25rem; }
-      .hero-copy.only-then .hero-pill {
-        display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.32rem 0.85rem;
-        margin-bottom: 1rem; font-size: 0.72rem; font-weight: 800; color: var(--ink, #2b1d45);
-        background: #ffffff; border: 2px solid var(--ink, #2b1d45); border-radius: 999px;
-        box-shadow: 3px 3px 0 var(--pink, #ff5fa2);
-      }
-      .hero-copy.only-then .hero-title {
-        font-size: clamp(2rem, 5.2vw, 3.85rem); font-weight: 800; line-height: 1.08;
-        letter-spacing: -0.03em; margin: 0 0 1rem; color: var(--ink, #2b1d45);
-      }
-      .hero-copy.only-then .grad-text {
-        background: linear-gradient(90deg, #ff5fa2, #ff8a3d 48%, #7c3aed 78%, #00b4d8);
-        -webkit-background-clip: text; background-clip: text; color: transparent;
-      }
-
-      /* Present (Today) Hero Spotlight */
-      html.era-now .hero-layout, html.era-future .hero-layout {
-        display: block !important; width: 100%; max-width: 76rem; margin: 0 auto;
-      }
-      html.era-now .hero-spotlight.only-now {
-        position: relative; width: 100%; min-height: 32rem; aspect-ratio: 1.82;
-        overflow: hidden; margin: 0 0 1.25rem; border: 1px solid rgba(255,255,255,0.92);
-        border-radius: 1.5rem; background: #242044;
-        box-shadow: 0 22px 70px -35px rgba(97,76,182,0.38), 0 0 0 1px rgba(149,118,234,0.28);
-      }
-      html.era-now .hero-spotlight.only-now img {
-        position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 53%;
-      }
-      html.era-now .hero-spotlight.only-now .hero-image-shade {
-        position: absolute; inset: 0; pointer-events: none;
-        background: radial-gradient(ellipse at 80% 18%, rgba(81,210,245,0.28), transparent 42%),
-                    linear-gradient(90deg, rgba(35,24,70,0.04) 18%, rgba(38,24,75,0.18) 43%, rgba(34,25,79,0.68) 100%),
-                    linear-gradient(0deg, rgba(38,25,78,0.28), transparent 38%);
-      }
-      html.era-now .hero-spotlight.only-now figcaption {
-        position: absolute; z-index: 2; top: 50%; right: clamp(1.2rem, 5vw, 5rem);
-        display: flex; width: min(48%, 34rem); flex-direction: column; align-items: flex-start;
-        text-align: left; padding: clamp(1.2rem, 2.5vw, 2rem); color: #ffffff;
-        border: 1px solid rgba(255,255,255,0.44); border-radius: 1.3rem;
-        background: linear-gradient(135deg, rgba(96,76,159,0.52), rgba(41,43,103,0.62) 55%, rgba(43,114,151,0.46));
-        box-shadow: 0 18px 54px rgba(21,15,55,0.25), inset 0 1px rgba(255,255,255,0.32);
-        -webkit-backdrop-filter: blur(16px) saturate(1.35); backdrop-filter: blur(16px) saturate(1.35);
-        transform: translateY(-50%);
-      }
-      html.era-now .hero-spotlight.only-now .hero-overline {
-        margin-bottom: 0.85rem; color: #9df1ff; font-size: 0.58rem; font-weight: 800; letter-spacing: 0.16em;
-      }
-      html.era-now .hero-spotlight.only-now .hero-title {
-        max-width: 14ch; margin: 0 0 0.8rem; color: #ffffff; font-size: clamp(2.2rem, 4.1vw, 4.2rem);
-        font-weight: 800; line-height: 0.98; letter-spacing: -0.05em;
-      }
-      html.era-now .hero-spotlight.only-now .hero-title em {
-        color: #b8a5ff; font-style: italic; font-weight: 700;
-      }
-      html.era-now .hero-spotlight.only-now figcaption p {
-        max-width: 30rem; margin: 0 0 1.2rem; color: rgba(255,255,255,0.88); font-size: 0.82rem; line-height: 1.65;
-      }
-      html.era-now .hero-spotlight.only-now .hero-index {
-        position: absolute; right: 1.5rem; bottom: 1.15rem; z-index: 2;
-        color: rgba(255,255,255,0.72); font-family: "VT323", monospace; font-size: 0.95rem; letter-spacing: 0.14em;
-      }
-
-      /* Future (2030s+) Hero Spotlight */
-      html.era-future .hero-spotlight-future.only-future {
-        position: relative; width: 100%; min-height: 32rem; aspect-ratio: 1.82;
-        overflow: hidden; margin: 0 0 1.25rem; border: 1px solid rgba(0,229,255,0.45);
-        border-radius: 1.5rem; background: #060b18;
-        box-shadow: 0 26px 80px -30px rgba(0,229,255,0.35), 0 0 0 1px rgba(192,132,252,0.25);
-      }
-      html.era-future .hero-spotlight-future.only-future img {
-        position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 50%;
-      }
-      html.era-future .hero-spotlight-future.only-future .hero-image-shade {
-        position: absolute; inset: 0; pointer-events: none;
-        background: radial-gradient(ellipse at 78% 22%, rgba(0,229,255,0.22), transparent 45%),
-                    linear-gradient(90deg, rgba(6,9,19,0.15) 15%, rgba(6,9,19,0.55) 48%, rgba(6,9,19,0.88) 100%),
-                    linear-gradient(0deg, rgba(6,9,19,0.65), transparent 35%);
-      }
-      html.era-future .hero-spotlight-future.only-future figcaption {
-        position: absolute; z-index: 2; top: 50%; right: clamp(1.2rem, 5vw, 5rem);
-        display: flex; width: min(50%, 35rem); flex-direction: column; align-items: flex-start;
-        text-align: left; padding: clamp(1.25rem, 2.5vw, 2.1rem); color: #e4f3ff;
-        border: 1px solid rgba(0,229,255,0.42); border-radius: 1.35rem;
-        background: linear-gradient(135deg, rgba(8,17,36,0.78), rgba(22,14,46,0.82) 60%, rgba(6,38,56,0.72));
-        box-shadow: 0 20px 60px rgba(0,0,0,0.65), 0 0 28px rgba(0,229,255,0.18), inset 0 1px rgba(255,255,255,0.22);
-        -webkit-backdrop-filter: blur(16px) saturate(1.4); backdrop-filter: blur(16px) saturate(1.4);
-        transform: translateY(-50%);
-      }
-      html.era-future .hero-spotlight-future.only-future .hero-overline {
-        margin-bottom: 0.85rem; color: #00e5ff; font-family: "Silkscreen", monospace;
-        font-size: 0.58rem; letter-spacing: 0.14em; text-shadow: 0 0 14px rgba(0,229,255,0.6);
-      }
-      html.era-future .hero-spotlight-future.only-future .hero-title {
-        max-width: 15ch; margin: 0 0 0.85rem; color: #ffffff; font-size: clamp(2.2rem, 4vw, 4.1rem);
-        font-weight: 800; line-height: 1.02; letter-spacing: -0.04em; text-shadow: 0 4px 24px rgba(0,229,255,0.35);
-      }
-      html.era-future .hero-spotlight-future.only-future .hero-title em {
-        background: linear-gradient(90deg, #00f2fe, #c084fc, #f472b6);
-        -webkit-background-clip: text; background-clip: text; color: transparent; font-style: italic;
-      }
-      html.era-future .hero-spotlight-future.only-future figcaption p {
-        max-width: 31rem; margin: 0 0 1.2rem; color: rgba(228,243,255,0.88); font-size: 0.82rem; line-height: 1.65;
-      }
-      html.era-future .hero-spotlight-future.only-future .hero-index {
-        position: absolute; right: 1.5rem; bottom: 1.15rem; z-index: 2;
-        color: #00e5ff; font-family: "VT323", monospace; font-size: 0.95rem; letter-spacing: 0.14em;
-      }
-
-      @media (max-width: 760px) {
-        html.era-now .hero-spotlight.only-now,
-        html.era-future .hero-spotlight-future.only-future {
-          min-height: 36rem; aspect-ratio: auto;
-        }
-        html.era-now .hero-spotlight.only-now figcaption,
-        html.era-future .hero-spotlight-future.only-future figcaption {
-          top: auto; right: 1rem; bottom: 3.2rem; left: 1rem; width: auto; transform: none;
-        }
-      }
-    `;
-    document.head.appendChild(st);
-  }
-
-  // 2. Locate or create .hero-layout inside <section id="top">
-  let topSec = $('top') || document.querySelector('section#top');
-  if (!topSec) {
-    const mainEl = document.querySelector('main');
-    if (mainEl && mainEl.parentNode) {
-      topSec = document.createElement('section');
-      topSec.id = 'top';
-      topSec.className = 'px-4 pt-10 sm:pt-14 pb-8 text-center';
-      mainEl.parentNode.insertBefore(topSec, mainEl);
-    }
-  }
-  if (!topSec) return;
-
-  let heroLayout = topSec.querySelector('.hero-layout');
-  if (!heroLayout) {
-    heroLayout = document.createElement('div');
-    heroLayout.className = 'max-w-5xl mx-auto hero-layout';
-    topSec.prepend(heroLayout);
-  }
-
-  // If #hero-phase-slot is used inside heroLayout, populate or unwrap it so CSS selectors match .hero-layout > ...
-  const heroSlot = $('hero-phase-slot');
-  const container = heroSlot || heroLayout;
-
-  // Restore Past (2000s) Hero (.hero-copy.only-then)
-  const existingPast = topSec.querySelector('.hero-copy.only-then');
-  if (!existingPast) {
-    container.insertAdjacentHTML('afterbegin', PAST_HERO_HTML);
-  } else if (!existingPast.querySelector('.hero-title')) {
-    existingPast.outerHTML = PAST_HERO_HTML;
-  }
-
-  // Restore Present (Today) Hero Spotlight (.hero-spotlight.only-now)
-  const existingPresent = topSec.querySelector('figure.hero-spotlight.only-now');
-  if (!existingPresent) {
-    const afterEl = topSec.querySelector('.hero-copy.only-then');
-    if (afterEl) afterEl.insertAdjacentHTML('afterend', PRESENT_HERO_HTML);
-    else container.insertAdjacentHTML('beforeend', PRESENT_HERO_HTML);
-  } else {
-    existingPresent.outerHTML = PRESENT_HERO_HTML;
-  }
-
-  // Restore Future (2030s+) Hero Spotlight (.hero-spotlight-future.only-future)
-  const existingFuture = topSec.querySelector('figure.hero-spotlight-future.only-future');
-  if (!existingFuture) {
-    const afterEl = topSec.querySelector('figure.hero-spotlight.only-now') || topSec.querySelector('.hero-copy.only-then');
-    if (afterEl) afterEl.insertAdjacentHTML('afterend', FUTURE_HERO_HTML);
-    else container.insertAdjacentHTML('beforeend', FUTURE_HERO_HTML);
-  } else {
-    existingFuture.outerHTML = FUTURE_HERO_HTML;
-  }
-
-  // Ensure #wing-tabs exists at the bottom of .hero-layout
-  if (!$('wing-tabs')) {
-    heroLayout.insertAdjacentHTML(
-      'beforeend',
-      '<div id="wing-tabs" class="pill-carousel max-w-3xl mx-auto" role="tablist" aria-label="Filter exhibits by topic"></div>'
-    );
-  }
-
-  // Ensure .wing-picker (Time Machine "Choose an era" box) exists above #gallery-grid
-  if (!document.querySelector('.wing-picker')) {
-    const galleryGrid = $('gallery-grid');
-    if (galleryGrid) {
-      galleryGrid.insertAdjacentHTML('beforebegin', WING_PICKER_HTML);
-    }
-  }
-}
-
-function syncMobilePolishAndRelicHeadings() {
-  // Ensure sheet headers in Passport & Map have horizontal clearance from the top-right close button on mobile
-  document.querySelectorAll('.sheet-head').forEach(el => {
-    el.style.paddingLeft = '2.2rem';
-    el.style.paddingRight = '2.2rem';
-  });
-  // Sync Relic section heading & sub-caption with 2030 Holo-Saber & Metro Surfer
-  const smsSec = $('sms');
-  if (smsSec) {
-    const fTitle = smsSec.querySelector('h3 .only-future');
-    if (fTitle) fTitle.textContent = 'NeuroLink AR Visor • 2030 Relic';
-    const nDesc = smsSec.querySelector('p .only-now');
-    if (nDesc) nDesc.textContent = 'Step into a 5G smartphone: send a message to Besties GC, or dodge EDSA traffic in Metro Surfer!';
-    const fDesc = smsSec.querySelector('p .only-future');
-    if (fDesc) fDesc.textContent = 'Connect with your barkada on the 6G AI Hub, or slice neon beat-cubes in Holo-Saber: 2030 Beat!';
-  }
-}
-
 function bootMuseum() {
-  ensureHeroSectionsRestored();
-  syncMobilePolishAndRelicHeadings();
   renderWingTabs();
   initGalleryEvents();
   applyEra(currentEra);
-  // Initialize best-score badges without triggering AudioContext before first user gesture
-  if ($('modern-game-best') && typeof modernGameBest !== 'undefined') {
-    $('modern-game-best').textContent = String(modernGameBest);
-  }
-  if ($('future-game-best') && typeof futureGameBest !== 'undefined') {
-    $('future-game-best').textContent = String(futureGameBest);
-  }
+  if (typeof setModernMode === 'function') setModernMode('chat');
+  if (typeof setFutureMode === 'function') setFutureMode('holo');
   updatePassportBadge();
   renderCurators();
   renderSources();
@@ -1592,37 +1270,8 @@ function bootMuseum() {
   openRoomFromHash();
 }
 
-let heroObserverBound = false;
-function bindHeroProtectionObserver() {
-  if (heroObserverBound || typeof MutationObserver === 'undefined') return;
-  const topSec = $('top') || document.querySelector('section#top');
-  if (!topSec) return;
-  heroObserverBound = true;
-  let restoring = false;
-  const obs = new MutationObserver(() => {
-    if (restoring) return;
-    const hasPast = !!topSec.querySelector('.hero-copy.only-then');
-    const hasPresent = !!topSec.querySelector('figure.hero-spotlight.only-now');
-    const hasFuture = !!topSec.querySelector('figure.hero-spotlight-future.only-future');
-    if (!hasPast || !hasPresent || !hasFuture) {
-      restoring = true;
-      ensureHeroSectionsRestored();
-      renderWingTabs();
-      restoring = false;
-    }
-  });
-  obs.observe(topSec, { childList: true, subtree: true });
-}
-
-window.bootMuseum = function() {
-  bootMuseum();
-  bindHeroProtectionObserver();
-};
+window.bootMuseum = bootMuseum;
 
 document.addEventListener('DOMContentLoaded', () => {
-  window.bootMuseum();
-});
-window.addEventListener('load', () => {
-  ensureHeroSectionsRestored();
-  renderWingTabs();
+  bootMuseum();
 });
