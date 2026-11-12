@@ -4,16 +4,17 @@
 // Controls:
 // 1. Era Time Machine (2000s / Today / 2030s+ Future) & Exhibit Cards
 // 2. Detail Room Modals (with 5 Worksheet Category Sub-Cards &
-//    High-Contrast Compare 3-Era Banner + Fallback Hero Images)
+//    Full-Width High-Contrast Compare 3-Era Banner + Fallback Hero Images)
 // 3. Friendster Curators Modal, Before/After Slider, OPM Mini-Player
-// 4. Museum Floor Map & 18-Stamp Museum Passport
+// 4. Museum Floor Map & 18-Stamp Museum Passport (Mobile & Web Friendly)
 // 5. Auto-Popup Museum Passport on Site Entry (unless a #room- hash is open)
 // ============================================================
 
 // ------------------------------------------------------------
 // Helpers
 // ------------------------------------------------------------
-const $ = id => document.getElementById(id);
+window.$ = window.$ || (id => document.getElementById(id));
+var $ = window.$;
 
 function esc(value) {
   return String(value == null ? '' : value)
@@ -442,7 +443,7 @@ function roomCategoriesHtml(categories) {
   if (!categories || !categories.length) return '';
   return `
     <h3 class="room-h">🗂️ Worksheet Breakdown</h3>
-    <div class="category-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:0.75rem;margin-bottom:1.1rem;">
+    <div class="category-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:0.75rem;margin-bottom:1.1rem;">
       ${categories.map(c => `
         <div class="category-card" style="background:rgba(128,128,160,0.08);border:1px solid rgba(128,128,160,0.22);border-radius:0.85rem;padding:0.85rem 1rem;">
           <div style="font-weight:800;font-size:0.8rem;letter-spacing:0.03em;text-transform:uppercase;margin-bottom:0.35rem;color:var(--c, #db32ae);">
@@ -476,20 +477,20 @@ function roomHeroHtml(ex, era) {
     const third = (d, cls) => {
       const heroSrc = d.image || (d.gallery && d.gallery[0] && d.gallery[0].src) || ex.image || '';
       return `
-      <div class="hero-half ${cls}">
+      <div class="hero-half ${cls}" style="position:relative;height:100%;min-height:13.5rem;overflow:hidden;">
         <span class="hero-half-emoji" aria-hidden="true">${esc(d.icon)}</span>
-        ${heroSrc ? `<img src="${esc(heroSrc)}" alt="${esc(d.alt || d.title)}" onerror="this.remove()">` : ''}
-        <span class="hero-half-tag">${esc(d.label)}</span>
+        ${heroSrc ? `<img src="${esc(heroSrc)}" alt="${esc(d.alt || d.title)}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" onerror="this.remove()">` : ''}
+        <span class="hero-half-tag" style="z-index:3;color:#0f172a;background:#ffffff;">${esc(d.label)}</span>
       </div>`;
     };
     return `
-      <div class="room-hero compare" style="position:relative;background:#0f172a;color:#ffffff;">
+      <div class="room-hero compare" style="position:relative;height:13.5rem;min-height:13.5rem;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));background:#0f172a;color:#ffffff;overflow:hidden;">
         ${third(eraData(ex, 'then'), 'then')}${third(eraData(ex, 'now'), 'now')}${third(eraData(ex, 'future'), 'future')}
-        <div class="room-hero-shade" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,11,26,0.32) 0%,rgba(8,11,26,0.88) 100%);pointer-events:none;z-index:1;"></div>
-        <div class="room-hero-text" style="position:relative;z-index:2;color:#ffffff;text-shadow:0 2px 10px rgba(0,0,0,0.85);">
-          <span class="room-domain" style="color:#f9a8d4;font-weight:800;">${esc(ex.domain)} • All 3 Phases</span>
-          <h2 style="color:#ffffff;text-shadow:0 2px 12px rgba(0,0,0,0.9);">${esc(ex.title)}</h2>
-          <p style="color:rgba(255,255,255,0.94);text-shadow:0 1px 8px rgba(0,0,0,0.85);">${esc(ex.blurb)}</p>
+        <div class="room-hero-shade" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,11,26,0.18) 0%,rgba(8,11,26,0.68) 48%,rgba(8,11,26,0.94) 100%);pointer-events:none;z-index:2;"></div>
+        <div class="room-hero-text" style="position:absolute;left:0;right:0;bottom:0;z-index:3;padding:0.9rem 1.2rem;color:#ffffff;text-shadow:0 2px 10px rgba(0,0,0,0.88);">
+          <span class="room-domain" style="background:#ffffff;color:#0f172a;font-weight:800;">${esc(ex.domain)} • All 3 Phases</span>
+          <h2 style="color:#ffffff;font-size:clamp(1.12rem,2.6vw,1.6rem);line-height:1.18;margin:0.15rem 0 0.2rem;text-shadow:0 2px 12px rgba(0,0,0,0.92);">${esc(ex.title)}</h2>
+          <p style="color:rgba(255,255,255,0.95);font-size:0.78rem;line-height:1.38;margin:0;text-shadow:0 1px 8px rgba(0,0,0,0.88);">${esc(ex.blurb)}</p>
         </div>
       </div>`;
   }
@@ -1073,14 +1074,14 @@ function renderPassport() {
     ${n === total
       ? `<div class="pp-complete">🏅 Museum complete! You explored every room across all three eras (2000s, Today, and 2030s+).</div>`
       : `<p class="pp-hint">Open each room in the <b>2000s</b>, <b>Today</b>, and <b>2030s+</b> tabs to collect all 18 stamps. The <b>Compare</b> tab awards all three at once. Tap a stamp to jump there.</p>`}
-    <div class="pp-grid">
+    <div class="pp-grid" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,13.2rem),1fr));">
       ${exhibits.map((ex, i) => `
         <div class="pp-room" style="--c:${esc(ex.color)}">
           <div class="pp-room-head" onclick="passportGo(${i}, currentEra)" style="cursor:pointer" title="Enter ${esc(ex.wing)} room"><span>${esc(ex.icon)}</span><b>${esc(ex.wing)}</b></div>
-          <div class="pp-stamps">${slot(ex, i, 'then')}${slot(ex, i, 'now')}${slot(ex, i, 'future')}</div>
+          <div class="pp-stamps" style="grid-template-columns:repeat(3,minmax(0,1fr));gap:0.4rem;">${slot(ex, i, 'then')}${slot(ex, i, 'now')}${slot(ex, i, 'future')}</div>
         </div>`).join('')}
     </div>
-    <div class="pp-foot">
+    <div class="pp-foot" style="flex-wrap:wrap;">
       <button type="button" id="pp-reset-btn" class="btn btn-sm" onclick="resetPassport()">${passportResetArmed ? 'Tap again to confirm reset' : 'Reset passport'}</button>
       <span>Saved on this device only.</span>
     </div>`;
@@ -1250,8 +1251,13 @@ function bootMuseum() {
   renderWingTabs();
   initGalleryEvents();
   applyEra(currentEra);
-  if (typeof setModernMode === 'function') setModernMode('chat');
-  if (typeof setFutureMode === 'function') setFutureMode('holo');
+  // Initialize best-score badges without triggering AudioContext before first user gesture
+  if ($('modern-game-best') && typeof modernGameBest !== 'undefined') {
+    $('modern-game-best').textContent = String(modernGameBest);
+  }
+  if ($('future-game-best') && typeof futureGameBest !== 'undefined') {
+    $('future-game-best').textContent = String(futureGameBest);
+  }
   updatePassportBadge();
   renderCurators();
   renderSources();
