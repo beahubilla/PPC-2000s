@@ -1,13 +1,13 @@
 // ============================================================
-// CORE MUSEUM SHELL CONTROLLER
+// CORE MUSEUM APPLICATION SHELL (js/app.js)
 // ------------------------------------------------------------
-// Handles Time Machine era switching, Exhibit Gallery cards,
-// Detail Rooms, Lightbox, Friendster Modal, Then vs. Now Slider,
-// Winamp Mini Player, Sources, Museum Passport, and Floor Map.
-// Phase-specific device controllers live in:
-//   - js/phases/past.js
-//   - js/phases/present.js
-//   - js/phases/future.js
+// Controls:
+// 1. Era Time Machine (2000s / Today / 2030s+ Future) & Exhibit Cards
+// 2. Detail Room Modals (with 5 Worksheet Category Sub-Cards &
+//    High-Contrast Compare 3-Era Banner + Fallback Hero Images)
+// 3. Friendster Curators Modal, Before/After Slider, OPM Mini-Player
+// 4. Museum Floor Map & 18-Stamp Museum Passport
+// 5. Auto-Popup Museum Passport on Site Entry (unless a #room- hash is open)
 // ============================================================
 
 // ------------------------------------------------------------
@@ -16,7 +16,7 @@
 const $ = id => document.getElementById(id);
 
 function esc(value) {
-  return String(value)
+  return String(value == null ? '' : value)
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
@@ -24,7 +24,9 @@ function esc(value) {
     .replace(/'/g, '&#39;');
 }
 
-function profShort(p) { return p.short || String(p.name || '?').trim().split(/\s+/)[0]; }
+function profShort(p) {
+  return p.short || String(p.name || '?').trim().split(/\s+/)[0];
+}
 function profInitials(p) {
   if (p.initials) return p.initials;
   const w = String(p.name || '?').trim().split(/\s+/).filter(Boolean);
@@ -46,17 +48,17 @@ const ERA_INFO = {
   then: {
     name: 'The 2000s Wing',
     theme: '#fff4fa',
-    desc: '2000–2010 • Texting Capital, Friendster, BPO & OPM'
+    desc: '2000–2010: texting clans, Friendster, burned CDs, LAN shops, and the first online rescue calls.'
   },
   now: {
     name: 'The Today Wing',
     theme: '#e9e6ff',
-    desc: 'Present Time • 5G Smartphones, E-Wallets, P-Pop & Olympic Golds'
+    desc: 'The 2020s: short videos, e-wallets, P-Pop, mobile esports, and real-time weather alerts.'
   },
   future: {
     name: 'The Future Wing',
     theme: '#070b19',
-    desc: '2030 Horizon • 6G AI Assistants, Digital Banking & Virtual Stages'
+    desc: '2030s Onwards: 6G AI-assisted communication, digital banking, AI fact-checking, virtual concerts, and satellite weather forecasting.'
   }
 };
 
@@ -64,36 +66,69 @@ const ERA_INFO = {
 function eraData(ex, era) {
   if (era === 'future') {
     const f = ex.future || {};
+    const gal = f.gallery || [];
+    const fallbackImg = (gal[0] && gal[0].src) || ex.image || '';
     return {
-      era: 'future', label: '2030s+',
-      title: f.title || ex.title || '', blurb: f.blurb || ex.blurb || '',
-      badge: f.badge || ex.badge || '', tag: f.tag || ex.tag || '',
-      icon: f.icon || ex.icon || '🚀', image: f.image || '', alt: f.alt || f.badge || ex.badge || '',
-      summary: f.summary || ex.futureSummary || '', intro: f.intro || '',
-      categories: f.categories || [], facts: f.facts || [], artifacts: f.artifacts || [],
-      gallery: f.gallery || [], impact: f.impact || ex.impact || ''
+      era: 'future',
+      label: '2030s+',
+      title: f.title || ex.title || '',
+      blurb: f.blurb || ex.blurb || '',
+      badge: f.badge || ex.badge || '',
+      tag: f.tag || ex.tag || '',
+      icon: f.icon || ex.icon || '🚀',
+      image: f.image || fallbackImg,
+      alt: f.alt || f.badge || ex.badge || '',
+      summary: f.summary || ex.futureSummary || '',
+      intro: f.intro || '',
+      categories: f.categories || [],
+      facts: f.facts || [],
+      artifacts: f.artifacts || [],
+      gallery: gal,
+      impact: f.impact || ex.impact || ''
     };
   }
   if (era === 'now') {
     const t = ex.today || {};
+    const gal = t.gallery || [];
+    const fallbackImg = (gal[0] && gal[0].src) || ex.image || '';
     return {
-      era: 'now', label: 'Today',
-      title: t.title || ex.title || '', blurb: t.blurb || ex.blurb || '',
-      badge: t.badge || ex.badge || '', tag: t.tag || ex.tag || '',
-      icon: t.icon || ex.icon || '✨', image: t.image || '', alt: t.alt || t.badge || ex.badge || '',
-      summary: ex.now || '', intro: t.intro || '',
-      categories: t.categories || [], facts: t.facts || [], artifacts: t.artifacts || [],
-      gallery: t.gallery || [], impact: t.impact || ex.impact || ''
+      era: 'now',
+      label: 'Today',
+      title: t.title || ex.title || '',
+      blurb: t.blurb || ex.blurb || '',
+      badge: t.badge || ex.badge || '',
+      tag: t.tag || ex.tag || '',
+      icon: t.icon || ex.icon || '✨',
+      image: t.image || fallbackImg,
+      alt: t.alt || t.badge || ex.badge || '',
+      summary: ex.now || '',
+      intro: t.intro || '',
+      categories: t.categories || [],
+      facts: t.facts || [],
+      artifacts: t.artifacts || [],
+      gallery: gal,
+      impact: t.impact || ex.impact || ''
     };
   }
+  const gal = ex.gallery || [];
+  const fallbackImg = (gal[0] && gal[0].src) || '';
   return {
-    era: 'then', label: '2000–2010',
-    title: ex.thenTitle || ex.title || '', blurb: ex.thenBlurb || ex.blurb || '',
-    badge: ex.badge || '', tag: ex.tag || '',
-    icon: ex.icon || '✨', image: ex.image || '', alt: ex.alt || ex.badge || '',
-    summary: ex.then || '', intro: ex.intro || '',
-    categories: ex.categories || [], facts: ex.facts || [], artifacts: ex.artifacts || [],
-    gallery: ex.gallery || [], impact: ex.impact || ''
+    era: 'then',
+    label: '2000–2010',
+    title: ex.thenTitle || ex.title || '',
+    blurb: ex.thenBlurb || ex.blurb || '',
+    badge: ex.badge || '',
+    tag: ex.tag || '',
+    icon: ex.icon || '✨',
+    image: ex.image || fallbackImg,
+    alt: ex.alt || ex.badge || '',
+    summary: ex.then || '',
+    intro: ex.intro || '',
+    categories: ex.categories || [],
+    facts: ex.facts || [],
+    artifacts: ex.artifacts || [],
+    gallery: gal,
+    impact: ex.impact || ''
   };
 }
 
@@ -134,9 +169,9 @@ function applyEra(era) {
 
   renderGallery();
   switchWing(currentTopic);
-  if (currentEra !== 'now') stopModernGame();
-  if (currentEra !== 'future') stopFutureGame();
-  if (currentEra !== 'then') stopSnake();
+  if (currentEra !== 'now' && typeof stopModernGame === 'function') stopModernGame();
+  if (currentEra !== 'future' && typeof stopFutureGame === 'function') stopFutureGame();
+  if (currentEra !== 'then' && typeof stopSnake === 'function') stopSnake();
 }
 
 function renderWingTabs() {
@@ -155,6 +190,8 @@ function renderGallery() {
   grid.innerHTML = exhibits.map((ex, i) => {
     const d = eraData(ex, currentEra);
     const visited = hasStamp(ex.id, currentEra);
+    const eraIcon = currentEra === 'then' ? '🕹️' : currentEra === 'now' ? '📱' : '🚀';
+    const footLabel = currentEra === 'then' ? 'Impact' : currentEra === 'now' ? 'Why it matters' : '2030s+ Horizon';
     return `
     <article class="exhibit-card reveal" tabindex="0" role="button" data-category="${esc(ex.id)}" data-index="${i}"
              style="--c:${esc(ex.color)}" aria-label="Enter the ${esc(ex.wing)} room (${esc(d.label)}): ${esc(d.title)}">
@@ -170,19 +207,17 @@ function renderGallery() {
             <span class="domain">${esc(ex.domain)}</span>
             <span class="retro-tag">${esc(d.tag)}</span>
           </div>
-          <h4 class="card-era-title">${esc(d.title)}</h4>
-          <p class="card-concise-blurb">${esc(d.blurb)}</p>
-          <div class="card-cat-pills" aria-label="Room categories">
-            <span class="card-cat-pill">✨ Highlights</span>
-            <span class="card-cat-pill">⚙️ Tech</span>
-            <span class="card-cat-pill">🎭 Performance</span>
-            <span class="card-cat-pill">🌐 Global</span>
-            <span class="card-cat-pill">📈 Trend</span>
+          <div class="card-era-comparison" aria-label="${esc(d.label)} summary">
+            <section class="card-era-copy card-era-copy-${currentEra} is-current">
+              <span class="card-era-label"><span aria-hidden="true">${eraIcon}</span>${esc(d.label)}</span>
+              <h4>${esc(d.title)}</h4>
+              <p class="card-era-subtitle">${esc(d.blurb)}</p>
+            </section>
           </div>
         </div>
       </div>
       <div class="card-foot">
-        <span>${visited ? '✓ Stamp collected' : '🛂 5 category cards inside'}</span>
+        <span>${footLabel}: <em>${esc(d.impact)}</em></span>
         <span class="enter">${visited ? '✓ ' : ''}Enter room →</span>
       </div>
     </article>`;
@@ -200,9 +235,12 @@ function renderGallery() {
 }
 
 // Attached once (the cards themselves are re-built whenever the era changes)
+let galleryEventsBound = false;
 function initGalleryEvents() {
+  if (galleryEventsBound) return;
   const grid = $('gallery-grid');
   if (!grid) return;
+  galleryEventsBound = true;
   grid.addEventListener('click', e => {
     const card = e.target.closest('.exhibit-card');
     if (card) openRoom(Number(card.dataset.index));
@@ -241,8 +279,8 @@ function enterLevel(lvl, hash) {
   try {
     const base = location.pathname + location.search;
     const url = hash || (lvl > 1 ? base + location.hash : base);
-    if (histLevel() >= lvl) history.replaceState({ lvl }, '', url);
-    else history.pushState({ lvl }, '', url);
+    if (histLevel() < lvl) history.pushState({ lvl }, '', url);
+    else history.replaceState({ lvl }, '', url);
   } catch (e) { historyOK = false; }
 }
 
@@ -400,23 +438,24 @@ function roomSourcesHtml(ex, era) {
     </details>`;
 }
 
-function roomCategoriesHtml(categories, facts) {
-  if (categories && categories.length) {
-    return `
-      <h3 class="room-h">🗂️ Phase Categories <span class="room-h-sub">Key Events, Technology, Performance, Globalization &amp; Trend</span></h3>
-      <div class="cat-grid">
-        ${categories.map((c, idx) => `
-          <article class="cat-card ${idx === categories.length - 1 && categories.length % 2 === 1 ? 'cat-wide' : ''}">
-            <div class="cat-head">
-              <span class="cat-icon" aria-hidden="true">${esc(c.icon || '📌')}</span>
-              <span class="cat-label">${esc(c.label)}</span>
-            </div>
-            <p class="cat-text">${esc(c.text)}</p>
-          </article>`).join('')}
-      </div>`;
-  }
+function roomCategoriesHtml(categories) {
+  if (!categories || !categories.length) return '';
+  return `
+    <h3 class="room-h">🗂️ Worksheet Breakdown</h3>
+    <div class="category-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:0.75rem;margin-bottom:1.1rem;">
+      ${categories.map(c => `
+        <div class="category-card" style="background:rgba(128,128,160,0.08);border:1px solid rgba(128,128,160,0.22);border-radius:0.85rem;padding:0.85rem 1rem;">
+          <div style="font-weight:800;font-size:0.8rem;letter-spacing:0.03em;text-transform:uppercase;margin-bottom:0.35rem;color:var(--c, #db32ae);">
+            <span aria-hidden="true">${esc(c.icon || '📌')}</span> ${esc(c.label || '')}
+          </div>
+          <p style="margin:0;font-size:0.86rem;line-height:1.5;">${esc(c.text || '')}</p>
+        </div>`).join('')}
+    </div>`;
+}
+
+function roomFactsHtml(facts) {
   if (!facts || !facts.length) return '';
-  return `<h3 class="room-h">💡 Key Highlights</h3><ul class="fact-list">${facts.map(f => `<li>${esc(f)}</li>`).join('')}</ul>`;
+  return `<h3 class="room-h">💡 Key Takeaways</h3><ul class="fact-list">${facts.map(f => `<li>${esc(f)}</li>`).join('')}</ul>`;
 }
 
 function roomArtifactsHtml(items) {
@@ -434,30 +473,32 @@ function roomArtifactsHtml(items) {
 
 function roomHeroHtml(ex, era) {
   if (era === 'compare') {
-    const third = (d, cls) => `
-      <div class="hero-half ${cls}" style="position:relative;height:100%;overflow:hidden;">
+    const third = (d, cls) => {
+      const heroSrc = d.image || (d.gallery && d.gallery[0] && d.gallery[0].src) || ex.image || '';
+      return `
+      <div class="hero-half ${cls}">
         <span class="hero-half-emoji" aria-hidden="true">${esc(d.icon)}</span>
-        ${d.image ? `<img src="${esc(d.image)}" alt="${esc(d.alt)}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" onerror="this.remove()">` : ''}
-        <span class="hero-half-tag" style="position:absolute;top:0.6rem;left:0.6rem;z-index:2;padding:0.12rem 0.52rem;font-size:0.6rem;font-weight:800;background:rgba(255,255,255,0.92);color:#17172f;border:1.5px solid #17172f;border-radius:999px;">${esc(d.label)}</span>
+        ${heroSrc ? `<img src="${esc(heroSrc)}" alt="${esc(d.alt || d.title)}" onerror="this.remove()">` : ''}
+        <span class="hero-half-tag">${esc(d.label)}</span>
       </div>`;
+    };
     return `
-      <div class="room-hero era-compare" style="position:relative;display:flex;align-items:flex-end;height:12.5rem;overflow:hidden;">
-        <div style="position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,1fr);z-index:0;">
-          ${third(eraData(ex, 'then'), 'then')}${third(eraData(ex, 'now'), 'now')}${third(eraData(ex, 'future'), 'future')}
-        </div>
-        <div class="room-hero-shade" style="position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(10,12,28,0.22) 0%,rgba(10,12,28,0.68) 48%,rgba(10,12,28,0.92) 100%);"></div>
-        <div class="room-hero-text" style="position:relative;z-index:2;width:100%;padding:1.1rem 1.25rem;color:#ffffff;">
-          <span class="room-domain" style="display:inline-block;padding:0.15rem 0.6rem;margin-bottom:0.35rem;background:#ffffff;color:#17172f;border-radius:999px;font-size:0.62rem;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;">${esc(ex.domain)} • All 3 Phases</span>
-          <h2 style="color:#ffffff;font-size:clamp(1.2rem,3.5vw,1.85rem);font-weight:800;line-height:1.15;text-shadow:0 2px 10px rgba(0,0,0,0.75);margin:0;">${esc(ex.title)}</h2>
-          <p style="color:rgba(255,255,255,0.94);font-size:0.76rem;line-height:1.42;margin:0.25rem 0 0;max-width:42rem;text-shadow:0 1px 6px rgba(0,0,0,0.65);">${esc(ex.blurb)}</p>
+      <div class="room-hero compare" style="position:relative;background:#0f172a;color:#ffffff;">
+        ${third(eraData(ex, 'then'), 'then')}${third(eraData(ex, 'now'), 'now')}${third(eraData(ex, 'future'), 'future')}
+        <div class="room-hero-shade" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,11,26,0.32) 0%,rgba(8,11,26,0.88) 100%);pointer-events:none;z-index:1;"></div>
+        <div class="room-hero-text" style="position:relative;z-index:2;color:#ffffff;text-shadow:0 2px 10px rgba(0,0,0,0.85);">
+          <span class="room-domain" style="color:#f9a8d4;font-weight:800;">${esc(ex.domain)} • All 3 Phases</span>
+          <h2 style="color:#ffffff;text-shadow:0 2px 12px rgba(0,0,0,0.9);">${esc(ex.title)}</h2>
+          <p style="color:rgba(255,255,255,0.94);text-shadow:0 1px 8px rgba(0,0,0,0.85);">${esc(ex.blurb)}</p>
         </div>
       </div>`;
   }
   const d = eraData(ex, era);
+  const heroSrc = d.image || (d.gallery && d.gallery[0] && d.gallery[0].src) || ex.image || '';
   return `
     <div class="room-hero era-${era}">
       <span class="room-hero-emoji" aria-hidden="true">${esc(d.icon)}</span>
-      ${d.image ? `<img src="${esc(d.image)}" alt="${esc(d.alt)}" onerror="this.remove()">` : ''}
+      ${heroSrc ? `<img src="${esc(heroSrc)}" alt="${esc(d.alt || d.title)}" onerror="this.remove()">` : ''}
       <div class="room-hero-shade"></div>
       <div class="room-hero-text">
         <span class="room-domain">${esc(ex.domain)} • ${esc(d.label)}</span>
@@ -495,26 +536,31 @@ function roomActionsHtml(ex, era) {
 
 function roomEraBodyHtml(ex, era) {
   const d = eraData(ex, era);
-  const impactLabel = era === 'then' ? 'Impact (Past → Present)' : era === 'now' ? 'Impact (Past → Present)' : 'Impact to 2030';
+  const blockCls = era === 'then' ? 'era-then' : era === 'now' ? 'era-present' : 'era-future';
+  const blockLabel = era === 'then' ? '2000–2010 Decade' : era === 'now' ? 'Present Time (2020s)' : 'Future Horizon (2030s+)';
+  const impactLabel = era === 'then' ? 'Impact' : era === 'now' ? 'Why it matters' : '2030s+ Horizon';
   return `
     ${d.intro ? `<p class="room-intro">${esc(d.intro)}</p>` : ''}
-    ${roomCategoriesHtml(d.categories, d.facts)}
-    ${roomArtifactsHtml(d.artifacts)}
+    <div class="era-block ${blockCls}" style="margin:0 0 1rem">
+      <span class="era-label">${blockLabel}</span>${esc(d.summary)}
+    </div>
+    ${roomCategoriesHtml(d.categories)}
     ${roomGalleryHtml(d.gallery, era)}
-    ${d.impact ? `<div class="impact-box">⭐ <b>${impactLabel}:</b> ${esc(d.impact)}</div>` : ''}
+    ${roomFactsHtml(d.facts)}
+    ${roomArtifactsHtml(d.artifacts)}
+    ${d.impact ? `<div class="impact-box">⭐ ${impactLabel}: ${esc(d.impact)}</div>` : ''}
     ${roomSourcesHtml(ex, era)}
     ${roomActionsHtml(ex, era)}`;
 }
 
 function roomCompareBodyHtml(ex) {
-  const col = (d, cls, heading) => `
+  const col = (d, cls, heading, blockCls) => `
     <div class="cmp-col ${cls}">
       <h4 class="cmp-head">${heading}</h4>
-      <div class="cmp-subcards">
-        ${(d.categories && d.categories.length)
-          ? d.categories.map(c => `<div class="cmp-subcard"><strong>${esc(c.icon)} ${esc(c.label)}</strong>${esc(c.text)}</div>`).join('')
-          : d.facts.slice(0, 3).map(f => `<div class="cmp-subcard">${esc(f)}</div>`).join('')}
+      <div class="era-block ${blockCls}" style="margin:0 0 .6rem">
+        <span class="era-label">${esc(d.title)}</span>${esc(d.summary)}
       </div>
+      ${d.facts.length ? `<ul class="cmp-facts">${d.facts.slice(0, 3).map(f => `<li>${esc(f)}</li>`).join('')}</ul>` : ''}
       <div class="cmp-chips">${d.artifacts.map(a => `<span class="cmp-chip" title="${esc(a.note)}">${esc(a.emoji)} ${esc(a.name)}</span>`).join('')}</div>
     </div>`;
   const a = eraData(ex, 'then');
@@ -523,18 +569,18 @@ function roomCompareBodyHtml(ex) {
   return `
     <div class="change-box">🔄 <b>Across three eras:</b> ${esc(ex.change || ex.impact || '')}</div>
     <div class="cmp-grid">
-      ${col(a, 'then', '🕹️ 2000–2010')}
-      ${col(b, 'now', '📱 Today (2020s)')}
-      ${col(c, 'future', '🚀 Future (2030)')}
+      ${col(a, 'then', '🕹️ 2000–2010', 'era-then')}
+      ${col(b, 'now', '📱 Today (2020s)', 'era-present')}
+      ${col(c, 'future', '🚀 Future (2030s+)', 'era-future')}
     </div>
     ${roomGalleryHtml(a.gallery, 'then', '📸 2000s photos')}
     ${roomGalleryHtml(b.gallery, 'now', '📸 Today photos')}
-    ${roomGalleryHtml(c.gallery, 'future', '📸 2030 visualizations')}
+    ${roomGalleryHtml(c.gallery, 'future', '📸 2030s+ Future visualizations')}
     ${roomSourcesHtml(ex, 'compare')}
     <div class="room-actions">
       <button type="button" class="btn" onclick="setRoomEra('then')">🕹️ Enter 2000s room</button>
       <button type="button" class="btn" onclick="setRoomEra('now')">📱 Enter Today room</button>
-      <button type="button" class="btn btn-pink" onclick="setRoomEra('future')">🚀 Enter 2030 room</button>
+      <button type="button" class="btn btn-pink" onclick="setRoomEra('future')">🚀 Enter 2030s+ room</button>
     </div>`;
 }
 
@@ -601,26 +647,30 @@ function visitCurator(profileIndex) {
   openFriendsterModal(profileIndex);
 }
 
+let initialPassportShown = false;
+
 function openRoomFromHash() {
   const m = location.hash.match(/^#room-([\w-]+?)(?:\/(then|now|future|compare))?$/);
-  if (!m) return;
-  const i = exhibits.findIndex(e => e.id === m[1]);
-  if (i >= 0) openRoom(i, m[2] || 'then');
+  if (m) {
+    const i = exhibits.findIndex(e => e.id === m[1]);
+    if (i >= 0) {
+      initialPassportShown = true;
+      openRoom(i, m[2] || 'then');
+      return;
+    }
+  }
+  // Automatically pop up the Museum Passport first when entering the site
+  // so viewers immediately have a clear path on where to go
+  if (!initialPassportShown) {
+    initialPassportShown = true;
+    openPassport(true);
+  }
 }
 
-
+// ------------------------------------------------------------
 // Keyboard controls
+// ------------------------------------------------------------
 document.addEventListener('keydown', e => {
-  if (nokiaMode === 'snake' && currentEra === 'then') {
-    if (['ArrowUp', 'KeyW'].includes(e.code)) { snakeChangeDir(0, -1); e.preventDefault(); }
-    else if (['ArrowDown', 'KeyS'].includes(e.code)) { snakeChangeDir(0, 1); e.preventDefault(); }
-    else if (['ArrowLeft', 'KeyA'].includes(e.code)) { snakeChangeDir(-1, 0); e.preventDefault(); }
-    else if (['ArrowRight', 'KeyD'].includes(e.code)) { snakeChangeDir(1, 0); e.preventDefault(); }
-    else if (['Space', 'Enter'].includes(e.code)) { toggleSnakePlay(); e.preventDefault(); }
-    else if (e.key === 'Escape') { setNokiaMode('sms'); }
-    return;
-  }
-
   if (lbIsOpen()) {
     if (e.key === 'Escape') closeLightbox();
     else if (e.key === 'ArrowRight') lightboxStep(1);
@@ -650,6 +700,16 @@ document.addEventListener('keydown', e => {
     else if (e.key === 'ArrowRight') nextRoom();
     else if (e.key === 'ArrowLeft') prevRoom();
     else if (e.key === 'Tab') trapTab(e, $('room-panel'));
+    return;
+  }
+
+  if (typeof nokiaMode !== 'undefined' && nokiaMode === 'snake' && currentEra === 'then') {
+    if (['ArrowUp', 'KeyW'].includes(e.code)) { snakeChangeDir(0, -1); e.preventDefault(); }
+    else if (['ArrowDown', 'KeyS'].includes(e.code)) { snakeChangeDir(0, 1); e.preventDefault(); }
+    else if (['ArrowLeft', 'KeyA'].includes(e.code)) { snakeChangeDir(-1, 0); e.preventDefault(); }
+    else if (['ArrowRight', 'KeyD'].includes(e.code)) { snakeChangeDir(1, 0); e.preventDefault(); }
+    else if (['Space', 'Enter'].includes(e.code)) { toggleSnakePlay(); e.preventDefault(); }
+    else if (e.key === 'Escape') { setNokiaMode('sms'); }
   }
 });
 
@@ -747,7 +807,7 @@ function closeFriendsterModal() { leaveLevel(1, hideFriendster); }
 
 function renderCurators() {
   const grid = $('curator-grid');
-  if (!grid) return;
+  if (!grid || typeof friendsterProfiles === 'undefined') return;
   grid.innerHTML = friendsterProfiles.map((p, i) => `
     <div class="curator-card">
       <div class="fs-avatar">${avatarHtml(p)}</div>
@@ -769,12 +829,14 @@ function baLayerHtml(side) {
 
 function setBaPosition(percent) {
   const slider = $('ba-slider');
+  if (!slider) return;
   const p = Math.max(0, Math.min(100, percent));
   slider.style.setProperty('--pos', p + '%');
   slider.setAttribute('aria-valuenow', Math.round(p));
 }
 
 function showBeforeAfter(index) {
+  if (typeof beforeAfterPairs === 'undefined') return;
   const pair = beforeAfterPairs[index];
   if (!pair) return;
   $('ba-before').innerHTML = baLayerHtml(pair.before);
@@ -791,6 +853,7 @@ function showBeforeAfter(index) {
   setBaPosition(50);
 }
 
+let baEventsBound = false;
 function initBeforeAfter() {
   const slider = $('ba-slider');
   if (!slider || typeof beforeAfterPairs === 'undefined' || !beforeAfterPairs.length) return;
@@ -799,22 +862,25 @@ function initBeforeAfter() {
     `<button type="button" class="chip-btn" onclick="showBeforeAfter(${i})">${esc(String(pair.tab).trim())}</button>`
   ).join('');
 
-  let dragging = false;
-  const moveTo = clientX => {
-    const rect = slider.getBoundingClientRect();
-    setBaPosition(((clientX - rect.left) / rect.width) * 100);
-  };
-  slider.addEventListener('pointerdown', e => { dragging = true; slider.setPointerCapture(e.pointerId); moveTo(e.clientX); });
-  slider.addEventListener('pointermove', e => { if (dragging) moveTo(e.clientX); });
-  ['pointerup', 'pointercancel'].forEach(evt => slider.addEventListener(evt, () => { dragging = false; }));
+  if (!baEventsBound) {
+    baEventsBound = true;
+    let dragging = false;
+    const moveTo = clientX => {
+      const rect = slider.getBoundingClientRect();
+      setBaPosition(((clientX - rect.left) / rect.width) * 100);
+    };
+    slider.addEventListener('pointerdown', e => { dragging = true; slider.setPointerCapture(e.pointerId); moveTo(e.clientX); });
+    slider.addEventListener('pointermove', e => { if (dragging) moveTo(e.clientX); });
+    ['pointerup', 'pointercancel'].forEach(evt => slider.addEventListener(evt, () => { dragging = false; }));
 
-  slider.addEventListener('keydown', e => {
-    const now = Number(slider.getAttribute('aria-valuenow')) || 50;
-    if (e.key === 'ArrowLeft') { setBaPosition(now - 5); e.preventDefault(); }
-    else if (e.key === 'ArrowRight') { setBaPosition(now + 5); e.preventDefault(); }
-    else if (e.key === 'Home') { setBaPosition(0); e.preventDefault(); }
-    else if (e.key === 'End') { setBaPosition(100); e.preventDefault(); }
-  });
+    slider.addEventListener('keydown', e => {
+      const now = Number(slider.getAttribute('aria-valuenow')) || 50;
+      if (e.key === 'ArrowLeft') { setBaPosition(now - 5); e.preventDefault(); }
+      else if (e.key === 'ArrowRight') { setBaPosition(now + 5); e.preventDefault(); }
+      else if (e.key === 'Home') { setBaPosition(0); e.preventDefault(); }
+      else if (e.key === 'End') { setBaPosition(100); e.preventDefault(); }
+    });
+  }
 
   showBeforeAfter(0);
 }
@@ -840,11 +906,13 @@ function renderStationTabs() {
 
 function setPlayerMissing(message) {
   const box = $('yt-video-box');
+  if (!box) return;
   box.classList.add('missing');
   box.innerHTML = `<div>${esc(message)}<br><br><a class="btn btn-pink btn-sm" href="${esc(playlistSearch.youtube)}" target="_blank" rel="noopener noreferrer">🔎 Search YouTube ↗</a></div>`;
 }
 
 function switchStation(stationNum) {
+  if (typeof playlistStations === 'undefined') return;
   const st = playlistStations[stationNum - 1];
   if (!st) return;
   currentStation = stationNum;
@@ -866,8 +934,8 @@ function switchStation(stationNum) {
 
     $('ytm-open-link').href = st.url || playlistSearch.music;
     $('ytm-note').textContent = st.url
-      ? "Opens curated playlist in YouTube Music."
-      : 'No playlist link set yet. Paste yours into js/data.js (playlistStations).';
+      ? 'Opens curated playlist in YouTube Music.'
+      : 'No playlist link set yet. Paste yours into js/data/shared.js (playlistStations).';
     return;
   }
 
@@ -876,7 +944,7 @@ function switchStation(stationNum) {
   const box = $('yt-video-box');
 
   if (!hasId) {
-    setPlayerMissing('No playlist link yet. Paste a YouTube playlist link into js/data.js (playlistStations).');
+    setPlayerMissing('No playlist link yet. Paste a YouTube playlist link into js/data/shared.js (playlistStations).');
     $('yt-open-link').href = playlistSearch.youtube;
     $('yt-open-link').textContent = 'Search YouTube for 2000s OPM ↗';
     return;
@@ -904,7 +972,7 @@ function togglePlayerPopup() {
 }
 
 // ------------------------------------------------------------
-// SOURCES SECTION (built from `sources` + `imageCredits` in data.js)
+// SOURCES SECTION (built from `sources` + `imageCredits`)
 // ------------------------------------------------------------
 function renderSources() {
   const wrap = $('sources-list');
@@ -1008,7 +1076,7 @@ function renderPassport() {
     <div class="pp-grid">
       ${exhibits.map((ex, i) => `
         <div class="pp-room" style="--c:${esc(ex.color)}">
-          <div class="pp-room-head"><span>${esc(ex.icon)}</span><b>${esc(ex.wing)}</b></div>
+          <div class="pp-room-head" onclick="passportGo(${i}, currentEra)" style="cursor:pointer" title="Enter ${esc(ex.wing)} room"><span>${esc(ex.icon)}</span><b>${esc(ex.wing)}</b></div>
           <div class="pp-stamps">${slot(ex, i, 'then')}${slot(ex, i, 'now')}${slot(ex, i, 'future')}</div>
         </div>`).join('')}
     </div>
@@ -1018,22 +1086,33 @@ function renderPassport() {
     </div>`;
 }
 
-function openPassport() {
+function openPassport(isAuto) {
+  const modal = $('passport-modal');
+  if (!modal) return;
   passportResetArmed = false;
-  lastFocus.pp = document.activeElement;
-  enterLevel(1);
+  if (!passportIsOpen()) {
+    lastFocus.pp = document.activeElement;
+    if (!isAuto) enterLevel(1);
+  }
   renderPassport();
-  $('passport-modal').classList.remove('hidden');
+  modal.classList.remove('hidden');
   lockScroll();
   focusPanel('passport-panel');
 }
 function hidePassport() {
   passportResetArmed = false;
-  $('passport-modal').classList.add('hidden');
+  const modal = $('passport-modal');
+  if (modal) modal.classList.add('hidden');
   unlockScrollIfIdle();
   restoreFocus('pp');
 }
-function closePassport() { leaveLevel(1, hidePassport); }
+function closePassport() {
+  if (historyOK && histLevel() >= 1) {
+    leaveLevel(1, hidePassport);
+  } else {
+    hidePassport();
+  }
+}
 
 function passportGo(i, era) { hidePassport(); openRoom(i, era); }
 
@@ -1084,7 +1163,7 @@ function burstConfetti() {
 // ------------------------------------------------------------
 // MUSEUM FLOOR MAP (2000s Wing | Today Wing | Future Wing + Grand Lobby)
 // ------------------------------------------------------------
-let mapHere = null; // {id, era} when the map was opened from inside a room
+let mapHere = null;
 
 function renderMap() {
   const doors = era => exhibits.map((ex, i) => {
@@ -1162,34 +1241,37 @@ function mapGo(sectionId) {
 }
 
 // ------------------------------------------------------------
+// Start everything (supports both direct DOMContentLoaded and
+// modular js/phases/loader.js bootMuseum() invocation)
 // ------------------------------------------------------------
-// Start everything (mounts phase HTML templates first, then initializes)
-// ------------------------------------------------------------
-function initMuseumApp() {
+let swipeEventsBound = false;
+
+function bootMuseum() {
   renderWingTabs();
   initGalleryEvents();
   applyEra(currentEra);
-  setModernMode('chat');
-  setFutureMode('holo');
+  if (typeof setModernMode === 'function') setModernMode('chat');
+  if (typeof setFutureMode === 'function') setFutureMode('holo');
   updatePassportBadge();
   renderCurators();
   renderSources();
   initBeforeAfter();
   renderStationTabs();
-  addSwipe($('room-content'), nextRoom, prevRoom);
-  addSwipe($('lightbox'), () => lightboxStep(1), () => lightboxStep(-1));
-  addSwipe($('fs-window'), nextProfile, prevProfile);
-  if (typeof smsDefault !== 'undefined' && $('sms-input')) {
+  if (!swipeEventsBound) {
+    swipeEventsBound = true;
+    addSwipe($('room-content'), nextRoom, prevRoom);
+    addSwipe($('lightbox'), () => lightboxStep(1), () => lightboxStep(-1));
+    addSwipe($('fs-window'), nextProfile, prevProfile);
+  }
+  if (typeof smsDefault !== 'undefined' && $('sms-input') && typeof updateSmsDisplay === 'function') {
     $('sms-input').value = '';
     updateSmsDisplay(smsDefault);
   }
   openRoomFromHash();
 }
 
+window.bootMuseum = bootMuseum;
+
 document.addEventListener('DOMContentLoaded', () => {
-  if (typeof mountAllPhases === 'function') {
-    mountAllPhases().then(initMuseumApp);
-  } else {
-    initMuseumApp();
-  }
+  bootMuseum();
 });
