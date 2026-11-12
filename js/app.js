@@ -473,32 +473,30 @@ function roomArtifactsHtml(items) {
 
 function roomHeroHtml(ex, era) {
   if (era === 'compare') {
-    const third = (d, cls) => {
-      const heroSrc = d.image || (d.gallery && d.gallery[0] && d.gallery[0].src) || ex.image || '';
-      return `
-      <div class="hero-half ${cls}">
+    const third = (d, cls) => `
+      <div class="hero-half ${cls}" style="position:relative;height:100%;overflow:hidden;">
         <span class="hero-half-emoji" aria-hidden="true">${esc(d.icon)}</span>
-        ${heroSrc ? `<img src="${esc(heroSrc)}" alt="${esc(d.alt || d.title)}" onerror="this.remove()">` : ''}
-        <span class="hero-half-tag">${esc(d.label)}</span>
+        ${d.image ? `<img src="${esc(d.image)}" alt="${esc(d.alt)}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" onerror="this.remove()">` : ''}
+        <span class="hero-half-tag" style="position:absolute;top:0.6rem;left:0.6rem;z-index:2;padding:0.12rem 0.52rem;font-size:0.6rem;font-weight:800;background:rgba(255,255,255,0.92);color:#17172f;border:1.5px solid #17172f;border-radius:999px;">${esc(d.label)}</span>
       </div>`;
-    };
     return `
-      <div class="room-hero compare" style="position:relative;background:#0f172a;color:#ffffff;">
-        ${third(eraData(ex, 'then'), 'then')}${third(eraData(ex, 'now'), 'now')}${third(eraData(ex, 'future'), 'future')}
-        <div class="room-hero-shade" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,11,26,0.32) 0%,rgba(8,11,26,0.88) 100%);pointer-events:none;z-index:1;"></div>
-        <div class="room-hero-text" style="position:relative;z-index:2;color:#ffffff;text-shadow:0 2px 10px rgba(0,0,0,0.85);">
-          <span class="room-domain" style="color:#f9a8d4;font-weight:800;">${esc(ex.domain)} • All 3 Phases</span>
-          <h2 style="color:#ffffff;text-shadow:0 2px 12px rgba(0,0,0,0.9);">${esc(ex.title)}</h2>
-          <p style="color:rgba(255,255,255,0.94);text-shadow:0 1px 8px rgba(0,0,0,0.85);">${esc(ex.blurb)}</p>
+      <div class="room-hero era-compare" style="position:relative;display:flex;align-items:flex-end;height:12.5rem;overflow:hidden;">
+        <div style="position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,1fr);z-index:0;">
+          ${third(eraData(ex, 'then'), 'then')}${third(eraData(ex, 'now'), 'now')}${third(eraData(ex, 'future'), 'future')}
+        </div>
+        <div class="room-hero-shade" style="position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(10,12,28,0.22) 0%,rgba(10,12,28,0.68) 48%,rgba(10,12,28,0.92) 100%);"></div>
+        <div class="room-hero-text" style="position:relative;z-index:2;width:100%;padding:1.1rem 1.25rem;color:#ffffff;">
+          <span class="room-domain" style="display:inline-block;padding:0.15rem 0.6rem;margin-bottom:0.35rem;background:#ffffff;color:#17172f;border-radius:999px;font-size:0.62rem;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;">${esc(ex.domain)} • All 3 Phases</span>
+          <h2 style="color:#ffffff;font-size:clamp(1.2rem,3.5vw,1.85rem);font-weight:800;line-height:1.15;text-shadow:0 2px 10px rgba(0,0,0,0.75);margin:0;">${esc(ex.title)}</h2>
+          <p style="color:rgba(255,255,255,0.94);font-size:0.76rem;line-height:1.42;margin:0.25rem 0 0;max-width:42rem;text-shadow:0 1px 6px rgba(0,0,0,0.65);">${esc(ex.blurb)}</p>
         </div>
       </div>`;
   }
   const d = eraData(ex, era);
-  const heroSrc = d.image || (d.gallery && d.gallery[0] && d.gallery[0].src) || ex.image || '';
   return `
     <div class="room-hero era-${era}">
       <span class="room-hero-emoji" aria-hidden="true">${esc(d.icon)}</span>
-      ${heroSrc ? `<img src="${esc(heroSrc)}" alt="${esc(d.alt || d.title)}" onerror="this.remove()">` : ''}
+      ${d.image ? `<img src="${esc(d.image)}" alt="${esc(d.alt)}" onerror="this.remove()">` : ''}
       <div class="room-hero-shade"></div>
       <div class="room-hero-text">
         <span class="room-domain">${esc(ex.domain)} • ${esc(d.label)}</span>
